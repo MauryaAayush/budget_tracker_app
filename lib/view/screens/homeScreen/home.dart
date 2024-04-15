@@ -10,11 +10,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
-    return  Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -53,22 +52,20 @@ class _HomeScreenState extends State<HomeScreen> {
                         ],
                       ),
 
-                      const SizedBox(width: 70,),
+                      const SizedBox(
+                        width: 70,
+                      ),
 
                       const Icon(
                         Icons.notifications_none_outlined,
                         size: 26,
                         color: Colors.black,
                       ),
-
-
-
                     ],
                   ),
                 ),
               ],
             ),
-
           ],
         ),
       ),
