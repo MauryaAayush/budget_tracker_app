@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'components/text_field.dart';
 
 class SignUp extends StatefulWidget {
@@ -48,9 +47,9 @@ class _SignUpState extends State<SignUp> {
                 'Full Name',
               ),
               textFieldBox(textEmail, 'Email ID', 'Email ID '),
-              textFieldBox(textPassword, 'Mobile Number', 'Mobile Number'),
-              textFieldBox(textEmail, 'Password', 'Password '),
-              textFieldBox(textPassword, 'Confirm Password', 'Confirm Password'),
+              textFieldBox(textMobileNum, 'Mobile Number', 'Mobile Number'),
+              textFieldBox(textPassword, 'Password', 'Password '),
+              textFieldBox(textConfirm, 'Confirm Password', 'Confirm Password'),
               SizedBox(
                 height: height / 35,
               ),
