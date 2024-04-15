@@ -13,7 +13,8 @@ class BudgetTracker extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes:{
-        '/':(context) => SplashScreen()
+        '/':(context) => SplashScreen(),
+        '/signUp':(context) =>
       },
     );
   }
