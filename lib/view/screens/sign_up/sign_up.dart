@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'components/text_field.dart';
 
 class SignUp extends StatefulWidget {
@@ -28,14 +27,14 @@ class _SignUpState extends State<SignUp> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 'Getting Started',
                 style: TextStyle(
                     fontSize: 30,
                     color: Color(0xff059E2E),
                     fontWeight: FontWeight.bold),
               ),
-              Text(
+              const Text(
                 'Create Your Account With Budget Friendly',
                 style: TextStyle(fontSize: 15),
               ),
@@ -48,9 +47,9 @@ class _SignUpState extends State<SignUp> {
                 'Full Name',
               ),
               textFieldBox(textEmail, 'Email ID', 'Email ID '),
-              textFieldBox(textPassword, 'Mobile Number', 'Mobile Number'),
-              textFieldBox(textEmail, 'Password', 'Password '),
-              textFieldBox(textPassword, 'Confirm Password', 'Confirm Password'),
+              textFieldBox(textMobileNum, 'Mobile Number', 'Mobile Number'),
+              textFieldBox(textPassword, 'Password', 'Password '),
+              textFieldBox(textConfirm, 'Confirm Password', 'Confirm Password'),
               SizedBox(
                 height: height / 35,
               ),
@@ -60,11 +59,11 @@ class _SignUpState extends State<SignUp> {
                   height: height / 15,
                   width: width / 1,
                   decoration: BoxDecoration(
-                    color: Color(0xff059E2E),
+                    color: const Color(0xff059E2E),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     'Sign In',
                     style: TextStyle(
                         fontSize: 22,
@@ -111,13 +110,17 @@ class _SignUpState extends State<SignUp> {
                   height: height / 17,
                   width: width,
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black,width: 2),
+                    border: Border.all(color: Colors.black, width: 2),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  child: Row(
+                  child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Sign In With Google',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+                      Text(
+                        'Sign In With Google',
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.w500),
+                      ),
                     ],
                   ),
                 ),
@@ -128,7 +131,7 @@ class _SignUpState extends State<SignUp> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 90),
                 child: RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                     text: 'Already Have Account?',
                     style: TextStyle(
                       color: Colors.black,
