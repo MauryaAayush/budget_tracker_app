@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class MoreScreen extends StatefulWidget {
   const MoreScreen({super.key});
@@ -23,8 +26,16 @@ class _MoreScreenState extends State<MoreScreen> {
                   SizedBox(height: 20),
                   Row(
                     children: [
-                      CircleAvatar(
-                        maxRadius: height * 0.03,
+                      InkWell(
+                        borderRadius: BorderRadius.circular(50),
+                        onTap: () {
+                          pickImage();
+                        },
+                        child: CircleAvatar(
+                          maxRadius: height * 0.03,
+                          backgroundImage:
+                              (imgPath != null) ? FileImage(imgPath!) : null,
+                        ),
                       ),
                       SizedBox(
                         width: width * 0.8,
@@ -149,5 +160,13 @@ class _MoreScreenState extends State<MoreScreen> {
         ),
       ),
     );
+  }
+
+  ImagePicker imagePicker = ImagePicker();
+  File? imgPath;
+  Future<void> pickImage() async {
+    final picker = await imagePicker.pickImage(source: ImageSource.gallery);
+    imgPath = File(picker!.path);
+    setState(() {});
   }
 }
