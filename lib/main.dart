@@ -3,7 +3,6 @@ import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
 
 import 'package:budget_tracker_app/view/screens/homeScreen/home.dart';
 import 'package:budget_tracker_app/view/screens/log_in/login.dart';
-import 'package:budget_tracker_app/view/screens/moreScreen/more.dart';
 import 'package:budget_tracker_app/view/screens/sign_up/sign_up.dart';
 import 'package:flutter/material.dart';
 
@@ -19,14 +18,13 @@ class BudgetTracker extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/more',
+      initialRoute: '/home',
       routes: {
         '/': (context) => const SplashScreen(),
         '/signUp': (context) => const SignUp(),
         '/login': (context) => const LogIn(),
         '/home': (context) => const HomeScreen(),
         '/analytics': (context) => const AnalyticsScreen(),
-        '/more': (context) => const MoreScreen(),
       },
     );
   }
