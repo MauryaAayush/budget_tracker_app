@@ -6,6 +6,7 @@ class LogIn extends StatefulWidget {
   @override
   State<LogIn> createState() => _LogInState();
 }
+
 TextEditingController textName=TextEditingController();
 TextEditingController textEmail=TextEditingController();
 TextEditingController textPassword=TextEditingController();
