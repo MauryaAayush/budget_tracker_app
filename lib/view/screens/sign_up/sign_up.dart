@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'components/text_field.dart';
+
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
 
@@ -45,9 +47,9 @@ class _SignUpState extends State<SignUp> {
                 'Full Name',
                 'Full Name',
               ),
-              textFieldBox(textEmail, 'Email ID ', 'Email ID '),
+              textFieldBox(textEmail, 'Email ID', 'Email ID '),
               textFieldBox(textPassword, 'Mobile Number', 'Mobile Number'),
-              textFieldBox(textEmail, 'Password ', 'Password '),
+              textFieldBox(textEmail, 'Password', 'Password '),
               textFieldBox(textPassword, 'Confirm Password', 'Confirm Password'),
               SizedBox(
                 height: height / 35,
@@ -146,31 +148,6 @@ class _SignUpState extends State<SignUp> {
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget textFieldBox(
-      TextEditingController controller, String name, String lname) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: TextFormField(
-        textInputAction: TextInputAction.next,
-        controller: controller,
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xff059E2E), width: 2),
-            borderRadius: BorderRadius.all(
-              Radius.circular(10),
-            ),
-          ),
-          hintText: name,
-          label: Text(lname),
         ),
       ),
     );
