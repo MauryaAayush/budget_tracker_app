@@ -69,6 +69,7 @@ class _passwordState extends State<password> {
       ),
     );
   }
+
   Widget textFieldBox(
       TextEditingController controller, String name, String lname) {
     return Padding(
