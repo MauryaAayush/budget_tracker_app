@@ -92,7 +92,6 @@ class _MoreScreenState extends State<MoreScreen> {
                             ]),
                         child: Row(
                           children: [
-
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 20),
