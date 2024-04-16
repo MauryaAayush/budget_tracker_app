@@ -8,6 +8,9 @@ Widget textFieldBox(
       textInputAction: TextInputAction.next,
       controller: controller,
       keyboardType: TextInputType.emailAddress,
+      onTapOutside: (event) {
+        FocusManager.instance.primaryFocus!.unfocus();
+      },
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15),
@@ -18,7 +21,7 @@ Widget textFieldBox(
             Radius.circular(10),
           ),
         ),
-        hintText: name,
+        hintText: name,focusColor: Color(0xff059E2E),
         label: Text(lname),
       ),
     ),
