@@ -469,7 +469,163 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             ),
+            SizedBox(height: 30,),
+            //monthly budeget
+            Row(
+              children: [
+                Text('  Monthly budeget',style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 17
+                ),),
+                Spacer(),
+                Text('Edit budget   ',style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w400
+                ),),
+              ],
+            ),
+            SizedBox(height: 20,),
+            Row(
+              children: [
+                SizedBox(width: 15,),
+                Container(
+                  height: height/5,
+                  width: width/1.5,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(13),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(0,1),
+                        spreadRadius: 1,
+                        blurRadius: 0.5,
+                        color: Colors.black12,
+                      )
+                    ],
+
+                  ),child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+
+                      Text('Budget left',style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: height/35
+                      ),),
+                      Text('\$55,944',style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: height/40
+                      ),),
+                      SizedBox(height: 17,),
+                      Container(
+                        height: height/30,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: Colors.black12,
+                        ),child: Row(
+                        children: [
+                          Text('   \$56.0',style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize:height/55
+                          ),),
+                          Spacer(),
+                          Text('\$56,000   ',style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                            fontSize:height/55
+                          ),),
+                        ],
+                      ),
+                      )
+                    ],
+                                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
+           Row(
+             children: [
+               Text('  Upcoming Reminders 💎',style: TextStyle(
+                 fontWeight: FontWeight.w600,
+                 fontSize: height/35,
+               ),)
+             ],
+           ),
             SizedBox(height: 10,),
+            Container(
+              height: height/4.5,
+              width: width/1.1,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0,1),
+                    spreadRadius: 1,
+                    blurRadius: 0.5,
+                    color: Colors.black12,
+                  )
+                ],
+                borderRadius: BorderRadius.circular(10),
+              ),child: Column(
+              children: [
+                SizedBox(height: 15,),
+                Text('Set Transaction Reminers',
+                style: TextStyle(
+                  fontSize: height/40,
+                  fontWeight: FontWeight.w500
+                ),),
+                SizedBox(height: 10,),
+                Text('Effortlessly manage your finances by setting reminders\n       for all your future and recurring transactions with',style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey,
+                  
+                ),),
+                Text('premium.',style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey,
+                ),),
+                SizedBox(height: 20,),
+                Container(
+                  height: height/20,
+                  width: width/2,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.black,
+                  ),child: Center(child: Text('Upgrade Now',style: TextStyle(
+                  color: Colors.white,
+                  fontSize: height/45,
+                  fontWeight: FontWeight.w600
+                ),)),
+                ),
+
+              
+              ],
+            ),
+            ),
+            SizedBox(height: 10,),
+            //articles
+            Row(
+              children: [
+                Text('  Articles  ',style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontSize: height/40,
+                ),),
+                Icon(Icons.visibility_off_outlined,color: Colors.grey,size: 18,),
+                Spacer(),
+                Text('See more   ',style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black54
+                ),)
+              ],
+            ),
+
           ],
         ),
       ),
