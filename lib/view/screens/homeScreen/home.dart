@@ -1,4 +1,5 @@
 import 'package:budget_tracker_app/view/screens/log_in/login.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/color.dart';
@@ -625,6 +626,154 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),)
               ],
             ),
+            SizedBox(height: 15,),
+            Container(
+              height: height/9,
+              width: width/1.1,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0,1),
+                    spreadRadius: 1,
+                    blurRadius: 0.5,
+                    color: Colors.black12,
+                  )
+                ],
+
+              ),child: Row(
+              children: [
+                Container(
+                  height: height/9,
+                  width: width/4,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10))
+                  ),
+                  
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10,top: 5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text('How to integrate Expenes\nManager in your life?',style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+
+                      ),),
+
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 35,top: 50),
+                  child: Icon(Icons.share),
+                )
+                
+              ],
+            ),
+            ),
+            SizedBox(height: 10,),
+            Container(
+              height: height/9,
+              width: width/1.1,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0,1),
+                    spreadRadius: 1,
+                    blurRadius: 0.5,
+                    color: Colors.black12,
+                  )
+                ],
+
+              ),child: Row(
+              children: [
+                Container(
+                  height: height/9,
+                  width: width/4,
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10))
+                  ),
+
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10,top: 5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text('How to integrate Expenes\nManager in your life?',style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+
+                      ),),
+
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 35,top: 50),
+                  child: Icon(Icons.share),
+                )
+
+              ],
+            ),
+            ),
+            SizedBox(height: 10,),
+            Container(
+              height: height/9,
+              width: width/1.1,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0,1),
+                    spreadRadius: 1,
+                    blurRadius: 0.5,
+                    color: Colors.black12,
+                  )
+                ],
+
+              ),child: Row(
+              children: [
+                Container(
+                  height: height/9,
+                  width: width/4,
+                  decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10))
+                  ),
+
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10,top: 5),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text('How to integrate Expenes\nManager in your life?',style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+
+                      ),),
+
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 35,top: 50),
+                  child: Icon(Icons.share),
+                )
+
+              ],
+            ),
+            ),
+            SizedBox(height: 50,),
 
           ],
         ),
