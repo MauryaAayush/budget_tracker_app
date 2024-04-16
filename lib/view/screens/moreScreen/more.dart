@@ -294,6 +294,7 @@ class _MoreScreenState extends State<MoreScreen> {
                       style: TextStyle(
                           fontSize: height * 0.02,
                           fontWeight: FontWeight.bold)),
+                  SizedBox(height: height * 0.012),
                   Row(
                     children: [
                       Container(
@@ -314,10 +315,14 @@ class _MoreScreenState extends State<MoreScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Icon(Icons.calendar_view_day_outlined,size: height*0.04,),
-                              Text("Day",style: TextStyle(
-                                fontSize: height*0.02
-                              ),)
+                              Icon(
+                                Icons.calendar_view_day_outlined,
+                                size: height * 0.04,
+                              ),
+                              Text(
+                                "Day",
+                                style: TextStyle(fontSize: height * 0.02),
+                              )
                             ],
                           ),
                         ),
@@ -341,10 +346,14 @@ class _MoreScreenState extends State<MoreScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Icon(Icons.calendar_month_outlined,size: height*0.04,),
-                              Text("Month",style: TextStyle(
-                                  fontSize: height*0.02
-                              ),)
+                              Icon(
+                                Icons.calendar_month_outlined,
+                                size: height * 0.04,
+                              ),
+                              Text(
+                                "Month",
+                                style: TextStyle(fontSize: height * 0.02),
+                              )
                             ],
                           ),
                         ),
@@ -368,15 +377,48 @@ class _MoreScreenState extends State<MoreScreen> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Icon(Icons.tune_outlined,size: height*0.04,),
-                              Text("Custom",style: TextStyle(
-                                  fontSize: height*0.02
-                              ),)
+                              Icon(
+                                Icons.tune_outlined,
+                                size: height * 0.04,
+                              ),
+                              Text(
+                                "Custom",
+                                style: TextStyle(fontSize: height * 0.02),
+                              )
                             ],
                           ),
                         ),
                       ),
                     ],
+                  ),
+                  SizedBox(height: height * 0.02),
+                  Text("More options",
+                      style: TextStyle(
+                          fontSize: height * 0.02,
+                          fontWeight: FontWeight.bold)),
+                  ListTile(
+                    leading: Icon(Icons.settings_outlined,size: height*0.032,color: Colors.black54,),
+                    title: Text("Settings"),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.campaign_outlined,size: height*0.032,color: Colors.black54,),
+                    title: Text("Referrals"),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.star_border_purple500,size: height*0.032,color: Colors.black54,),
+                    title: Text("Rate App"),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.chat_outlined,size: height*0.032,color: Colors.black54,),
+                    title: Text("Query/feedback"),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.help_outline,size: height*0.032,color: Colors.black54,),
+                    title: Text("FAQ"),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.error_outline,size: height*0.032,color: Colors.black54,),
+                    title: Text("About app"),
                   )
                 ],
               ),
