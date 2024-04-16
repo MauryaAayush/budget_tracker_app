@@ -21,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       bottomNavigationBar: bottem_navigation_bar(),
-
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -32,8 +31,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   margin: const EdgeInsets.fromLTRB(15, 38, 10, 0),
                   height: height * 0.08,
                   width: width * 0.918,
+
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const CircleAvatar(
                         backgroundColor: Colors.blue,
@@ -41,32 +41,33 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
 
                       // here we have written the text of 👋 and AM
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            (dateTime.hour >= 0 && dateTime.hour < 12)
-                                ? '  Good Morning 👋'
-                                : (dateTime.hour >= 12 && dateTime.hour < 17)
-                                ? '  Good Afternoon 👋'
-                                : '  Good evening 👋',
-                            style: TextStyle(
-                              color: Colors.black,
-                            ),
-                          ),
-                          Text(
-                            textName.text,
-                            style: TextStyle(
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              (dateTime.hour >= 0 && dateTime.hour < 12)
+                                  ? '  Good Morning 👋'
+                                  : (dateTime.hour >= 12 && dateTime.hour < 17)
+                                  ? '  Good Afternoon 👋'
+                                  : '  Good evening 👋',
+                              style: TextStyle(
                                 color: Colors.black,
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16),
-                          )
-                        ],
+                              ),
+                            ),
+                            Text(
+                              textName.text,
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 16),
+                            ),
+                          ],
+                        ),
                       ),
 
-                      const SizedBox(
-                        width: 70,
-                      ),
+                      Spacer(),
 
                       const Icon(
                         Icons.notifications_none_outlined,
@@ -102,15 +103,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 //Red button
                 InkWell(
-                  onTap: () {
-
-                  },
+                  onTap: () {},
                   child: Container(
                     height: height * 0.07,
                     width: width * 0.4,
@@ -129,23 +130,28 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Colors.white,
                           ),
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(
+                          width: 10,
+                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 5,),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Text(
                               'Spending',
-                              style: TextStyle(color: Colors.white54,
-                                fontSize: height/50,
+                              style: TextStyle(
+                                color: Colors.white54,
+                                fontSize: height / 50,
                               ),
                             ),
                             Text(
                               '\$0.00',
-                              style: TextStyle(color: Colors.white,
-                                  fontSize: height/60,
-                                  fontWeight: FontWeight.bold
-                              ),
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: height / 60,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ],
                         )
@@ -153,12 +159,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-                SizedBox(width: 10,),
+                SizedBox(
+                  width: 10,
+                ),
                 // green button
                 InkWell(
-                  onTap: () {
-
-                  },
+                  onTap: () {},
                   child: Container(
                     height: height * 0.07,
                     width: width * 0.4,
@@ -177,23 +183,28 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Colors.white,
                           ),
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(
+                          width: 10,
+                        ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 5,),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Text(
                               'Income',
-                              style: TextStyle(color: Colors.white54,
-                                fontSize: height/50,
+                              style: TextStyle(
+                                color: Colors.white54,
+                                fontSize: height / 50,
                               ),
                             ),
                             Text(
                               '\$0.00',
-                              style: TextStyle(color: Colors.white,
-                                  fontSize: height/60,
-                                  fontWeight: FontWeight.bold
-                              ),
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: height / 60,
+                                  fontWeight: FontWeight.bold),
                             ),
                           ],
                         )
@@ -201,346 +212,429 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
-
               ],
             ),
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             //Balance button
             Container(
-              height: height*0.04,
-              width: width*0.4,
+              height: height * 0.04,
+              width: width * 0.4,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: Colors.black12
-              ),child: Center(child: Text('Balance: \$0.00',style: TextStyle(
-                fontSize: height/50,
-                fontWeight: FontWeight.w500
-            ),)),
+                  color: Colors.black12),
+              child: Center(
+                  child: Text(
+                    'Balance: \$0.00',
+                    style: TextStyle(
+                        fontSize: height / 50, fontWeight: FontWeight.w500),
+                  )),
             ),
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
             Row(
               children: [
-                Text('  Recent transactions',style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 17
-                ),),
+                Text(
+                  '  Recent transactions',
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
+                ),
                 Spacer(),
-                Text('see all   ',style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w400
-                ),),
+                Text(
+                  'see all   ',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                ),
               ],
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Container(
-              height: height/9,
-              width: width/1.05,
+              height: height / 9,
+              width: width / 1.05,
               decoration: BoxDecoration(
                 color: Color(0xffE3F5FF),
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0,1),
+                    offset: Offset(0, 1),
                     spreadRadius: 1,
                     blurRadius: 5,
                     color: Colors.black12,
                   ),
                 ],
-              ),child: Row(
-              children: [
-                SizedBox(width: 10,),
-                CircleAvatar(
-                  backgroundColor: Colors.grey.shade100,
-                  radius: 25,
-                  child: Icon(Icons.compare_arrows,size: 40,color: Colors.blue,),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('\$580.0',style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600,
-                          fontSize: height/55
-                      ),),
-                      Text('Not specified',style: TextStyle(
-                          color: Colors.grey,
-
-                          fontSize: height/60
-                      ),),
-                    ],
+              ),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 10,
                   ),
-                ),
-                Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text('16 Apr 24',style: TextStyle(
-                          fontSize: height/65,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black
-                      ),),
-                      Icon(Icons.account_balance,color: Colors.blue,)
-                    ],
+                  CircleAvatar(
+                    backgroundColor: Colors.grey.shade100,
+                    radius: 25,
+                    child: Icon(
+                      Icons.compare_arrows,
+                      size: 40,
+                      color: Colors.blue,
+                    ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '\$580.0',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                              fontSize: height / 55),
+                        ),
+                        Text(
+                          'Not specified',
+                          style: TextStyle(
+                              color: Colors.grey, fontSize: height / 60),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          '16 Apr 24',
+                          style: TextStyle(
+                              fontSize: height / 65,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black),
+                        ),
+                        Icon(
+                          Icons.account_balance,
+                          color: Colors.blue,
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
+            SizedBox(
+              height: 10,
             ),
-            SizedBox(height: 10,),
             Container(
-              height: height/9,
-              width: width/1.05,
+              height: height / 9,
+              width: width / 1.05,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0,1),
+                    offset: Offset(0, 1),
                     spreadRadius: 1,
                     blurRadius: 5,
                     color: Colors.black12,
                   ),
                 ],
-              ),child: Row(
-              children: [
-                SizedBox(width: 10,),
-                CircleAvatar(
-                  backgroundColor: Colors.grey.shade100,
-                  radius: 25,
-                  child: Icon(Icons.more_horiz_outlined,size: 40,color: Colors.black,),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('\$580.0',style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600,
-                          fontSize: height/55
-                      ),),
-                      Text('Not specified',style: TextStyle(
-                          color: Colors.grey,
-
-                          fontSize: height/60
-                      ),),
-                    ],
+              ),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 10,
                   ),
-                ),
-                Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text('16 Apr 24',style: TextStyle(
-                          fontSize: height/65,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black
-                      ),),
-                      Icon(Icons.payments_outlined,color: Colors.green,)
-                    ],
+                  CircleAvatar(
+                    backgroundColor: Colors.grey.shade100,
+                    radius: 25,
+                    child: Icon(
+                      Icons.more_horiz_outlined,
+                      size: 40,
+                      color: Colors.black,
+                    ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '\$580.0',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                              fontSize: height / 55),
+                        ),
+                        Text(
+                          'Not specified',
+                          style: TextStyle(
+                              color: Colors.grey, fontSize: height / 60),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          '16 Apr 24',
+                          style: TextStyle(
+                              fontSize: height / 65,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black),
+                        ),
+                        Icon(
+                          Icons.payments_outlined,
+                          color: Colors.green,
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
+            SizedBox(
+              height: 10,
             ),
-            SizedBox(height: 10,),
 
             Container(
-              height: height/9,
-              width: width/1.05,
+              height: height / 9,
+              width: width / 1.05,
               decoration: BoxDecoration(
-                color:  Color(0xffE7F6E9),
+                color: Color(0xffE7F6E9),
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0,1),
+                    offset: Offset(0, 1),
                     spreadRadius: 1,
                     blurRadius: 5,
                     color: Colors.black12,
                   ),
                 ],
-              ),child: Row(
-              children: [
-                SizedBox(width: 10,),
-                CircleAvatar(
-                  backgroundColor: Colors.grey.shade100,
-                  radius: 25,
-                  child: Icon(Icons.shopping_cart_outlined,size: 30,color: Colors.green,),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('\$580.0',style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600,
-                          fontSize: height/55
-                      ),),
-                      Text('Not specified',style: TextStyle(
-                          color: Colors.grey,
-
-                          fontSize: height/60
-                      ),),
-                    ],
+              ),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 10,
                   ),
-                ),
-                Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text('16 Apr 24',style: TextStyle(
-                          fontSize: height/65,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black
-                      ),),
-                      Icon(Icons.payments_outlined,color: Colors.green,)
-                    ],
+                  CircleAvatar(
+                    backgroundColor: Colors.grey.shade100,
+                    radius: 25,
+                    child: Icon(
+                      Icons.shopping_cart_outlined,
+                      size: 30,
+                      color: Colors.green,
+                    ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '\$580.0',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                              fontSize: height / 55),
+                        ),
+                        Text(
+                          'Not specified',
+                          style: TextStyle(
+                              color: Colors.grey, fontSize: height / 60),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          '16 Apr 24',
+                          style: TextStyle(
+                              fontSize: height / 65,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black),
+                        ),
+                        Icon(
+                          Icons.payments_outlined,
+                          color: Colors.green,
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
+            SizedBox(
+              height: 10,
             ),
-            SizedBox(height: 10,),
             Container(
-              height: height/9,
-              width: width/1.05,
+              height: height / 9,
+              width: width / 1.05,
               decoration: BoxDecoration(
-                color:  Colors.white,
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0,1),
+                    offset: Offset(0, 1),
                     spreadRadius: 1,
                     blurRadius: 5,
                     color: Colors.black12,
                   ),
                 ],
-              ),child: Row(
-              children: [
-                SizedBox(width: 10,),
-                CircleAvatar(
-                  backgroundColor: Colors.white54,
-                  radius: 25,
-                  child: Icon(Icons.compare_arrows,size: 40,color: Colors.black,),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('\$580.0',style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600,
-                          fontSize: height/55
-                      ),),
-                      Text('Not specified',style: TextStyle(
-                          color: Colors.grey,
-
-                          fontSize: height/60
-                      ),),
-                    ],
+              ),
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 10,
                   ),
-                ),
-                Spacer(),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text('16 Apr 24',style: TextStyle(
-                          fontSize: height/65,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black
-                      ),),
-                      Icon(Icons.account_balance,color: Colors.blue,)
-                    ],
+                  CircleAvatar(
+                    backgroundColor: Colors.white54,
+                    radius: 25,
+                    child: Icon(
+                      Icons.compare_arrows,
+                      size: 40,
+                      color: Colors.black,
+                    ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '\$580.0',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                              fontSize: height / 55),
+                        ),
+                        Text(
+                          'Not specified',
+                          style: TextStyle(
+                              color: Colors.grey, fontSize: height / 60),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          '16 Apr 24',
+                          style: TextStyle(
+                              fontSize: height / 65,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black),
+                        ),
+                        Icon(
+                          Icons.account_balance,
+                          color: Colors.blue,
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: height/5,
+              width: width/1.060,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    offset: Offset(0, 1),
+                    spreadRadius: 1,
+                    blurRadius: 0.5,
+                    color: Colors.black12,
+                  )
+                ],
+              ),child: Column(
+              children: [
+                Row(
+
+                  children: [
+                    SizedBox(width: 130,),
+                    Text('05:20:25',style: TextStyle(
+                        fontSize: height/24,
+                        fontWeight: FontWeight.bold
+                    ),),
+                    Spacer(),
+                    Text('💎   ',style: TextStyle(
+                        fontSize: height/24,
+                        fontWeight: FontWeight.bold
+                    ),),
+                  ],
                 ),
-              ],
-            ),
-            ),
-            SizedBox(height: 30,),
-            //monthly budeget
-            Row(
-              children: [
-                Text('  Monthly budeget',style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 17
-                ),),
-                Spacer(),
-                Text('Edit budget   ',style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400
-                ),),
-              ],
-            ),
-            SizedBox(height: 20,),
-            Row(
-              children: [
-                SizedBox(width: 15,),
-                Container(
-                  height: height/5,
-                  width: width/1.5,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(13),
-                    boxShadow: [
-                      BoxShadow(
-                        offset: Offset(0,1),
-                        spreadRadius: 1,
-                        blurRadius: 0.5,
-                        color: Colors.black12,
-                      )
-                    ],
-
-                  ),child: Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-
-                      Text('Budget left',style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: height/35
-                      ),),
-                      Text('\$55,944',style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: height/40
-                      ),),
-                      SizedBox(height: 17,),
-                      Container(
-                        height: height/30,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: Colors.black12,
-                        ),child: Row(
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20,top: 40),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('   \$56.0',style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                              fontSize:height/55
+                          Text('Exdusive Offer',style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
                           ),),
-                          Spacer(),
-                          Text('\$56,000   ',style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                              fontSize:height/55
+                          Text('Limited Time Only-Act Fast!',style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 18,
                           ),),
                         ],
                       ),
-                      )
-                    ],
-                  ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 50,left: 18),
+                      child: Container(
+                        height: height/20,
+                        width: width/4,
+                        decoration: BoxDecoration(
+                          color: Colors.black,
+                          borderRadius: BorderRadius.circular(15),
+                        ),child: Center(child: Text('Clami',style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18
+                      ),),),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+            ),
+
+            SizedBox(
+              height: 30,
+            ),
+            //monthly budeget
+            Row(
+              children: [
+                Text(
+                  '  Monthly budeget',
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
                 ),
+                Spacer(),
+                Text(
+                  'Edit budget   ',
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
                 ),
               ],
             ),
@@ -549,230 +643,342 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Row(
               children: [
-                Text('  Upcoming Reminders 💎',style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: height/35,
-                ),)
+                SizedBox(
+                  width: 15,
+                ),
+                Container(
+                  height: height / 5,
+                  width: width / 1.5,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(13),
+                    boxShadow: [
+                      BoxShadow(
+                        offset: Offset(0, 1),
+                        spreadRadius: 1,
+                        blurRadius: 0.5,
+                        color: Colors.black12,
+                      )
+                    ],
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Budget left',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: height / 35),
+                        ),
+                        Text(
+                          '\$55,944',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontSize: height / 40),
+                        ),
+                        SizedBox(
+                          height: 17,
+                        ),
+                        Container(
+                          height: height / 30,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: Colors.black12,
+                          ),
+                          child: Row(
+                            children: [
+                              Text(
+                                '   \$56.0',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: height / 55),
+                              ),
+                              Spacer(),
+                              Text(
+                                '\$56,000   ',
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: height / 55),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Text(
+                  '  Upcoming Reminders 💎',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: height / 35,
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
             Container(
-              height: height/4.5,
-              width: width/1.1,
+              height: height / 4.5,
+              width: width / 1.1,
               decoration: BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0,1),
+                    offset: Offset(0, 1),
                     spreadRadius: 1,
                     blurRadius: 0.5,
                     color: Colors.black12,
                   )
                 ],
                 borderRadius: BorderRadius.circular(10),
-              ),child: Column(
-              children: [
-                SizedBox(height: 15,),
-                Text('Set Transaction Reminers',
-                  style: TextStyle(
-                      fontSize: height/40,
-                      fontWeight: FontWeight.w500
-                  ),),
-                SizedBox(height: 10,),
-                Text('Effortlessly manage your finances by setting reminders\n       for all your future and recurring transactions with',style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  color: Colors.grey,
-
-                ),),
-                Text('premium.',style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  color: Colors.grey,
-                ),),
-                SizedBox(height: 20,),
-                Container(
-                  height: height/20,
-                  width: width/2,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.black,
-                  ),child: Center(child: Text('Upgrade Now',style: TextStyle(
-                    color: Colors.white,
-                    fontSize: height/45,
-                    fontWeight: FontWeight.w600
-                ),)),
-                ),
-
-
-              ],
+              ),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    'Set Transaction Reminers',
+                    style: TextStyle(
+                        fontSize: height / 40, fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Effortlessly manage your finances by setting reminders\n       for all your future and recurring transactions with',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  Text(
+                    'premium.',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    height: height / 20,
+                    width: width / 2,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.black,
+                    ),
+                    child: Center(
+                        child: Text(
+                          'Upgrade Now',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: height / 45,
+                              fontWeight: FontWeight.w600),
+                        )),
+                  ),
+                ],
+              ),
             ),
+            SizedBox(
+              height: 10,
             ),
-            SizedBox(height: 10,),
             //articles
             Row(
               children: [
-                Text('  Articles  ',style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
-                  fontSize: height/40,
-                ),),
-                Icon(Icons.visibility_off_outlined,color: Colors.grey,size: 18,),
+                Text(
+                  '  Articles  ',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
+                    fontSize: height / 40,
+                  ),
+                ),
+                Icon(
+                  Icons.visibility_off_outlined,
+                  color: Colors.grey,
+                  size: 18,
+                ),
                 Spacer(),
-                Text('See more   ',style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black54
-                ),)
+                Text(
+                  'See more   ',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black54),
+                )
               ],
             ),
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             Container(
-              height: height/9,
-              width: width/1.1,
+              height: height / 9,
+              width: width / 1.1,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0,1),
+                    offset: Offset(0, 1),
                     spreadRadius: 1,
                     blurRadius: 0.5,
                     color: Colors.black12,
                   )
                 ],
-
-              ),child: Row(
-              children: [
-                Container(
-                  height: height/9,
-                  width: width/4,
-                  decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10))
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    height: height / 9,
+                    width: width / 4,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            bottomLeft: Radius.circular(10))),
                   ),
-
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10,top: 5),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text('How to integrate Expenes\nManager in your life?',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16,
-
-                      ),),
-
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, top: 5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          'How to integrate Expenes\nManager in your life?',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 35,top: 50),
-                  child: Icon(Icons.share),
-                )
-
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 35, top: 50),
+                    child: Icon(Icons.share),
+                  )
+                ],
+              ),
             ),
+            SizedBox(
+              height: 10,
             ),
-            SizedBox(height: 10,),
             Container(
-              height: height/9,
-              width: width/1.1,
+              height: height / 9,
+              width: width / 1.1,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0,1),
+                    offset: Offset(0, 1),
                     spreadRadius: 1,
                     blurRadius: 0.5,
                     color: Colors.black12,
                   )
                 ],
-
-              ),child: Row(
-              children: [
-                Container(
-                  height: height/9,
-                  width: width/4,
-                  decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10))
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    height: height / 9,
+                    width: width / 4,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            bottomLeft: Radius.circular(10))),
                   ),
-
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10,top: 5),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text('How to integrate Expenes\nManager in your life?',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16,
-
-                      ),),
-
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, top: 5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          'How to integrate Expenes\nManager in your life?',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 35,top: 50),
-                  child: Icon(Icons.share),
-                )
-
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 35, top: 50),
+                    child: Icon(Icons.share),
+                  )
+                ],
+              ),
             ),
+            SizedBox(
+              height: 10,
             ),
-            SizedBox(height: 10,),
             Container(
-              height: height/9,
-              width: width/1.1,
+              height: height / 9,
+              width: width / 1.1,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0,1),
+                    offset: Offset(0, 1),
                     spreadRadius: 1,
                     blurRadius: 0.5,
                     color: Colors.black12,
                   )
                 ],
-
-              ),child: Row(
-              children: [
-                Container(
-                  height: height/9,
-                  width: width/4,
-                  decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomLeft: Radius.circular(10))
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    height: height / 9,
+                    width: width / 4,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(10),
+                            bottomLeft: Radius.circular(10))),
                   ),
-
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10,top: 5),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text('How to integrate Expenes\nManager in your life?',style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16,
-
-                      ),),
-
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, top: 5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          'How to integrate Expenes\nManager in your life?',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 35,top: 50),
-                  child: Icon(Icons.share),
-                )
-
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(left: 35, top: 50),
+                    child: Icon(Icons.share),
+                  )
+                ],
+              ),
             ),
+            SizedBox(
+              height: 50,
             ),
-            SizedBox(height: 50,),
-
           ],
         ),
       ),
@@ -781,8 +987,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Container bottem_navigation_bar() {
     return Container(
-      height :120,
-      width :500,
+      height: 120,
+      width: 500,
       child: Stack(
         children: [
           Padding(
@@ -793,7 +999,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 60,
                   width: 450,
                   decoration: BoxDecoration(
-                    color: (dark)?Colors.white:Colors.black,
+                    color: (dark) ? Colors.white : Colors.black,
                   ),
                   child: Row(
                     children: [
@@ -804,16 +1010,28 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () {
                           setState(() {
                             hometoch = true;
-                            accounttoch=false;
-                            moretoch=false;
+                            accounttoch = false;
+                            moretoch = false;
                             analytoch = false;
                           });
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.home_rounded,size: 30,color: (hometoch)?(dark)?Colors.black:Colors.white:Colors.grey,),
-                            Text('Home',style: TextStyle(color: (hometoch)?text:Colors.grey),),
+                            Icon(
+                              Icons.home_rounded,
+                              size: 30,
+                              color: (hometoch)
+                                  ? (dark)
+                                  ? Colors.black
+                                  : Colors.white
+                                  : Colors.grey,
+                            ),
+                            Text(
+                              'Home',
+                              style: TextStyle(
+                                  color: (hometoch) ? text : Colors.grey),
+                            ),
                           ],
                         ),
                       ),
@@ -822,17 +1040,26 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () {
                           setState(() {
                             analytoch = true;
-                            hometoch=false;
-                            accounttoch=false;
-                            moretoch=false;
-
+                            hometoch = false;
+                            accounttoch = false;
+                            moretoch = false;
                           });
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.bar_chart_outlined,size: 35,color: (analytoch)?(dark)?Colors.black:Colors.white:Colors.grey),
-                            Text('Analysis',style: TextStyle(color: (analytoch)?text:Colors.grey),),
+                            Icon(Icons.bar_chart_outlined,
+                                size: 35,
+                                color: (analytoch)
+                                    ? (dark)
+                                    ? Colors.black
+                                    : Colors.white
+                                    : Colors.grey),
+                            Text(
+                              'Analysis',
+                              style: TextStyle(
+                                  color: (analytoch) ? text : Colors.grey),
+                            ),
                           ],
                         ),
                       ),
@@ -845,16 +1072,25 @@ class _HomeScreenState extends State<HomeScreen> {
                           setState(() {
                             accounttoch = true;
                             analytoch = false;
-                            hometoch=false;
-                            moretoch=false;
-
+                            hometoch = false;
+                            moretoch = false;
                           });
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.home_work_outlined,size: 35,color: (accounttoch)?(dark)?Colors.black:Colors.white:Colors.grey),
-                            Text('Accounts',style: TextStyle(color: (accounttoch)?text:Colors.grey),),
+                            Icon(Icons.home_work_outlined,
+                                size: 35,
+                                color: (accounttoch)
+                                    ? (dark)
+                                    ? Colors.black
+                                    : Colors.white
+                                    : Colors.grey),
+                            Text(
+                              'Accounts',
+                              style: TextStyle(
+                                  color: (accounttoch) ? text : Colors.grey),
+                            ),
                           ],
                         ),
                       ),
@@ -865,14 +1101,22 @@ class _HomeScreenState extends State<HomeScreen> {
                             moretoch = true;
                             accounttoch = false;
                             analytoch = false;
-                            hometoch=false;
+                            hometoch = false;
                           });
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.more_horiz_outlined,size: 35,color: (moretoch)?(dark)?Colors.black:Colors.white:Colors.grey),
-                            Text('More',style: TextStyle(color: (moretoch)?text:Colors.grey)),
+                            Icon(Icons.more_horiz_outlined,
+                                size: 35,
+                                color: (moretoch)
+                                    ? (dark)
+                                    ? Colors.black
+                                    : Colors.white
+                                    : Colors.grey),
+                            Text('More',
+                                style: TextStyle(
+                                    color: (moretoch) ? text : Colors.grey)),
                           ],
                         ),
                       ),
@@ -895,18 +1139,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(0,1),
+                    offset: Offset(0, 1),
                     spreadRadius: 0.5,
                     blurRadius: 1,
                     color: Colors.white,
                   )
                 ],
-
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(175,35,40, 0),
+            padding: const EdgeInsets.fromLTRB(175, 35, 40, 0),
             child: InkWell(
               onTap: () {
                 Navigator.of(context).pushNamed('/analytics');
@@ -915,26 +1158,29 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 63,
                 width: 63,
                 decoration: BoxDecoration(
-                  color: (dark)?Colors.black:Colors.white,
-                  shape: BoxShape.circle
-                  ,boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0,1.5),
-                    spreadRadius: 0.5,
-                    blurRadius: 2,
-                    color: Colors.black54,
-                  )
-                ],
+                  color: (dark) ? Colors.black : Colors.white,
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      offset: Offset(0, 1.5),
+                      spreadRadius: 0.5,
+                      blurRadius: 2,
+                      color: Colors.black54,
+                    )
+                  ],
                 ),
                 child: Center(
-                  child: Icon(Icons.add,color: (dark)?Colors.white:Colors.black,size: 40,),
+                  child: Icon(
+                    Icons.add,
+                    color: (dark) ? Colors.white : Colors.black,
+                    size: 40,
+                  ),
                 ),
               ),
             ),
           ),
         ],
       ),
-
     );
   }
 }
