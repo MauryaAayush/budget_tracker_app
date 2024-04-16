@@ -17,7 +17,7 @@ class BudgetTracker extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/otp',
+      initialRoute: '/analytics',
       routes: {
         '/': (context) => const SplashScreen(),
         '/signUp': (context) => const SignUp(),
