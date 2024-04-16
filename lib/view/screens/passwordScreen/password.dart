@@ -18,7 +18,7 @@ class _passwordState extends State<password> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+             Text(
               "Forgot Password",
               style: TextStyle(
                   color: Color(0xff059E2E),
