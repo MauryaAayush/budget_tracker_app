@@ -1,3 +1,4 @@
+import 'package:budget_tracker_app/view/screens/log_in/login.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+    DateTime dateTime = DateTime.now();
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -33,17 +35,21 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
 
                       // here we have written the text of 👋 and AM
-                      const Column(
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            '  Good Morning 👋',
+                            (dateTime.hour >= 0 && dateTime.hour < 12)
+                                ? '  Good Morning 👋'
+                                : (dateTime.hour >= 12 && dateTime.hour < 17)
+                                    ? '  Good Afternoon 👋'
+                                    : '  Good evening 👋',
                             style: TextStyle(
                               color: Colors.black,
                             ),
                           ),
                           Text(
-                            'Aayush Maurya',
+                            textName.text,
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w500,
