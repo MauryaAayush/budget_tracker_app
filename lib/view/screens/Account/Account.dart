@@ -63,7 +63,7 @@ class _AccountState extends State<Account> {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                             color: Colors.black12,
                             offset: Offset(2, 4),
