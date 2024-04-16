@@ -1,5 +1,6 @@
 import 'package:budget_tracker_app/view/screens/About/about.dart';
 import 'package:budget_tracker_app/view/screens/Account/Account.dart';
+import 'package:budget_tracker_app/view/screens/Add_Transaction/Add-transaction.dart';
 import 'package:budget_tracker_app/view/screens/SplashScreen/splash.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
 
@@ -30,7 +31,8 @@ class BudgetTracker extends StatelessWidget {
         '/analytics': (context) => const AnalyticsScreen(),
         '/account' : (context) => const Account(),
         '/more' : (context) => const MoreScreen(),
-        '/about' : (context) => const AboutApp()
+        '/about' : (context) => const AboutApp(),
+        '/add' : (context) => const AddTransaction(),
       },
     );
   }
