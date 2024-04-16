@@ -255,13 +255,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         onTap: () {
                           setState(() {
                             hometoch = true;
+                            accounttoch=false;
+                            moretoch=false;
+                            analytoch = false;
                           });
                         },
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Icon(Icons.home_rounded,size: 30,color: (hometoch)?(dark)?Colors.black:Colors.white:Colors.grey,),
-                            Text('Home',style: TextStyle(color: text),),
+                            Text('Home',style: TextStyle(color: (hometoch)?text:Colors.grey),),
                           ],
                         ),
                       ),
@@ -279,8 +282,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.bar_chart_outlined,size: 35,color: (dark)?Colors.black:Colors.white,),
-                            Text('Analysis',style: TextStyle(color: text),),
+                            Icon(Icons.bar_chart_outlined,size: 35,color: (analytoch)?(dark)?Colors.black:Colors.white:Colors.grey),
+                            Text('Analysis',style: TextStyle(color: (analytoch)?text:Colors.grey),),
                           ],
                         ),
                       ),
@@ -319,8 +322,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.more_horiz_outlined,size: 35,color: (dark)?Colors.black:Colors.white,),
-                            Text('More',style: TextStyle(color: text),),
+                            Icon(Icons.more_horiz_outlined,size: 35,color: (moretoch)?(dark)?Colors.black:Colors.white:Colors.grey),
+                            Text('More',style: TextStyle(color: (moretoch)?text:Colors.grey)),
                           ],
                         ),
                       ),
