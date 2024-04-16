@@ -84,6 +84,7 @@ class _MoreScreenState extends State<MoreScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -97,7 +98,7 @@ class _MoreScreenState extends State<MoreScreen> {
                             boxShadow: [
                               BoxShadow(
                                   color: Colors.black12,
-                                  offset: Offset(5, 5),
+                                  offset: Offset(2, 4),
                                   blurRadius: 10,
                                   spreadRadius: 2)
                             ]),
@@ -107,8 +108,8 @@ class _MoreScreenState extends State<MoreScreen> {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 20),
                               child: Icon(
-                                Icons.access_time_rounded,
-                                color: Colors.teal.shade200,
+                                Icons.list,
+                                color: Colors.blueAccent,
                                 size: height * 0.034,
                               ),
                             ),
@@ -128,7 +129,7 @@ class _MoreScreenState extends State<MoreScreen> {
                             boxShadow: [
                               BoxShadow(
                                   color: Colors.black12,
-                                  offset: Offset(5, 5),
+                                  offset: Offset(2, 4),
                                   blurRadius: 10,
                                   spreadRadius: 2)
                             ]),
@@ -153,6 +154,145 @@ class _MoreScreenState extends State<MoreScreen> {
                     ],
                   ),
                   SizedBox(height: height * 0.012),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: height * 0.068,
+                        width: width * 0.45,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black12,
+                                  offset: Offset(2, 4),
+                                  blurRadius: 10,
+                                  spreadRadius: 2)
+                            ]),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding:
+                              const EdgeInsets.symmetric(horizontal: 20),
+                              child: Icon(
+                                Icons.wallet,
+                                color: Colors.brown,
+                                size: height * 0.034,
+                              ),
+                            ),
+                            Text(
+                              "Budgets",
+                              style: TextStyle(fontSize: height * 0.018),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: height * 0.068,
+                        width: width * 0.45,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black12,
+                                  offset: Offset(2, 4),
+                                  blurRadius: 10,
+                                  spreadRadius: 2)
+                            ]),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding:
+                              const EdgeInsets.symmetric(horizontal: 20),
+                              child: Icon(
+                                Icons.category_outlined,
+                                color: Colors.green,
+                                size: height * 0.034,
+                              ),
+                            ),
+                            Text(
+                              "Categories",
+                              style: TextStyle(fontSize: height * 0.018),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(height: height * 0.012),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: height * 0.068,
+                        width: width * 0.45,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black12,
+                                  offset: Offset(2, 4),
+                                  blurRadius: 10,
+                                  spreadRadius: 2)
+                            ]),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding:
+                              const EdgeInsets.symmetric(horizontal: 20),
+                              child: Icon(
+                                Icons.tag,
+                                color: Colors.teal.shade200,
+                                size: height * 0.034,
+                              ),
+                            ),
+                            Text(
+                              "Tags",
+                              style: TextStyle(fontSize: height * 0.018),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: height * 0.068,
+                        width: width * 0.45,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black12,
+                                  offset: Offset(2, 4),
+                                  blurRadius: 10,
+                                  spreadRadius: 2)
+                            ]),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding:
+                              const EdgeInsets.symmetric(horizontal: 20),
+                              child: Icon(
+                                Icons.diamond_outlined,
+                                color: Colors.amber.shade400,
+                                size: height * 0.034,
+                              ),
+                            ),
+                            Text(
+                              "Go Premium",
+                              style: TextStyle(fontSize: height * 0.018),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  Text("Views",style: TextStyle(
+                    fontSize: height*0.02,
+                    fontWeight: FontWeight.bold
+                  ))
                 ],
               ),
             )
