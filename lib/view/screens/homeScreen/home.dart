@@ -22,8 +22,6 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
       bottomNavigationBar: bottem_navigation_bar(),
 
-
-
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
