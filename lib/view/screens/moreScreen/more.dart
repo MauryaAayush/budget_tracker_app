@@ -174,7 +174,7 @@ class _MoreScreenState extends State<MoreScreen> {
                           children: [
                             Padding(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 20),
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               child: Icon(
                                 Icons.wallet,
                                 color: Colors.brown,
@@ -205,7 +205,7 @@ class _MoreScreenState extends State<MoreScreen> {
                           children: [
                             Padding(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 20),
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               child: Icon(
                                 Icons.category_outlined,
                                 color: Colors.green,
@@ -242,7 +242,7 @@ class _MoreScreenState extends State<MoreScreen> {
                           children: [
                             Padding(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 20),
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               child: Icon(
                                 Icons.tag,
                                 color: Colors.teal.shade200,
@@ -273,7 +273,7 @@ class _MoreScreenState extends State<MoreScreen> {
                           children: [
                             Padding(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 20),
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               child: Icon(
                                 Icons.diamond_outlined,
                                 color: Colors.amber.shade400,
@@ -289,10 +289,95 @@ class _MoreScreenState extends State<MoreScreen> {
                       )
                     ],
                   ),
-                  Text("Views",style: TextStyle(
-                    fontSize: height*0.02,
-                    fontWeight: FontWeight.bold
-                  ))
+                  SizedBox(height: height * 0.03),
+                  Text("Views",
+                      style: TextStyle(
+                          fontSize: height * 0.02,
+                          fontWeight: FontWeight.bold)),
+                  Row(
+                    children: [
+                      Container(
+                        height: height * 0.11,
+                        width: width * 0.28,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black12,
+                                  offset: Offset(2, 4),
+                                  blurRadius: 10,
+                                  spreadRadius: 2)
+                            ]),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.calendar_view_day_outlined,size: height*0.04,),
+                              Text("Day",style: TextStyle(
+                                fontSize: height*0.02
+                              ),)
+                            ],
+                          ),
+                        ),
+                      ),
+                      Spacer(),
+                      Container(
+                        height: height * 0.11,
+                        width: width * 0.28,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black12,
+                                  offset: Offset(2, 4),
+                                  blurRadius: 10,
+                                  spreadRadius: 2)
+                            ]),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.calendar_month_outlined,size: height*0.04,),
+                              Text("Month",style: TextStyle(
+                                  fontSize: height*0.02
+                              ),)
+                            ],
+                          ),
+                        ),
+                      ),
+                      Spacer(),
+                      Container(
+                        height: height * 0.11,
+                        width: width * 0.28,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black12,
+                                  offset: Offset(2, 4),
+                                  blurRadius: 10,
+                                  spreadRadius: 2)
+                            ]),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Icon(Icons.tune_outlined,size: height*0.04,),
+                              Text("Custom",style: TextStyle(
+                                  fontSize: height*0.02
+                              ),)
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             )
@@ -304,6 +389,7 @@ class _MoreScreenState extends State<MoreScreen> {
 
   ImagePicker imagePicker = ImagePicker();
   File? imgPath;
+
   Future<void> pickImage() async {
     final picker = await imagePicker.pickImage(source: ImageSource.gallery);
     imgPath = File(picker!.path);
