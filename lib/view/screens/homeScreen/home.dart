@@ -1168,6 +1168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: Colors.black54,
                     )
                   ],
+
                 ),
                 child: Center(
                   child: Icon(
