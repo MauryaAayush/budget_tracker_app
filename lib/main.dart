@@ -1,3 +1,4 @@
+import 'package:budget_tracker_app/view/screens/Referrals%20Screen/Referrals.dart';
 import 'package:budget_tracker_app/view/screens/SplashScreen/splash.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
 
@@ -25,6 +26,7 @@ class BudgetTracker extends StatelessWidget {
         '/login': (context) => const LogIn(),
         '/home': (context) => const HomeScreen(),
         '/analytics': (context) => const AnalyticsScreen(),
+        '/Referrals':(context) => const Referrals(),
       },
     );
   }
