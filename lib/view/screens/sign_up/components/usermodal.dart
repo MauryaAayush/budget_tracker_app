@@ -1,3 +1,5 @@
+import '../../../../utils/color.dart';
+
 class User {
   String username;
   String password;
@@ -11,6 +13,7 @@ List<User> users = [];
 void signUp({required String username, required String password,required String num,required String userid}) {
   final newUser = User(username: username, password: password,number: num,userid: userid);
   users.add(newUser);
+  navigation = true;
   print("User registered successfully!");
 }
 bool login({required String username, required String password,required String userid}) {

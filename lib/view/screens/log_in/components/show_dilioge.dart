@@ -41,3 +41,43 @@ void showDialogBoxnull(BuildContext context) {
     },
   );
 }
+
+void showDialogBoxerror(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text("Error !"),
+        content: Text("Something is  wrong"),
+        actions: <Widget>[
+          TextButton(
+            child: Text("OK",style: TextStyle(color: Colors.green),),
+            onPressed: () {
+              Navigator.of(context).pop(); // Dismiss the dialog
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
+void showDialogBoxusernotfound(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text("Error !"),
+        content: Text("User Not found"),
+        actions: <Widget>[
+          TextButton(
+            child: Text("OK",style: TextStyle(color: Colors.green),),
+            onPressed: () {
+              Navigator.of(context).pop(); // Dismiss the dialog
+            },
+          ),
+        ],
+      );
+    },
+  );
+}

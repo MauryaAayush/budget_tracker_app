@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../sign_up/components/text_field.dart';
+import '../sign_up/components/usermodal.dart';
+import 'components/show_dilioge.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -44,28 +46,35 @@ class _LogInState extends State<LogIn> {
                 'Full Name',
                 'Full Name',
               ),
-              textFieldBox(textEmail, 'Email ID OR Mobile Number',
-                  'Email ID OR Mobile Number'),
+              textFieldBox(textEmail, 'Email ID',
+                  'Email ID'),
               textFieldBox(textPassword, 'Password', 'Password'),
               SizedBox(
                 height: height / 35,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 75),
-                child: Container(
-                  height: height / 15,
-                  width: width / 1,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff059E2E),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  alignment: Alignment.center,
-                  child: const Text(
-                    'Log  In',
-                    style: TextStyle(
-                        fontSize: 22,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500),
+                child: InkWell(
+                  onTap: () {
+                    (login(password:textPassword.text,userid: textEmail.text,username: textName.text ))?
+                    Navigator.pushNamed(context, '/bottem')
+                        :showDialogBoxusernotfound(context);
+                  },
+                  child: Container(
+                    height: height / 15,
+                    width: width / 1,
+                    decoration: BoxDecoration(
+                      color: const Color(0xff059E2E),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    alignment: Alignment.center,
+                    child: const Text(
+                      'Log  In',
+                      style: TextStyle(
+                          fontSize: 22,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
                 ),
               ),
@@ -136,6 +145,7 @@ class _LogInState extends State<LogIn> {
                       ),),
 
                       TextButton(onPressed: () {
+                        Navigator.pushNamed(context, '/signUp');
                       }, child: Text("Sign Up"))
 
 

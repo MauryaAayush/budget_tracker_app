@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+// import 'package:pie_chart/pie_chart.dart';
+import 'package:fl_chart/fl_chart.dart';
+import '../../../utils/global_variable.dart';
 
 class Analytics2 extends StatefulWidget {
   const Analytics2({super.key});
@@ -343,9 +346,39 @@ class _Analytics2State extends State<Analytics2> {
                     Container(
                       height: height/3.5,
                       width: width,
-                      decoration: BoxDecoration(color: Colors.blue),
-
+                      // decoration: BoxDecoration(color: Colors.blue),
+                      child:
+                      //Center(
+                      //   child: PieChart(
+                      //     totalValue: 10,
+                      //     dataMap: dataMap,
+                      //     animationDuration: Duration(milliseconds: 800),
+                      //     chartLegendSpacing: 32,
+                      //     chartRadius: MediaQuery.of(context).size.width / 2.7,
+                      //     colorList: [Colors.blue, Colors.green, Colors.red, Colors.yellow],
+                      //      initialAngleInDegree: 10,
+                      //     chartType: ChartType.ring,
+                      //     ringStrokeWidth: 34,
+                      //     centerText: " Chart",
+                      //     legendOptions: LegendOptions(
+                      //       showLegendsInRow: true,
+                      //       legendPosition: LegendPosition.bottom,
+                      //       showLegends: true,
+                      //       legendShape: BoxShape.circle,
+                      //       legendTextStyle: TextStyle(
+                      //         fontWeight: FontWeight.bold,
+                      //       ),
+                      //     ),
+                      //     chartValuesOptions: ChartValuesOptions(
+                      //       showChartValueBackground: true,
+                      //       showChartValues: true,
+                      //       showChartValuesInPercentage: true,
+                      //       showChartValuesOutside: false,
+                      //     ),
+                      //   ),
+                      // ),
                     ),
+
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Row(

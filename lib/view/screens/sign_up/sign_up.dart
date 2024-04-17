@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../utils/color.dart';
 import '../log_in/components/show_dilioge.dart';
 import 'components/text_field.dart';
 import 'components/usermodal.dart';
@@ -57,9 +58,13 @@ class _SignUpState extends State<SignUp> {
               ),
               InkWell(
                 onTap: () {
+                  (textName != null && textMobileNum !=null&& textConfirm!=null && textEmail != null&& textPassword!= null )?
+
                   (textPassword.text == textConfirm.text)?
-                  signUp(username: textName.text,userid: textEmail.text,num: textMobileNum.text,password: textConfirm.text) :showDialogBox(context);
-                  (textName.text != null && textMobileNum !=null&& textConfirm!=null && textEmail != null&& textPassword!= null )?Navigator.pushNamed(context, '/bottem'):showDialogBoxnull(context);
+                  signUp(username: textName.text,userid: textEmail.text,num: textMobileNum.text,password: textConfirm.text):showDialogBox(context)
+                  :showDialogBoxnull(context);
+
+                  (navigation)?Navigator.pushNamed(context, '/bottem'):showDialogBoxerror(context);
 
                 },
                 child: Padding(
@@ -149,7 +154,8 @@ class _SignUpState extends State<SignUp> {
                     ),),
 
                     TextButton(onPressed: () {
-                    }, child: Text("Sign Up"))
+                      Navigator.pushNamed(context, '/login');
+                    }, child: Text("Login"))
 
 
                   ],
