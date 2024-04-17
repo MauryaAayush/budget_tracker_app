@@ -400,6 +400,88 @@ class _Analytics2State extends State<Analytics2> {
               SizedBox(
                 height: height / 60,
               ),
+              Container(
+                height: height / 2.3,
+                width: width,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.shade300,
+
+                        // offset: const Offset(1, 5),
+                        blurRadius: 5,
+                        spreadRadius: 1,
+                      )
+                    ]
+                ),
+                child:Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                      child: Text("Category-Wise Income",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w500),),
+                    ),
+                    // graph ////----------------------------------------
+                    Container(
+                      height: height/3.5,
+                      width: width,
+                      // decoration: BoxDecoration(color: Colors.blue),
+                      child:
+                      Center(
+                        child: PieChart(
+                          dataMap: dataMap,
+                          animationDuration: Duration(milliseconds: 800),
+                          chartLegendSpacing: 32,
+                          chartRadius: MediaQuery.of(context).size.width / 2.7,
+                          colorList: [Colors.blue, Colors.green, Colors.red, Colors.yellow],
+                          initialAngleInDegree: 10,
+                          chartType: ChartType.ring,
+                          ringStrokeWidth: 34,
+                          centerText: " Chart",
+                          legendOptions: LegendOptions(
+                            showLegendsInRow: true,
+                            legendPosition: LegendPosition.bottom,
+                            showLegends: true,
+                            legendShape: BoxShape.circle,
+                            legendTextStyle: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          chartValuesOptions: ChartValuesOptions(
+                            showChartValueBackground: true,
+                            showChartValues: true,
+                            showChartValuesInPercentage: true,
+                            showChartValuesOutside: false,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Row(
+                        children: [
+                          Container(
+                              height: height/10.9,
+                              width: width/9,
+                              decoration: BoxDecoration(shape: BoxShape.circle,color: Colors.black12),
+                              child: Icon(Icons.more_horiz)),
+                          SizedBox(width: width/15,),
+                          Text("Others",style: TextStyle(fontSize: 18),),
+                          SizedBox(width: width/2.9,),
+                          Text("1,000.0",style: TextStyle(fontSize: 18),),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+
+              ),
+              SizedBox(
+                height: height / 60,
+              ),
               ListTile(
                 leading: Text(
                   "Payment modes",
