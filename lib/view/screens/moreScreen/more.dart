@@ -3,8 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-
-
 class MoreScreen extends StatefulWidget {
   const MoreScreen({super.key});
 
@@ -15,20 +13,15 @@ class MoreScreen extends StatefulWidget {
 class _MoreScreenState extends State<MoreScreen> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery
-        .of(context)
-        .size
-        .height;
-    double width = MediaQuery
-        .of(context)
-        .size
-        .width;
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+              padding:
+                  EdgeInsets.symmetric(vertical: 10, horizontal: width / 29),
               child: Column(
                 children: [
                   SizedBox(height: 20),
@@ -42,7 +35,7 @@ class _MoreScreenState extends State<MoreScreen> {
                         child: CircleAvatar(
                           maxRadius: height * 0.03,
                           backgroundImage:
-                          (imgPath != null) ? FileImage(imgPath!) : null,
+                              (imgPath != null) ? FileImage(imgPath!) : null,
                         ),
                       ),
                       SizedBox(
@@ -114,7 +107,7 @@ class _MoreScreenState extends State<MoreScreen> {
                           children: [
                             Padding(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 20),
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               child: Icon(
                                 Icons.list,
                                 color: Colors.blueAccent,
@@ -145,7 +138,7 @@ class _MoreScreenState extends State<MoreScreen> {
                           children: [
                             Padding(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 20),
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               child: Icon(
                                 Icons.access_time_rounded,
                                 color: Colors.teal.shade200,
@@ -182,7 +175,7 @@ class _MoreScreenState extends State<MoreScreen> {
                           children: [
                             Padding(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 20),
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               child: Icon(
                                 Icons.wallet,
                                 color: Colors.brown,
@@ -213,7 +206,7 @@ class _MoreScreenState extends State<MoreScreen> {
                           children: [
                             Padding(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 20),
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               child: Icon(
                                 Icons.category_outlined,
                                 color: Colors.green,
@@ -250,7 +243,7 @@ class _MoreScreenState extends State<MoreScreen> {
                           children: [
                             Padding(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 20),
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               child: Icon(
                                 Icons.tag,
                                 color: Colors.teal.shade200,
@@ -281,7 +274,7 @@ class _MoreScreenState extends State<MoreScreen> {
                           children: [
                             Padding(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 20),
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               child: Icon(
                                 Icons.diamond_outlined,
                                 color: Colors.amber.shade400,
@@ -405,34 +398,51 @@ class _MoreScreenState extends State<MoreScreen> {
                           fontSize: height * 0.02,
                           fontWeight: FontWeight.bold)),
                   ListTile(
-                    leading: Icon(Icons.settings_outlined, size: height * 0.032,
-                      color: Colors.black54,),
+                    leading: Icon(
+                      Icons.settings_outlined,
+                      size: height * 0.032,
+                      color: Colors.black54,
+                    ),
                     title: Text("Settings"),
                   ),
                   ListTile(
-                    leading: Icon(Icons.campaign_outlined, size: height * 0.032,
-                      color: Colors.black54,),
+                    leading: Icon(
+                      Icons.campaign_outlined,
+                      size: height * 0.032,
+                      color: Colors.black54,
+                    ),
                     title: Text("Referrals"),
                   ),
                   ListTile(
                     leading: Icon(
-                      Icons.star_border_purple500, size: height * 0.032,
-                      color: Colors.black54,),
+                      Icons.star_border_purple500,
+                      size: height * 0.032,
+                      color: Colors.black54,
+                    ),
                     title: Text("Rate App"),
                   ),
                   ListTile(
-                    leading: Icon(Icons.chat_outlined, size: height * 0.032,
-                      color: Colors.black54,),
+                    leading: Icon(
+                      Icons.chat_outlined,
+                      size: height * 0.032,
+                      color: Colors.black54,
+                    ),
                     title: Text("Query/feedback"),
                   ),
                   ListTile(
-                    leading: Icon(Icons.help_outline, size: height * 0.032,
-                      color: Colors.black54,),
+                    leading: Icon(
+                      Icons.help_outline,
+                      size: height * 0.032,
+                      color: Colors.black54,
+                    ),
                     title: Text("FAQ"),
                   ),
                   ListTile(
-                    leading: Icon(Icons.error_outline, size: height * 0.032,
-                      color: Colors.black54,),
+                    leading: Icon(
+                      Icons.error_outline,
+                      size: height * 0.032,
+                      color: Colors.black54,
+                    ),
                     title: Text("About app"),
                   )
                 ],

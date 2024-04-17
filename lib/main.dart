@@ -18,7 +18,8 @@ import 'package:provider/provider.dart';
 
 //darshan patel
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: (dark)?Colors.white:Colors.black));
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: (dark) ? Colors.white : Colors.black));
   runApp(const BudgetTracker());
 }
 
@@ -35,12 +36,12 @@ class BudgetTracker extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/analytics',
+        initialRoute: '/bottem',
         routes: {
           '/': (context) => const SplashScreen(),
           '/signUp': (context) => const SignUp(),
           '/login': (context) => const LogIn(),
-          '/bottem':(context)=> const bottemscreen(),
+          '/bottem': (context) => const bottemscreen(),
           '/home': (context) => const HomeScreen(),
           '/analytics': (context) => const AnalyticsScreen(),
           '/account': (context) => const Account(),

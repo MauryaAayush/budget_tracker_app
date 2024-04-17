@@ -1,5 +1,5 @@
+import 'package:budget_tracker_app/utils/global_variable.dart';
 import 'package:flutter/material.dart';
-
 
 class Account extends StatefulWidget {
   const Account({super.key});
@@ -14,7 +14,6 @@ class _AccountState extends State<Account> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
@@ -42,16 +41,26 @@ class _AccountState extends State<Account> {
                 Text(
                   "Transactions based balance,actual may vary.",
                   style: TextStyle(
-                      fontSize: height * 0.013, color: Colors.black45),
+                      fontSize: height * 0.013,
+                      color: Colors.black45,
+                      letterSpacing: -0.5),
                 ),
                 Text(
                   "Show balance",
                   style: TextStyle(
-                      fontSize: height * 0.013, color: Colors.black45),
+                      fontSize: height * 0.013,
+                      color: Colors.black45,
+                      letterSpacing: -0.5),
                 ),
                 Switch(
-                  value: false,
-                  onChanged: (value) {},
+                  value: switchValue,
+                  activeColor: Colors.white,
+                  activeTrackColor: Colors.black87,
+                  onChanged: (value) {
+                    setState(() {
+                      switchValue = value;
+                    });
+                  },
                 )
               ],
             ),
@@ -167,7 +176,7 @@ class _AccountState extends State<Account> {
                           fontWeight: FontWeight.bold,
                           letterSpacing: 2),
                     ),
-                    SizedBox(width: width*0.02),
+                    SizedBox(width: width * 0.02),
                     Icon(Icons.arrow_forward_ios)
                   ],
                 ),
@@ -205,7 +214,7 @@ class _AccountState extends State<Account> {
                           fontWeight: FontWeight.bold,
                           letterSpacing: 2),
                     ),
-                    SizedBox(width: width*0.02),
+                    SizedBox(width: width * 0.02),
                     Icon(Icons.arrow_forward_ios)
                   ],
                 ),
@@ -216,5 +225,4 @@ class _AccountState extends State<Account> {
       ),
     );
   }
-
 }
