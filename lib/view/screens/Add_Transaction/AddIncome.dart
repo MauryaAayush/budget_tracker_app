@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../../utils/global_variable.dart';
 import 'components/categoryIcon.dart';
@@ -204,25 +205,33 @@ class _AddIncomeState extends State<AddIncome> {
                       ],
                     ),
                     SizedBox(height: height * 0.02),
-                    Card(
-                      child: ListTile(
-                        title: Text(
-                          "Bank Account",
-                          style: TextStyle(fontSize: height * 0.02),
-                        ),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              "*****",
-                              style: TextStyle(
-                                  fontSize: height * 0.02,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 2),
-                            ),
-                            SizedBox(width: width * 0.02),
-                            Icon(Icons.arrow_forward_ios)
-                          ],
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isCashInIncome = false;
+                          Navigator.pop(context);
+                        });
+                      },
+                      child: Card(
+                        child: ListTile(
+                          title: Text(
+                            "Bank Account",
+                            style: TextStyle(fontSize: height * 0.02),
+                          ),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                "*****",
+                                style: TextStyle(
+                                    fontSize: height * 0.02,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 2),
+                              ),
+                              SizedBox(width: width * 0.02),
+                              Icon(Icons.arrow_forward_ios)
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -242,25 +251,33 @@ class _AddIncomeState extends State<AddIncome> {
                       ],
                     ),
                     SizedBox(height: height * 0.02),
-                    Card(
-                      child: ListTile(
-                        title: Text(
-                          "Cash",
-                          style: TextStyle(fontSize: height * 0.02),
-                        ),
-                        trailing: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              "*****",
-                              style: TextStyle(
-                                  fontSize: height * 0.02,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 2),
-                            ),
-                            SizedBox(width: width * 0.02),
-                            Icon(Icons.arrow_forward_ios)
-                          ],
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isCashInIncome = true;
+                          Navigator.pop(context);
+                        });
+                      },
+                      child: Card(
+                        child: ListTile(
+                          title: Text(
+                            "Cash",
+                            style: TextStyle(fontSize: height * 0.02),
+                          ),
+                          trailing: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                "*****",
+                                style: TextStyle(
+                                    fontSize: height * 0.02,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 2),
+                              ),
+                              SizedBox(width: width * 0.02),
+                              Icon(Icons.arrow_forward_ios)
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -287,7 +304,7 @@ class _AddIncomeState extends State<AddIncome> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      left: width / 29, right: width / 200, top: width / 100),
+                      left: width / 29, right: width / 200, top: width / 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -301,7 +318,7 @@ class _AddIncomeState extends State<AddIncome> {
                             width: 15,
                           ),
                           Text(
-                            "Cash",
+                            (isCashInIncome) ? "Cash" : "Bank",
                             style: TextStyle(
                                 color: Colors.black, fontSize: width * 0.045),
                           )
