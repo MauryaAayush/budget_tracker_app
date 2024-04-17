@@ -73,4 +73,33 @@ List categoriesList = [
   },
 ];
 
-bool isExpense = true;
+List incomeCategoryList = [
+  {
+    'icon': Icon(
+      Icons.menu_outlined,
+      color: Colors.teal,
+    ),
+    'name': 'Others',
+  },
+  {
+    'icon': Icon(
+      Icons.money,
+      color: Colors.orange,
+    ),
+    'name': 'Salary',
+  },
+  {
+    'icon': Icon(
+      Icons.shopping_cart,
+      color: Colors.teal,
+    ),
+    'name': 'Sold Items',
+  },
+  {
+    'icon': Icon(
+      Icons.discount,
+      color: Colors.purpleAccent,
+    ),
+    'name': 'Coupons',
+  },
+];
