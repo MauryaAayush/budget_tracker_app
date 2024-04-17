@@ -3,7 +3,7 @@ import 'package:budget_tracker_app/view/screens/Account/Account.dart';
 import 'package:budget_tracker_app/view/screens/Add_Transaction/Add-transaction.dart';
 import 'package:budget_tracker_app/view/screens/SplashScreen/splash.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
-
+import 'package:budget_tracker_app/view/screens/bottem_navigation_bar/bottem.dart';
 import 'package:budget_tracker_app/view/screens/homeScreen/home.dart';
 import 'package:budget_tracker_app/view/screens/homeScreen/providers/homeProvider.dart';
 import 'package:budget_tracker_app/view/screens/log_in/login.dart';
@@ -30,11 +30,12 @@ class BudgetTracker extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/home',
+        initialRoute: '/bottem',
         routes: {
           '/': (context) => const SplashScreen(),
           '/signUp': (context) => const SignUp(),
           '/login': (context) => const LogIn(),
+          '/bottem':(context)=> bottemscreen(),
           '/home': (context) => const HomeScreen(),
           '/analytics': (context) => const AnalyticsScreen(),
           '/account': (context) => const Account(),
