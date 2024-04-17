@@ -104,7 +104,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                   Expanded(
                     child: Container(
-                      height: 0.3,
+                      height: 0.5,
                       width: width,
                       color: Colors.grey,
                     ),
@@ -138,27 +138,25 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
                 height: height / 35,
               ),
+
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 90),
-                child: RichText(
-                  text: const TextSpan(
-                    text: 'Already Have Account?',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15,
-                    ),
-                    children: [
-                      TextSpan(
-                        text: 'Log In',
-                        style: TextStyle(
-                          color: Color(0xff059E2E),
-                          fontSize: 15,
-                        ),
-                      ),
-                    ],
-                  ),
+                padding:  EdgeInsets.only(left: width/5),
+                child: Row(
+                  children: [
+                    Text("Dont Have An Account?",style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black
+                    ),),
+
+                    TextButton(onPressed: () {
+                    }, child: Text("Sign Up"))
+
+
+                  ],
                 ),
               ),
+
+
             ],
           ),
         ),

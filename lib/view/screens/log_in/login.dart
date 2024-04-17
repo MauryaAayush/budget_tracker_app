@@ -123,17 +123,12 @@ class _LogInState extends State<LogIn> {
                 ),
               ),
               SizedBox(
-                height: height / 35,
+                height: height / 45,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 80),
-                child: Row(
 
-                    // text: 'Dont Have An Account?',
-                    // style: TextStyle(
-                    //   color: Colors.black,
-                    //   fontSize: 15,
-                    // ),
+              Padding(
+                padding:  EdgeInsets.only(left: width/5),
+                child: Row(
                     children: [
                       Text("Dont Have An Account?",style: TextStyle(
                         fontSize: 15,
@@ -141,25 +136,12 @@ class _LogInState extends State<LogIn> {
                       ),),
 
                       TextButton(onPressed: () {
+                      }, child: Text("Sign Up"))
 
-                      }, child: Text("Log in"))
 
-                      // GestureDetector(
-                      //zcx
-                      //
-                      //
-                      //   // child: TextSpan(
-                      //   //   text: 'Sign In',
-                      //   //   style: TextStyle(
-                      //   //     color: Color(0xff059E2E),
-                      //   //     fontSize: 15,
-                      //   //   ),
-                      //   // ),
-                      // )
-                      //
                     ],
                   ),
-                ),
+              ),
 
             ],
           ),
