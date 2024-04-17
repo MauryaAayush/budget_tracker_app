@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/color.dart';
 import '../Account/Account.dart';
+
 // import '../Add_Transaction/Add-transaction.dart';
 import '../analyticsScreen/analytics.dart';
 import '../homeScreen/home.dart';
@@ -30,109 +31,112 @@ class _SectionState extends State<BottemScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-            bottomNavigationBar: CurvedNavBar(
-            actionButton: CurvedActionBar(
-            onTab: (value) {
-
-        /// perform action here
-        print(value);
-  },
-    activeIcon: InkWell(
-    onTap: () {
-    setState(() {
-
-    });
-    },
-    child: Container(
-    padding: EdgeInsets.all(10),
-    decoration:
-    BoxDecoration(color: Color(0xff6b58b1), shape: BoxShape.circle),
-    child: Icon(
-    Icons.downloading_sharp,
-    size: 40,
-    color: Colors.white,
-    ),
-    ),
-    ),
-    inActiveIcon: InkWell(
-      onTap: () {
-        setState(() {
-
-          Navigator.pushReplacementNamed(context, '/add');
-        });
-      },
-    child: Container(
-    padding: EdgeInsets.all(18),
-    decoration:
-    BoxDecoration(color: Color(0XFF6a5ca8), shape: BoxShape.circle),
-    child: Icon(
-    Icons.add,
-    size: 30,
-    color: (dark) ? Colors.white : Colors.black,
-    ),
-    ),
-    ),
-    text: ''),
-    activeColor: Color(0XFF6a5ca8),
-    navBarBackgroundColor: Colors.white,
-    inActiveColor: Colors.black45,
-    appBarItems: [
-    FABBottomAppBarItem(
-    activeIcon: Icon(
-    Icons.home,
-    color: Color(0XFF6a5ca8),
-    ),
-    inActiveIcon: Icon(
-    Icons.home,
-    color: Colors.black54,
-    ),
-    text: 'Home'),
-    FABBottomAppBarItem(
-    activeIcon: Icon(
-    Icons.edit,
-    color: Color(0XFF6a5ca8),
-    ),
-    inActiveIcon: Icon(
-    Icons.bar_chart_rounded,
-    color: Colors.black54,
-    ),
-    text: 'Analysis'),
-    FABBottomAppBarItem(
-    activeIcon: Icon(
-    Icons.photo_rounded,
-    color:Color(0XFF6a5ca8),
-    ),
-    inActiveIcon: Icon(
-    Icons.home_work_rounded,
-    color: Colors.black54,
-    ),
-    text: 'Accounts'),
-    FABBottomAppBarItem(
-    activeIcon: Icon(
-    Icons.more_horiz_outlined,
-    color: Color(0XFF6a5ca8),
-    ),
-    inActiveIcon: Icon(
-    Icons.account_circle_rounded,
-    color: Colors.black54,
-    ),
-    text: 'Account'),
-
-
-    ],
-    bodyItems: [
-    HomeScreen(),
-    AnalyticsScreen(),
-    Account(),
-    MoreScreen(
-    )
-    ,
-    ]
-    ,
-    // actionBarView :AddTransaction(),
-    ),
-    ),
+      child: Scaffold(
+        bottomNavigationBar: CurvedNavBar(
+          actionButton: CurvedActionBar(
+              onTab: (value) {
+                /// perform action here
+                print(value);
+              },
+              activeIcon: InkWell(
+                onTap: () {
+                  setState(() {});
+                },
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      color: Color(0xff6b58b1), shape: BoxShape.circle),
+                  child: Icon(
+                    Icons.downloading_sharp,
+                    size: 40,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              inActiveIcon: InkWell(
+                onTap: () {
+                  setState(() {
+                    Navigator.pushNamed(context, '/add');
+                  });
+                },
+                child: Container(
+                  padding: EdgeInsets.all(18),
+                  decoration: BoxDecoration(
+                      color:(dark) ? Colors.black:Colors.white , shape: BoxShape.circle),
+                  child: Icon(
+                    Icons.add,
+                    size: 30,
+                    color: (dark) ? Colors.white : Colors.black,
+                  ),
+                ),
+              ),
+              text: ''),
+          activeColor: (dark)
+              ? Colors.black
+              : Colors.white,
+          navBarBackgroundColor: (dark)
+              ? Colors.white
+              :Colors.black,
+          inActiveColor: Colors.black45,
+          appBarItems: [
+            FABBottomAppBarItem(
+                activeIcon: Icon(
+                  Icons.home,
+                  color: (dark)
+                                ? Colors.black
+                                : Colors.white,
+                ),
+                inActiveIcon: Icon(
+                  Icons.home,
+                  color: Colors.grey,
+                ),
+                text: 'Home'),
+            FABBottomAppBarItem(
+                activeIcon: Icon(
+                  Icons.bar_chart_rounded,
+                  color: (dark)
+                      ? Colors.black
+                      : Colors.white,
+                ),
+                inActiveIcon: Icon(
+                  Icons.bar_chart_rounded,
+                  color: Colors.grey,
+                ),
+                text: 'Analysis'),
+            FABBottomAppBarItem(
+                activeIcon: Icon(
+                  Icons.home_work_rounded,
+                  color: (dark)
+                      ? Colors.black
+                      : Colors.white,
+                ),
+                inActiveIcon: Icon(
+                  Icons.home_work_rounded,
+                  color: Colors.grey,
+                ),
+                text: 'Accounts'),
+            FABBottomAppBarItem(
+                activeIcon: Icon(
+                  Icons.more_horiz_outlined,
+                  color:(dark)
+                      ? Colors.black
+                      : Colors.white,
+                ),
+                inActiveIcon: Icon(
+                  Icons.more_horiz_outlined,
+                  color: Colors.grey,
+                ),
+                text: 'More'),
+          ],
+          bodyItems: [
+            HomeScreen(),
+            AnalyticsScreen(),
+            Account(),
+            MoreScreen(),
+          ],
+          // actionBarView :AddTransaction(),
+        ),
+      ),
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/color.dart';
 
 class AnalyticsScreen extends StatefulWidget {
   const AnalyticsScreen({super.key});

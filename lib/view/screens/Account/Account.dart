@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../utils/color.dart';
 
 class Account extends StatefulWidget {
   const Account({super.key});

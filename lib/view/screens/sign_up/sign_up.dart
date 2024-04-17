@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'components/text_field.dart';
+import 'components/usermodal.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -53,22 +54,40 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
                 height: height / 35,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 75),
-                child: Container(
-                  height: height / 15,
-                  width: width / 1,
-                  decoration: BoxDecoration(
-                    color: const Color(0xff059E2E),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  alignment: Alignment.center,
-                  child: const Text(
-                    'Sign In',
-                    style: TextStyle(
-                        fontSize: 22,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500),
+              InkWell(
+                onTap: () {
+                  (textPassword.text == textConfirm.text)?signUp(username: textName.text,userid: textEmail.text,num: textMobileNum.text,password: textConfirm.text):showDialog(context: context, builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text("Alert!"),
+                content: Text("This is a simple alert dialog."),
+                        actions: <Widget>[
+                         TextButton(
+                        child: Text("OK"),
+                        onPressed: () {
+                            Navigator.of(context).pop(); // Dismiss the dialog
+                              },
+                        )
+                          ]
+                    );
+                },);
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 75),
+                  child: Container(
+                    height: height / 15,
+                    width: width / 1,
+                    decoration: BoxDecoration(
+                      color: const Color(0xff059E2E),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    alignment: Alignment.center,
+                    child: const Text(
+                      'Sign In',
+                      style: TextStyle(
+                          fontSize: 22,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
                 ),
               ),
