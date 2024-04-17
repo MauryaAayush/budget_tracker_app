@@ -349,7 +349,6 @@ class _Analytics2State extends State<Analytics2> {
                       child:
                       Center(
                         child: PieChart(
-                          totalValue: 10,
                           dataMap: dataMap,
                           animationDuration: Duration(milliseconds: 800),
                           chartLegendSpacing: 32,
