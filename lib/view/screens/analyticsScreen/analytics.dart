@@ -24,6 +24,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                   style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
+
                       color: Colors.black),
                 ),
                 Spacer(),
