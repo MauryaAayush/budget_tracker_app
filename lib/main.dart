@@ -1,3 +1,4 @@
+import 'package:budget_tracker_app/view/screens/Add%20Budget/Addbudget.dart';
 import 'package:budget_tracker_app/view/screens/Referrals%20Screen/Referrals.dart';
 import 'package:budget_tracker_app/view/screens/SplashScreen/splash.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
@@ -19,8 +20,9 @@ class BudgetTracker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(useMaterial3: false),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/Splash',
+      initialRoute: '/AddBudget',
       routes: {
         '/': (context) => const SplashScreen(),
         '/signUp': (context) => const SignUp(),
@@ -29,6 +31,7 @@ class BudgetTracker extends StatelessWidget {
         '/analytics': (context) => const AnalyticsScreen(),
         '/Referrals':(context) => const Referrals(),
         '/Splash':(context) => Splash(),
+        '/AddBudget':(context) => AddBudget(),
       },
     );
   }
