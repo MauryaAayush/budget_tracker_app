@@ -1,3 +1,5 @@
+import 'package:budget_tracker_app/view/screens/SplashScreen/introprivacyscreen.dart';
+import 'package:budget_tracker_app/view/screens/SplashScreen/introsaving.dart';
 import 'package:budget_tracker_app/view/screens/SplashScreen/splash.dart';
 import 'package:budget_tracker_app/view/screens/add_transaction_screen/add_transaction.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
@@ -20,7 +22,7 @@ class BudgetTracker extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/cat',
+      initialRoute: '/save',
       routes: {
         '/': (context) => const SplashScreen(),
         '/signUp': (context) => const SignUp(),
@@ -31,6 +33,8 @@ class BudgetTracker extends StatelessWidget {
         '/add' : (context) => const AddTransaction(),
         '/reminder' : (context) => const Reminder(),
         '/cat' : (context) => const Categories(),
+        '/privacy' : (context) => const Privacy(),
+        '/save' : (context) => const Saving(),
       },
     );
   }
