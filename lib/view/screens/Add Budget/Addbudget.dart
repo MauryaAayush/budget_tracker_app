@@ -14,6 +14,17 @@ class _AddBudgetState extends State<AddBudget> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+
+        backgroundColor: Colors.black,
+        child: Icon(Icons.save,color: Colors.white,),
+        onPressed: () {
+          setState(() {
+
+          });
+
+        },
+      ),
       appBar: AppBar(
         backgroundColor: Colors.black,
         leading: IconButton(
@@ -189,7 +200,7 @@ class _AddBudgetState extends State<AddBudget> {
           Center(child: Text('Learn more',style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 18
-          ),),)
+          ),),),
 
 
 
