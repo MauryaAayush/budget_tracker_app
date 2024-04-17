@@ -5,3 +5,4 @@ Colors text = ((dark)?Colors.black:Colors.white) as Colors;
 Color color_sigin_and_login = (dark)?Color(0xff059e2e):Color(0xffffffff);
 Color Color_backgrond = Color(0xffC8D2CB);
 
+String para = "You won't to get notification for the reminders you set.Please grant notification permission to Expenses Manager to receive notification.";

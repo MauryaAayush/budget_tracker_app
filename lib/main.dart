@@ -3,6 +3,8 @@ import 'package:budget_tracker_app/view/screens/add_transaction_screen/add_trans
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
 import 'package:budget_tracker_app/view/screens/homeScreen/home.dart';
 import 'package:budget_tracker_app/view/screens/log_in/login.dart';
+import 'package:budget_tracker_app/view/screens/moreScreen/categories.dart';
+import 'package:budget_tracker_app/view/screens/moreScreen/reminderscreen.dart';
 import 'package:budget_tracker_app/view/screens/otpscreen/otp_screen.dart';
 import 'package:budget_tracker_app/view/screens/sign_up/sign_up.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,7 @@ class BudgetTracker extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/add',
+      initialRoute: '/cat',
       routes: {
         '/': (context) => const SplashScreen(),
         '/signUp': (context) => const SignUp(),
@@ -27,6 +29,8 @@ class BudgetTracker extends StatelessWidget {
         '/home': (context) => const HomeScreen(),
         '/analytics': (context) => const AnalyticsScreen(),
         '/add' : (context) => const AddTransaction(),
+        '/reminder' : (context) => const Reminder(),
+        '/cat' : (context) => const Categories(),
       },
     );
   }
