@@ -127,25 +127,40 @@ class _LogInState extends State<LogIn> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 80),
-                child: RichText(
-                  text: const TextSpan(
-                    text: 'Dont Have An Account?',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15,
-                    ),
+                child: Row(
+
+                    // text: 'Dont Have An Account?',
+                    // style: TextStyle(
+                    //   color: Colors.black,
+                    //   fontSize: 15,
+                    // ),
                     children: [
-                      TextSpan(
-                        text: 'Sign In',
-                        style: TextStyle(
-                          color: Color(0xff059E2E),
-                          fontSize: 15,
-                        ),
-                      ),
+                      Text("Dont Have An Account?",style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black
+                      ),),
+
+                      TextButton(onPressed: () {
+
+                      }, child: Text("Log in"))
+
+                      // GestureDetector(
+                      //zcx
+                      //
+                      //
+                      //   // child: TextSpan(
+                      //   //   text: 'Sign In',
+                      //   //   style: TextStyle(
+                      //   //     color: Color(0xff059E2E),
+                      //   //     fontSize: 15,
+                      //   //   ),
+                      //   // ),
+                      // )
+                      //
                     ],
                   ),
                 ),
-              ),
+
             ],
           ),
         ),

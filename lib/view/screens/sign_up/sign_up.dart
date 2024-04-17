@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../log_in/components/show_dilioge.dart';
 import 'components/text_field.dart';
 import 'components/usermodal.dart';
 
@@ -56,20 +57,10 @@ class _SignUpState extends State<SignUp> {
               ),
               InkWell(
                 onTap: () {
-                  (textPassword.text == textConfirm.text)?signUp(username: textName.text,userid: textEmail.text,num: textMobileNum.text,password: textConfirm.text):showDialog(context: context, builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text("Alert!"),
-                content: Text("This is a simple alert dialog."),
-                        actions: <Widget>[
-                         TextButton(
-                        child: Text("OK"),
-                        onPressed: () {
-                            Navigator.of(context).pop(); // Dismiss the dialog
-                              },
-                        )
-                          ]
-                    );
-                },);
+                  (textPassword.text == textConfirm.text)?
+                  signUp(username: textName.text,userid: textEmail.text,num: textMobileNum.text,password: textConfirm.text) :showDialogBox(context);
+                  (textName.text != null && textMobileNum !=null&& textConfirm!=null && textEmail != null&& textPassword!= null )?Navigator.pushNamed(context, '/bottem'):showDialogBoxnull(context);
+
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 75),
