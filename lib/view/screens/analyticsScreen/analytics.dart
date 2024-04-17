@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class AnalyticsScreen extends StatefulWidget {
   const AnalyticsScreen({super.key});
 
@@ -28,12 +27,17 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                       color: Colors.black),
                 ),
                 Spacer(),
-                Icon(Icons.download,color: Colors.black,)
+                Icon(
+                  Icons.download,
+                  color: Colors.black,
+                )
               ],
             ),
-            SizedBox(height: height/90,),
+            SizedBox(
+              height: height / 90,
+            ),
             Container(
-              height: height/20,
+              height: height / 20,
               width: width,
               decoration: BoxDecoration(
                 color: Colors.black12,
@@ -43,55 +47,99 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 28),
                 child: Row(
                   children: [
-                    Text('Week',style: TextStyle(fontSize: 16),),
-                    SizedBox(width: width/25,),
+                    Text(
+                      'Week',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    SizedBox(
+                      width: width / 25,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: VerticalDivider(width: 1,thickness: 2,),
+                      child: VerticalDivider(
+                        width: 1,
+                        thickness: 2,
+                      ),
                     ),
-                    SizedBox(width: width/30,),
-                    Text('Month',style: TextStyle(fontSize: 16),),
-                    SizedBox(width: width/25,),
+                    SizedBox(
+                      width: width / 30,
+                    ),
+                    Text(
+                      'Month',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    SizedBox(
+                      width: width / 25,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: VerticalDivider(width: 1,thickness: 2,),
+                      child: VerticalDivider(
+                        width: 1,
+                        thickness: 2,
+                      ),
                     ),
-                    SizedBox(width: width/30,),
-                    Text('Year',style: TextStyle(fontSize: 16),),
-                    SizedBox(width: width/25,),
+                    SizedBox(
+                      width: width / 30,
+                    ),
+                    Text(
+                      'Year',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    SizedBox(
+                      width: width / 25,
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: VerticalDivider(width: 1,thickness: 2,),
+                      child: VerticalDivider(
+                        width: 1,
+                        thickness: 2,
+                      ),
                     ),
-                    SizedBox(width: width/30,),
-                    Text('Custom',style: TextStyle(fontSize: 16),),
+                    SizedBox(
+                      width: width / 30,
+                    ),
+                    Text(
+                      'Custom',
+                      style: TextStyle(fontSize: 16),
+                    ),
                   ],
                 ),
               ),
             ),
-            SizedBox(height: height/30,),
+            SizedBox(
+              height: height / 30,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Icon(Icons.arrow_back_ios),
-                Text('22 Apr - 28 Apr',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
+                Text(
+                  'May 2024',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                ),
                 Icon(Icons.arrow_forward_ios),
               ],
             ),
             Container(
               margin: EdgeInsets.only(top: 170),
               height: height / 5,
-              width: width/3,
+              width: width / 3,
               decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage('assets/img/transaction.png'),),
+                image: DecorationImage(
+                  image: AssetImage('assets/img/transaction.png'),
+                ),
               ),
             ),
-            SizedBox(height: height/35,),
-            Text('No transactions',style: TextStyle(fontSize: 18),),
+            SizedBox(
+              height: height / 35,
+            ),
+            Text(
+              'No transactions',
+              style: TextStyle(fontSize: 18),
+            ),
           ],
         ),
       ),
     );
   }
-
 }

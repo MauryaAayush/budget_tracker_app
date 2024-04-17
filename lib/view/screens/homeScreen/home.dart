@@ -30,9 +30,10 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               children: [
                 Container(
-                  margin: const EdgeInsets.fromLTRB(15, 38, 10, 0),
+                  margin: const EdgeInsets.fromLTRB(15, 20, 10, 0),
                   height: height * 0.08,
                   width: width * 0.918,
+                  color: Colors.white,
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

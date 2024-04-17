@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-bool dark = false;
+bool dark = true;
 bool hometoch=true;
 bool analytoch=false;
 bool accounttoch=false;
