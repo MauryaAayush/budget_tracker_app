@@ -2,7 +2,6 @@ import 'package:budget_tracker_app/view/screens/Add%20Budget/Addbudget.dart';
 import 'package:budget_tracker_app/view/screens/Referrals%20Screen/Referrals.dart';
 import 'package:budget_tracker_app/view/screens/SplashScreen/splash.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
-
 import 'package:budget_tracker_app/view/screens/homeScreen/home.dart';
 import 'package:budget_tracker_app/view/screens/log_in/login.dart';
 import 'package:budget_tracker_app/view/screens/sign_up/sign_up.dart';
@@ -30,8 +29,8 @@ class BudgetTracker extends StatelessWidget {
         '/home': (context) => const HomeScreen(),
         '/analytics': (context) => const AnalyticsScreen(),
         '/Referrals':(context) => const Referrals(),
-        '/Splash':(context) => Splash(),
-        '/AddBudget':(context) => AddBudget(),
+        '/Splash':(context) => const Splash(),
+        '/AddBudget':(context) => const AddBudget(),
       },
     );
   }

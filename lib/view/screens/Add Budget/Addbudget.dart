@@ -7,6 +7,7 @@ class AddBudget extends StatefulWidget {
   @override
   State<AddBudget> createState() => _AddBudgetState();
 }
+bool click=true;
 
 class _AddBudgetState extends State<AddBudget> {
   @override
@@ -20,6 +21,7 @@ class _AddBudgetState extends State<AddBudget> {
         child: Icon(Icons.save,color: Colors.white,),
         onPressed: () {
           setState(() {
+
 
           });
 
@@ -44,7 +46,6 @@ class _AddBudgetState extends State<AddBudget> {
       ),
       body: Column(
         children: [
-
           Container(
             height: height / 15,
             width: width / 1,
@@ -129,7 +130,10 @@ class _AddBudgetState extends State<AddBudget> {
                 ),),
                Spacer(),
 
-                Switch(value: false, onChanged: (value) {
+                Switch(value: click, activeColor: Colors.black, onChanged: (value) {
+                  setState(() {
+                    click=!click;
+                  });
 
 
                 },)
