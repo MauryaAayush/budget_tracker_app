@@ -1,3 +1,4 @@
+import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -14,15 +15,15 @@ class AddExpense extends StatefulWidget {
 class _AddExpenseState extends State<AddExpense> {
   @override
   Widget build(
-      BuildContext context,
-      ) {
+    BuildContext context,
+  ) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextField(
-          // controller: ,
+          controller: transactionExpense['amount'],
           textInputAction: TextInputAction.next,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
@@ -73,16 +74,18 @@ class _AddExpenseState extends State<AddExpense> {
                         width: width,
                         child: GridView.builder(
                           gridDelegate:
-                          SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 4, mainAxisSpacing: 10),
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 4, mainAxisSpacing: 10),
                           itemCount: categoriesList.length,
                           itemBuilder: (context, index) => Column(
                             children: [
                               GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    categoryNameShowedInExpense =
-                                    categoriesList[index]['name'];
+                                    transactionExpense['category'] =
+                                        categoriesList[index]['name'];
+                                    transactionExpense['categoryIcon'] =
+                                        categoriesList[index]['icon'];
                                     Navigator.pop(context);
                                   });
                                 },
@@ -148,14 +151,13 @@ class _AddExpenseState extends State<AddExpense> {
                             width: 15,
                           ),
                           Text(
-                            categoryNameShowedInExpense,
+                            transactionExpense['category'],
                             style: TextStyle(
                                 color: Colors.black, fontSize: width * 0.045),
                           )
                         ],
                       ),
-                      IconButton(
-                          onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
+                      Icon(Icons.arrow_forward_ios)
                     ],
                   ),
                 )
@@ -210,6 +212,9 @@ class _AddExpenseState extends State<AddExpense> {
                       onTap: () {
                         setState(() {
                           isCashInExpense = false;
+                          transactionExpense['payment'] = "Bank";
+                          transactionExpense['paymentIcon'] =
+                              Icon(Icons.food_bank);
                           Navigator.pop(context);
                         });
                       },
@@ -256,6 +261,8 @@ class _AddExpenseState extends State<AddExpense> {
                       onTap: () {
                         setState(() {
                           isCashInExpense = true;
+                          transactionExpense['payment'] = "Cash";
+                          transactionExpense['paymentIcon'] = Icon(Icons.money);
                           Navigator.pop(context);
                         });
                       },
@@ -325,8 +332,7 @@ class _AddExpenseState extends State<AddExpense> {
                           )
                         ],
                       ),
-                      IconButton(
-                          onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
+                      Icon(Icons.arrow_forward_ios)
                     ],
                   ),
                 )
@@ -334,29 +340,6 @@ class _AddExpenseState extends State<AddExpense> {
             ),
           ),
         ),
-        // TextField(
-        //   decoration: InputDecoration(
-        //     prefixIcon: Icon(Icons.more_horiz),
-        //     suffixIcon: Icon(Icons.arrow_forward_ios),
-        //     labelText: 'Category',
-        //     focusedBorder: OutlineInputBorder(
-        //       borderSide: BorderSide(color: Colors.white),
-        //     ),
-        //   ),
-        // ),
-        // SizedBox(
-        //   height: height / 70,
-        // ),
-        // TextField(
-        //   decoration: InputDecoration(
-        //     prefixIcon: Icon(Icons.payment),
-        //     suffixIcon: Icon(Icons.arrow_forward_ios),
-        //     labelText: 'Payment mode',
-        //     focusedBorder: OutlineInputBorder(
-        //       borderSide: BorderSide(color: Colors.white),
-        //     ),
-        //   ),
-        // ),
         SizedBox(
           height: height / 30,
         ),
@@ -368,6 +351,7 @@ class _AddExpenseState extends State<AddExpense> {
           height: height / 35,
         ),
         TextField(
+          controller: transactionExpense['note'],
           decoration: InputDecoration(
             prefixIcon: Icon(Icons.note_alt_outlined),
             labelText: 'Write a note',

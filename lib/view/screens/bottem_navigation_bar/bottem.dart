@@ -1,3 +1,4 @@
+import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:curved_nav_bar/curved_bar/curved_action_bar.dart';
 import 'package:curved_nav_bar/fab_bar/fab_bottom_app_bar_item.dart';
 import 'package:curved_nav_bar/flutter_curved_bottom_nav_bar.dart';
@@ -54,14 +55,19 @@ class _SectionState extends State<BottemScreen> {
               ),
               inActiveIcon: InkWell(
                 onTap: () {
-                  setState(() {
-                    Navigator.pushNamed(context, '/add');
-                  });
+                  TextEditingController tempExpense = TextEditingController();
+                  TextEditingController tempIncome = TextEditingController();
+
+                  transactionExpense['amount'] = tempExpense;
+                  transactionIncome['amount'] = tempIncome;
+
+                  Navigator.pushNamed(context, '/add');
                 },
                 child: Container(
                   padding: EdgeInsets.all(18),
                   decoration: BoxDecoration(
-                      color:(dark) ? Colors.black:Colors.white , shape: BoxShape.circle),
+                      color: (dark) ? Colors.black : Colors.white,
+                      shape: BoxShape.circle),
                   child: Icon(
                     Icons.add,
                     size: 30,
@@ -70,20 +76,14 @@ class _SectionState extends State<BottemScreen> {
                 ),
               ),
               text: ''),
-          activeColor: (dark)
-              ? Colors.black
-              : Colors.white,
-          navBarBackgroundColor: (dark)
-              ? Colors.white
-              :Colors.black,
+          activeColor: (dark) ? Colors.black : Colors.white,
+          navBarBackgroundColor: (dark) ? Colors.white : Colors.black,
           inActiveColor: Colors.black45,
           appBarItems: [
             FABBottomAppBarItem(
                 activeIcon: Icon(
                   Icons.home,
-                  color: (dark)
-                                ? Colors.black
-                                : Colors.white,
+                  color: (dark) ? Colors.black : Colors.white,
                 ),
                 inActiveIcon: Icon(
                   Icons.home,
@@ -93,9 +93,7 @@ class _SectionState extends State<BottemScreen> {
             FABBottomAppBarItem(
                 activeIcon: Icon(
                   Icons.bar_chart_rounded,
-                  color: (dark)
-                      ? Colors.black
-                      : Colors.white,
+                  color: (dark) ? Colors.black : Colors.white,
                 ),
                 inActiveIcon: Icon(
                   Icons.bar_chart_rounded,
@@ -105,9 +103,7 @@ class _SectionState extends State<BottemScreen> {
             FABBottomAppBarItem(
                 activeIcon: Icon(
                   Icons.home_work_rounded,
-                  color: (dark)
-                      ? Colors.black
-                      : Colors.white,
+                  color: (dark) ? Colors.black : Colors.white,
                 ),
                 inActiveIcon: Icon(
                   Icons.home_work_rounded,
@@ -117,9 +113,7 @@ class _SectionState extends State<BottemScreen> {
             FABBottomAppBarItem(
                 activeIcon: Icon(
                   Icons.more_horiz_outlined,
-                  color:(dark)
-                      ? Colors.black
-                      : Colors.white,
+                  color: (dark) ? Colors.black : Colors.white,
                 ),
                 inActiveIcon: Icon(
                   Icons.more_horiz_outlined,

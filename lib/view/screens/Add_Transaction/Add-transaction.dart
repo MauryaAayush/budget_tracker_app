@@ -1,3 +1,4 @@
+import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:budget_tracker_app/view/screens/Add_Transaction/AddIncome.dart';
 import 'package:budget_tracker_app/view/screens/Add_Transaction/addExpense.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,6 +20,20 @@ class _AddTransactionState extends State<AddTransaction> {
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            if (isExpense) {
+              txtExpenseNote.clear();
+              txtAmountExpense.clear();
+            } else {
+              txtIncomeNote.clear();
+              txtAmountIncome.clear();
+            }
+
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back),
+        ),
         iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.black87,
         title: Text(
@@ -32,7 +47,20 @@ class _AddTransactionState extends State<AddTransaction> {
           Icons.save,
           color: Colors.white,
         ),
-        onPressed: () {},
+        onPressed: () {
+          // String tempAmount = transactionExpense[0]['amount'].text;
+          // String tempAmountI = transactionIncome[0]['amount'].text;
+          (isExpense)
+              ? transactionData.add(transactionExpense)
+              : transactionData.add(transactionIncome);
+
+          // txtAmountExpense.clear();
+          // txtAmountIncome.clear();
+          // txtExpenseNote.clear();
+          // txtIncomeNote.clear();
+          transactionIncome.remove('amount');
+          Navigator.pushReplacementNamed(context, '/bottem');
+        },
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: width * 0.03, vertical: 10),
@@ -118,9 +146,9 @@ class _AddTransactionState extends State<AddTransaction> {
                             children: [
                               Center(
                                   child: Text(
-                                    "Premium lelo",
-                                    style: TextStyle(fontSize: 40),
-                                  ))
+                                "Premium lelo",
+                                style: TextStyle(fontSize: 40),
+                              ))
                             ],
                           ),
                         ),
@@ -130,7 +158,7 @@ class _AddTransactionState extends State<AddTransaction> {
                         width: width / 3.65,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                          // color: Colors.white,
+                            // color: Colors.white,
                             borderRadius: BorderRadius.circular(8)),
                         child: Text(
                           'Transfer',

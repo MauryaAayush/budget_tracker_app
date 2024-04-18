@@ -1,9 +1,9 @@
+import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import '../../../utils/global_variable.dart';
 import 'Components/Catogryicon.dart';
-
 
 class AddIncome extends StatefulWidget {
   const AddIncome({super.key});
@@ -21,7 +21,7 @@ class _AddIncomeState extends State<AddIncome> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextField(
-          // controller: ,
+          controller: transactionIncome['amount'],
           textInputAction: TextInputAction.next,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
@@ -72,16 +72,18 @@ class _AddIncomeState extends State<AddIncome> {
                         width: width,
                         child: GridView.builder(
                           gridDelegate:
-                          SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 4, mainAxisSpacing: 10),
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 4, mainAxisSpacing: 10),
                           itemCount: incomeCategoryList.length,
                           itemBuilder: (context, index) => Column(
                             children: [
                               GestureDetector(
                                 onTap: () {
                                   setState(() {
-                                    categoryNameShowedInIncome =
-                                    incomeCategoryList[index]['name'];
+                                    transactionIncome['category'] =
+                                        incomeCategoryList[index]['name'];
+                                    transactionIncome['categoryIcon'] =
+                                        incomeCategoryList[index]['icon'];
                                     Navigator.pop(context);
                                   });
                                 },
@@ -147,7 +149,7 @@ class _AddIncomeState extends State<AddIncome> {
                             width: 15,
                           ),
                           Text(
-                            categoryNameShowedInIncome,
+                            transactionIncome['category'],
                             style: TextStyle(
                                 color: Colors.black, fontSize: width * 0.045),
                           )
@@ -209,6 +211,9 @@ class _AddIncomeState extends State<AddIncome> {
                       onTap: () {
                         setState(() {
                           isCashInIncome = false;
+                          transactionIncome['payment'] = "Bank";
+                          transactionIncome['paymentIcon'] =
+                              Icon(Icons.food_bank);
                           Navigator.pop(context);
                         });
                       },
@@ -255,6 +260,8 @@ class _AddIncomeState extends State<AddIncome> {
                       onTap: () {
                         setState(() {
                           isCashInIncome = true;
+                          transactionIncome['payment'] = "Cash";
+                          transactionIncome['paymentIcon'] = Icon(Icons.money);
                           Navigator.pop(context);
                         });
                       },
@@ -304,7 +311,7 @@ class _AddIncomeState extends State<AddIncome> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      left: width / 29, right: width / 200, top: width / 30),
+                      left: width / 29, right: width / 30, top: width / 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -324,7 +331,7 @@ class _AddIncomeState extends State<AddIncome> {
                           )
                         ],
                       ),
-                      Icon(Icons.arrow_forward_ios)
+                      Icon(Icons.arrow_forward_ios),
                     ],
                   ),
                 )
@@ -343,6 +350,7 @@ class _AddIncomeState extends State<AddIncome> {
           height: height / 35,
         ),
         TextField(
+          controller: transactionIncome['note'],
           decoration: InputDecoration(
             prefixIcon: Icon(Icons.note_alt_outlined),
             labelText: 'Write a note',
