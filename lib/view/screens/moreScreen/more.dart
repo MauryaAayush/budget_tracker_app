@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../utils/global_variable.dart';
+import '../log_in/login.dart';
 
 class MoreScreen extends StatefulWidget {
   const MoreScreen({super.key});
@@ -44,7 +45,7 @@ class _MoreScreenState extends State<MoreScreen> {
                         width: width * 0.8,
                         child: ListTile(
                           title: Text(
-                            "Guest User",
+                            textName.text,
                             style: TextStyle(
                                 fontSize: height * 0.02,
                                 fontWeight: FontWeight.w600),
@@ -461,7 +462,9 @@ class _MoreScreenState extends State<MoreScreen> {
                       title: Text("About app"),
                     ),
                   ),
-                  SizedBox(height: 100,),
+                  SizedBox(
+                    height: 100,
+                  ),
                 ],
               ),
             )
@@ -472,7 +475,6 @@ class _MoreScreenState extends State<MoreScreen> {
   }
 
   ImagePicker imagePicker = ImagePicker();
-
 
   Future<void> pickImage() async {
     final picker = await imagePicker.pickImage(source: ImageSource.gallery);
