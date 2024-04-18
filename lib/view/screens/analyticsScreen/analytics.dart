@@ -112,7 +112,13 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(Icons.arrow_back_ios),
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      Navigator.pushNamed(context, '/analytics2');
+                    });
+                  },
+                    child: Icon(Icons.arrow_back_ios)),
                 Text(
                   'May 2024',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),

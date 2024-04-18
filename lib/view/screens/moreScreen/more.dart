@@ -397,13 +397,20 @@ class _MoreScreenState extends State<MoreScreen> {
                       style: TextStyle(
                           fontSize: height * 0.02,
                           fontWeight: FontWeight.bold)),
-                  ListTile(
-                    leading: Icon(
-                      Icons.settings_outlined,
-                      size: height * 0.032,
-                      color: Colors.black54,
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        Navigator.pushNamed(context, '/setting');
+                      });
+                    },
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.settings_outlined,
+                        size: height * 0.032,
+                        color: Colors.black54,
+                      ),
+                      title: Text("Settings"),
                     ),
-                    title: Text("Settings"),
                   ),
                   ListTile(
                     leading: Icon(
@@ -437,14 +444,22 @@ class _MoreScreenState extends State<MoreScreen> {
                     ),
                     title: Text("FAQ"),
                   ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.error_outline,
-                      size: height * 0.032,
-                      color: Colors.black54,
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        Navigator.pushNamed(context, '/about');
+                      });
+                    },
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.error_outline,
+                        size: height * 0.032,
+                        color: Colors.black54,
+                      ),
+                      title: Text("About app"),
                     ),
-                    title: Text("About app"),
-                  )
+                  ),
+                  SizedBox(height: 100,),
                 ],
               ),
             )

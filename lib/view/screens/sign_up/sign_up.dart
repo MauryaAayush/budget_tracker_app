@@ -64,7 +64,7 @@ class _SignUpState extends State<SignUp> {
                   signUp(username: textName.text,userid: textEmail.text,num: textMobileNum.text,password: textConfirm.text):showDialogBox(context)
                   :showDialogBoxnull(context);
 
-                  (navigation)?Navigator.pushNamed(context, '/bottem'):showDialogBoxerror(context);
+                  (navigation)? Navigator.pushNamed(context, '/login'):showDialogBoxerror(context);
 
                 },
                 child: Padding(
