@@ -66,6 +66,7 @@ flutter:
   assets:
     - assets/img/
     - assets/img/socialmedia_Icon/
+    - assets/img/team/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
