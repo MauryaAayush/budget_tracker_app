@@ -27,7 +27,10 @@ class _AddExpenseState extends State<AddExpense> {
           textInputAction: TextInputAction.next,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
-            prefixIcon: Icon(Icons.currency_rupee),
+            prefixIcon: Icon(
+              Icons.currency_rupee,
+              color: categoryIconColorList[selectedCategoryIndexExpense],
+            ),
             suffixIcon: Icon(Icons.calculate_outlined),
             labelText: 'Amount',
             focusedBorder: OutlineInputBorder(
@@ -86,6 +89,7 @@ class _AddExpenseState extends State<AddExpense> {
                                         categoriesList[index]['name'];
                                     transactionExpense['categoryIcon'] =
                                         categoriesList[index]['icon'];
+                                    selectedCategoryIndexExpense = index;
                                     Navigator.pop(context);
                                   });
                                 },
@@ -137,16 +141,13 @@ class _AddExpenseState extends State<AddExpense> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      left: width / 29, right: width / 200, top: width / 100),
+                      left: width / 29, right: width / 200, top: width / 29),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                         children: [
-                          Icon(
-                            Icons.more_horiz,
-                            size: width / 15,
-                          ),
+                          categoriesList[selectedCategoryIndexExpense]['icon'],
                           SizedBox(
                             width: 15,
                           ),
@@ -208,14 +209,15 @@ class _AddExpenseState extends State<AddExpense> {
                       ],
                     ),
                     SizedBox(height: height * 0.02),
-
                     GestureDetector(
                       onTap: () {
                         setState(() {
                           isCashInExpense = false;
                           transactionExpense['payment'] = "Bank";
-                          transactionExpense['paymentIcon'] =
-                              Icon(Icons.food_bank);
+                          transactionExpense['paymentIcon'] = Icon(
+                            Icons.account_balance,
+                            color: Colors.blue,
+                          );
                           Navigator.pop(context);
                         });
                       },
@@ -263,7 +265,10 @@ class _AddExpenseState extends State<AddExpense> {
                         setState(() {
                           isCashInExpense = true;
                           transactionExpense['payment'] = "Cash";
-                          transactionExpense['paymentIcon'] = Icon(Icons.money);
+                          transactionExpense['paymentIcon'] = Icon(
+                            Icons.money,
+                            color: Colors.green,
+                          );
                           Navigator.pop(context);
                         });
                       },
@@ -313,14 +318,18 @@ class _AddExpenseState extends State<AddExpense> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      left: width / 29, right: width / 200, top: width / 100),
+                      left: width / 29, right: width / 200, top: width / 29),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                         children: [
                           Icon(
-                            Icons.money,
+                            (!isCashInExpense)
+                                ? Icons.account_balance
+                                : Icons.money,
+                            color: categoryIconColorList[
+                                selectedCategoryIndexExpense],
                             size: width / 15,
                           ),
                           SizedBox(
@@ -354,7 +363,10 @@ class _AddExpenseState extends State<AddExpense> {
         TextField(
           controller: transactionExpense['note'],
           decoration: InputDecoration(
-            prefixIcon: Icon(Icons.note_alt_outlined),
+            prefixIcon: Icon(
+              Icons.note_alt_outlined,
+              color: categoryIconColorList[selectedCategoryIndexExpense],
+            ),
             labelText: 'Write a note',
             labelStyle: TextStyle(color: Colors.grey),
             focusedBorder: OutlineInputBorder(
@@ -367,7 +379,10 @@ class _AddExpenseState extends State<AddExpense> {
         ),
         TextField(
           decoration: InputDecoration(
-            prefixIcon: Icon(Icons.numbers),
+            prefixIcon: Icon(
+              Icons.numbers,
+              color: categoryIconColorList[selectedCategoryIndexExpense],
+            ),
             labelText: 'Add tags',
             labelStyle: TextStyle(color: Colors.grey),
             focusedBorder: OutlineInputBorder(
@@ -379,10 +394,25 @@ class _AddExpenseState extends State<AddExpense> {
           height: height / 35,
         ),
         ListTile(
-          leading: Icon(Icons.photo_album_outlined),
+          leading: Icon(
+            Icons.photo_album_outlined,
+            color: categoryIconColorList[selectedCategoryIndexExpense],
+          ),
           title: Text('Add photo'),
           trailing: Icon(Icons.arrow_forward_ios),
         ),
+        SizedBox(
+          height: height / 30,
+        ),
+        showText
+            ? Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(
+                  'Invalid amount entered!!',
+                  style: TextStyle(fontSize: 17, color: Colors.red),
+                ),
+              )
+            : Container(),
       ],
     );
   }

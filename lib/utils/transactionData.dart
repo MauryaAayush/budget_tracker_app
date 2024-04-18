@@ -6,21 +6,25 @@ import 'package:flutter/material.dart';
 List transactionData = [];
 
 Map transactionExpense = {
-  'amount': null,
   'category': "Others",
   'payment': "Cash",
   'categoryIcon': Icon(Icons.more_horiz),
-  'paymentIcon': Icon(Icons.food_bank),
+  'paymentIcon': Icon(
+    Icons.money,
+    color: Colors.green,
+  ),
   'note': txtExpenseNote,
   'isExpense': true,
 };
 
 Map transactionIncome = {
-  'amount': null,
   'category': "Others",
   'payment': "Cash",
   'categoryIcon': Icon(Icons.more_horiz),
-  'paymentIcon': Icon(Icons.food_bank),
+  'paymentIcon': Icon(
+    Icons.money,
+    color: Colors.green,
+  ),
   'note': txtIncomeNote,
   'isExpense': false,
 };

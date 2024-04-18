@@ -15,6 +15,7 @@ import 'package:budget_tracker_app/view/screens/sign_up/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: (dark) ? Colors.white : Colors.black));
@@ -34,7 +35,7 @@ class BudgetTracker extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/signUp',
+        initialRoute: '/bottem',
         routes: {
           '/': (context) => const SplashScreen(),
           '/signUp': (context) => const SignUp(),
