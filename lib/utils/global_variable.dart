@@ -16,3 +16,9 @@ Map<String, double> dataMap = {
 };
 
 File? imgPath;
+
+String ?textname1;
+String ?textMobileNum1;
+String ?textConfirm1;
+String ?textEmail1;
+String ?textPassword1;
