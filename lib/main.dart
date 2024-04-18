@@ -58,21 +58,15 @@ class BudgetTracker extends StatelessWidget {
           '/add': (context) => const AddTransaction(),
           '/setting': (context) => const Setting(),
           '/analytics2': (context) => const Analytics2(),
-
-          '/Referrals':(context) => const Referrals(),
-          '/Splash':(context) => const Splash(),
-
-          '/reminder' : (context) => const Reminder(),
-          '/cat' : (context) => const Categories(),
-          '/privacy' : (context) => const Privacy(),
-
+          '/Referrals': (context) => const Referrals(),
+          '/Splash': (context) => const Splash(),
+          '/reminder': (context) => const Reminder(),
+          '/cat': (context) => const Categories(),
+          '/privacy': (context) => const Privacy(),
           '/getstarted': (context) => const Get_started(),
-
           '/transationa': (context) => const Transationa(),
           '/budgets': (context) => const Budgets(),
           '/tags': (context) => const Tags(),
-
-
         },
       ),
     );
