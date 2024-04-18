@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../utils/global_variable.dart';
+
 class MoreScreen extends StatefulWidget {
   const MoreScreen({super.key});
 
@@ -470,7 +472,7 @@ class _MoreScreenState extends State<MoreScreen> {
   }
 
   ImagePicker imagePicker = ImagePicker();
-  File? imgPath;
+
 
   Future<void> pickImage() async {
     final picker = await imagePicker.pickImage(source: ImageSource.gallery);

@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../utils/global_variable.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -37,9 +39,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const CircleAvatar(
+                       CircleAvatar(
                         backgroundColor: Colors.blue,
                         radius: 27,
+                        backgroundImage: (imgPath != null) ? FileImage(imgPath!) : null,
                       ),
 
                       // here we have written the text of 👋 and AM

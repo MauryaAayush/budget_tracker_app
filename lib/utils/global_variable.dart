@@ -1,3 +1,5 @@
+import 'dart:io';
+
 bool switchValue = false;
 bool isExpense = true;
 int transactionIndexedStackIndex = 0;
@@ -12,3 +14,5 @@ Map<String, double> dataMap = {
   'Pie': 2,
   'Chart': 2,
 };
+
+File? imgPath;
