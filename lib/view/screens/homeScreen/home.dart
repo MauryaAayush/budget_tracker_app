@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../utils/color.dart';
 import '../../../utils/global_variable.dart';
 
 
@@ -58,13 +59,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                       ? '  Good Afternoon 👋'
                                       : '  Good evening 👋',
                               style: TextStyle(
-                                color: Colors.black,
+                                color: text,
                               ),
                             ),
                             Text(
                               textName.text,
                               style: TextStyle(
-                                  color: Colors.black,
+                                  color: text,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 16),
                             ),
@@ -74,10 +75,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       Spacer(),
 
-                      const Icon(
+                       Icon(
                         Icons.notifications_none_outlined,
                         size: 26,
-                        color: Colors.black,
+                        color: text,
                       ),
                     ],
                   ),
@@ -95,7 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text(
                     'This month',
                     style:
-                        TextStyle(fontWeight: FontWeight.w600, fontSize: 17.5),
+                        TextStyle(fontWeight: FontWeight.w600, fontSize: 17.5,color: text),
                   ),
                   Spacer(),
                   IconButton(

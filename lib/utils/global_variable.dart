@@ -9,7 +9,7 @@ bool isCashInExpense = true;
 bool isCashInIncome = true;
 
 Map<String, double> dataMap = {
-  'Flutter': 5,
+  'Flutter': 3,
   'Dart': 3,
   'Pie': 2,
   'Chart': 2,

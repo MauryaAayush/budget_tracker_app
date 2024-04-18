@@ -62,6 +62,26 @@ void showDialogBoxerror(BuildContext context) {
   );
 }
 
+void showDialogBoxlogin(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: Text("Error !"),
+        content: Text("This Account is Alreadey exist  \n You Already Have Account "),
+        actions: <Widget>[
+          TextButton(
+            child: Text("OK",style: TextStyle(color: Colors.green),),
+            onPressed: () {
+              Navigator.of(context).pop(); // Dismiss the dialog
+            },
+          ),
+        ],
+      );
+    },
+  );
+}
+
 void showDialogBoxusernotfound(BuildContext context) {
   showDialog(
     context: context,

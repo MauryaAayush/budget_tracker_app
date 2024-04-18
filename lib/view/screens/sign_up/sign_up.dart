@@ -216,6 +216,7 @@ class _SignUpState extends State<SignUp> {
               ),
               InkWell(
                 onTap: () {
+                  (login(username: textName.text, password: textConfirm.text, userid: textEmail.text))?showDialogBoxlogin(context):null;
                   (textname1 != null && textMobileNum1 !=null&& textConfirm1!=null && textEmail1 != null&& textPassword1 != null )?
 
 
@@ -223,7 +224,9 @@ class _SignUpState extends State<SignUp> {
                   signUp(username: textName.text,userid: textEmail.text,num: textMobileNum.text,password: textConfirm.text):showDialogBox(context)
                   :showDialogBoxnull(context);
 
-                  (navigation)? Navigator.pushNamed(context, '/login'):showDialogBoxerror(context);
+                  (navigation)?
+                  Navigator.pushNamed(context, '/login'):
+                  showDialogBoxerror(context);
 
                 },
                 child: Padding(
