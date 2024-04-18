@@ -1,6 +1,10 @@
 import 'package:budget_tracker_app/utils/global_variable.dart';
 import 'package:flutter/material.dart';
 
+
+
+
+
 class Account extends StatefulWidget {
   const Account({super.key});
 
@@ -59,6 +63,32 @@ class _AccountState extends State<Account> {
                   onChanged: (value) {
                     setState(() {
                       switchValue = value;
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(
+                            height:height*0.5,
+                            width: width,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                InkWell(
+                                  onLongPress: () {
+                                    Navigator.pop(context);
+                                  },
+                                    child: Icon(Icons.fingerprint_outlined,color: Colors.blueAccent,size: 100,)),
+                                SizedBox(height: 30),
+                                Text(
+                                  'Unlock By Fingerprint',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                SizedBox(height: 20),
+
+                              ],
+                            ),
+                          );
+                        },
+                      );
                     });
                   },
                 )
@@ -226,3 +256,5 @@ class _AccountState extends State<Account> {
     );
   }
 }
+
+
