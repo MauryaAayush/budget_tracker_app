@@ -89,6 +89,7 @@ class _AddTransactionState extends State<AddTransaction> {
         },
       ),
       body: SingleChildScrollView(
+
         scrollDirection: Axis.vertical,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.03, vertical: 10),
