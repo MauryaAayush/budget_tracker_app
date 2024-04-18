@@ -208,6 +208,7 @@ class _AddExpenseState extends State<AddExpense> {
                       ],
                     ),
                     SizedBox(height: height * 0.02),
+
                     GestureDetector(
                       onTap: () {
                         setState(() {
