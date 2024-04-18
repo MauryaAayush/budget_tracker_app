@@ -7,6 +7,7 @@ String categoryNameShowedInIncome = 'Others';
 String categoryNameShowedInExpense = 'Others';
 bool isCashInExpense = true;
 bool isCashInIncome = true;
+bool Singup = false;
 
 Map<String, double> dataMap = {
   'Flutter': 3,

@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 bool dark = true;
-bool navigation = false;
+bool navigation = true;
 bool hometoch=true;
 bool analytoch=false;
 bool accounttoch=false;
