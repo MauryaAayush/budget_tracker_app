@@ -23,7 +23,7 @@ class _AddExpenseState extends State<AddExpense> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextField(
-          controller: transactionExpense['amount'],
+          controller: txtAmountExpense,
           textInputAction: TextInputAction.next,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(

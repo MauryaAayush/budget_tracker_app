@@ -50,15 +50,41 @@ class _AddTransactionState extends State<AddTransaction> {
         onPressed: () {
           // String tempAmount = transactionExpense[0]['amount'].text;
           // String tempAmountI = transactionIncome[0]['amount'].text;
-          (isExpense)
-              ? transactionData.add(transactionExpense)
-              : transactionData.add(transactionIncome);
+          Map map = {
+            'amount': txtAmountExpense.text,
+            'category': transactionExpense['category'],
+            'payment': "Cash",
+            'categoryIcon': transactionExpense['categoryIcon'],
+            'paymentIcon': transactionExpense['paymentIcon'],
+            'note': txtExpenseNote,
+            'isExpense': true,
+          };
 
-          // txtAmountExpense.clear();
-          // txtAmountIncome.clear();
+          Map map1 = {
+            'amount': txtAmountIncome.text,
+            'category': "Others",
+            'payment': "Cash",
+            'categoryIcon': transactionIncome['categoryIcon'],
+            'paymentIcon': transactionIncome['paymentIcon'],
+            'note': txtIncomeNote,
+            'isExpense': false,
+          };
+
+          transactionExpense['category'] = "Others";
+          // transactionExpense['categoryIcon'] = Icon(Icons.more_horiz);
+          // transactionIncome['categoryIcon']=Icon(Icons.more_horiz);
+          // transactionExpense['amount'] =  txtAmountExpense.text;
+          // transactionIncome['amount'] =  txtAmountIncome.text;
+
+          (isExpense)
+              ? transactionData.add(map)
+              : transactionData.add(map1);
+
+          txtAmountExpense.clear();
+          txtAmountIncome.clear();
           // txtExpenseNote.clear();
           // txtIncomeNote.clear();
-          transactionIncome.remove('amount');
+          // transactionIncome.remove('amount');
           Navigator.pushReplacementNamed(context, '/bottem');
         },
       ),

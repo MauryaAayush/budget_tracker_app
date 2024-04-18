@@ -5,6 +5,7 @@ import 'package:curved_nav_bar/flutter_curved_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/color.dart';
+import '../../../utils/global_variable.dart';
 import '../Account/Account.dart';
 // import '../Add_Transaction/Add-transaction.dart';
 import '../analyticsScreen/analytics.dart';
@@ -55,11 +56,11 @@ class _SectionState extends State<BottemScreen> {
               ),
               inActiveIcon: InkWell(
                 onTap: () {
-                  TextEditingController tempExpense = TextEditingController();
-                  TextEditingController tempIncome = TextEditingController();
+                  // TextEditingController tempExpense = TextEditingController();
+                  // TextEditingController tempIncome = TextEditingController();
 
-                  transactionExpense['amount'] = tempExpense;
-                  transactionIncome['amount'] = tempIncome;
+                  // transactionExpense['amount'] = int.parse(txtAmountExpense.text);
+                  // transactionIncome['amount'] = int.parse(txtAmountIncome.text);
 
                   Navigator.pushNamed(context, '/add');
                 },

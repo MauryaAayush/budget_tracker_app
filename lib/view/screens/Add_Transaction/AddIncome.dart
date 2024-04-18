@@ -21,7 +21,7 @@ class _AddIncomeState extends State<AddIncome> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextField(
-          controller: transactionIncome['amount'],
+          controller: txtAmountIncome,
           textInputAction: TextInputAction.next,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(

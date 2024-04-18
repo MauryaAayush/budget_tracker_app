@@ -289,7 +289,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            transactionData[index]['amount'].text,
+                           '${transactionData[index]['amount']}',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w600,
