@@ -1,4 +1,8 @@
+import 'package:budget_tracker_app/view/screens/analyticsScreen/analytic_2.dart';
+import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../../utils/color.dart';
 
@@ -113,32 +117,23 @@ class _MainAnalyticsState extends State<MainAnalytics> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                InkWell(
-                    onTap: () {
-                      setState(() {
-                        // analtic = false;
-                        Navigator.pushNamed(context, '/analytics2');
-                      });
-                    },
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      color: text,
-                    )),
+                Icon(Icons.arrow_back_ios),
                 Text(
-                  'May 2024',
-                  style: TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.w400, color: text),
+                  'April 2024',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                 ),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  color: text,
-                ),
+                Icon(Icons.arrow_forward_ios),
               ],
             ),
-            IndexedStack(
-              children: [
-
-              ],
+            Container(
+              height: height / 1.7,
+              child: IndexedStack(
+                index: 1,
+                children: [
+                  Analytics2(),
+                  AnalyticsScreen(),
+                ],
+              ),
             )
           ],
         ),
