@@ -349,7 +349,7 @@ class _Analytics2State extends State<Analytics2> {
                       child:
                       Center(
                         child: PieChart(
-                          dataMap: dataMap,
+                          dataMap: dataMapEaxpens,
                           animationDuration: Duration(milliseconds: 800),
                           chartLegendSpacing: 32,
                           chartRadius: MediaQuery.of(context).size.width / 2.7,
@@ -357,7 +357,7 @@ class _Analytics2State extends State<Analytics2> {
                            initialAngleInDegree: 10,
                           chartType: ChartType.ring,
                           ringStrokeWidth: 34,
-                          centerText: " Chart",
+                          centerText: "Eaxpens Chart",
                           legendOptions: LegendOptions(
                             showLegendsInRow: true,
                             legendPosition: LegendPosition.bottom,
@@ -431,7 +431,7 @@ class _Analytics2State extends State<Analytics2> {
                       child:
                       Center(
                         child: PieChart(
-                          dataMap: dataMap,
+                          dataMap: dataMapIncome,
                           animationDuration: Duration(milliseconds: 800),
                           chartLegendSpacing: 32,
                           chartRadius: MediaQuery.of(context).size.width / 2.7,
@@ -439,7 +439,7 @@ class _Analytics2State extends State<Analytics2> {
                           initialAngleInDegree: 10,
                           chartType: ChartType.ring,
                           ringStrokeWidth: 34,
-                          centerText: " Chart",
+                          centerText: "Income Chart",
                           legendOptions: LegendOptions(
                             showLegendsInRow: true,
                             legendPosition: LegendPosition.bottom,

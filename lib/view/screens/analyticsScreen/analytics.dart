@@ -1,3 +1,4 @@
+import 'package:budget_tracker_app/utils/color.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/global_variable.dart';
@@ -15,6 +16,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Backgruond,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 55, horizontal: 15),
         child: Column(
@@ -26,12 +28,12 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                   style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
-                      color: Colors.black),
+                      color: text),
                 ),
                 Spacer(),
                 Icon(
                   Icons.download,
-                  color: Colors.black,
+                  color: text,
                 )
               ],
             ),
@@ -42,7 +44,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
               height: height / 20,
               width: width,
               decoration: BoxDecoration(
-                color: Colors.black12,
+                color: boder,
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Padding(
@@ -51,7 +53,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                   children: [
                     Text(
                       'Week',
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 16,color: text),
                     ),
                     SizedBox(
                       width: width / 25,
@@ -68,7 +70,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                     ),
                     Text(
                       'Month',
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 16,color: text),
                     ),
                     SizedBox(
                       width: width / 25,
@@ -85,7 +87,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                     ),
                     Text(
                       'Year',
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 16,color: text),
                     ),
                     SizedBox(
                       width: width / 25,
@@ -102,7 +104,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                     ),
                     Text(
                       'Custom',
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 16,color: text),
                     ),
                   ],
                 ),
@@ -117,16 +119,16 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      analtic = false;
-                      // Navigator.pushNamed(context, '/analytics2');
+                      // analtic = false;
+                      Navigator.pushNamed(context, '/analytics2');
                     });
                   },
-                    child: Icon(Icons.arrow_back_ios)),
+                    child: Icon(Icons.arrow_back_ios,color: text,)),
                 Text(
                   'May 2024',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400,color: text),
                 ),
-                Icon(Icons.arrow_forward_ios),
+                Icon(Icons.arrow_forward_ios,color: text,),
               ],
             ),
             Container(
@@ -144,7 +146,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
             ),
             Text(
               'No transactions',
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: 18,color: text),
             ),
           ],
         ),

@@ -117,9 +117,14 @@ class _MoreScreenState extends State<MoreScreen> {
                                 size: height * 0.034,
                               ),
                             ),
-                            Text(
-                              "Transactions",
-                              style: TextStyle(fontSize: height * 0.018),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/transationa');
+                              },
+                              child: Text(
+                                "Transactions",
+                                style: TextStyle(fontSize: height * 0.018),
+                              ),
                             ),
                           ],
                         ),
@@ -148,9 +153,14 @@ class _MoreScreenState extends State<MoreScreen> {
                                 size: height * 0.034,
                               ),
                             ),
-                            Text(
-                              "Reminders",
-                              style: TextStyle(fontSize: height * 0.018),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/reminder');
+                              },
+                              child: Text(
+                                "Reminders",
+                                style: TextStyle(fontSize: height * 0.018),
+                              ),
                             ),
                           ],
                         ),
@@ -185,9 +195,14 @@ class _MoreScreenState extends State<MoreScreen> {
                                 size: height * 0.034,
                               ),
                             ),
-                            Text(
-                              "Budgets",
-                              style: TextStyle(fontSize: height * 0.018),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/budgets');
+                              },
+                              child: Text(
+                                "Budgets",
+                                style: TextStyle(fontSize: height * 0.018),
+                              ),
                             ),
                           ],
                         ),
@@ -216,9 +231,14 @@ class _MoreScreenState extends State<MoreScreen> {
                                 size: height * 0.034,
                               ),
                             ),
-                            Text(
-                              "Categories",
-                              style: TextStyle(fontSize: height * 0.018),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/cat');
+                              },
+                              child: Text(
+                                "Categories",
+                                style: TextStyle(fontSize: height * 0.018),
+                              ),
                             ),
                           ],
                         ),
@@ -253,9 +273,14 @@ class _MoreScreenState extends State<MoreScreen> {
                                 size: height * 0.034,
                               ),
                             ),
-                            Text(
-                              "Tags",
-                              style: TextStyle(fontSize: height * 0.018),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushNamed(context, '/tags');
+                              },
+                              child: Text(
+                                "Tags",
+                                style: TextStyle(fontSize: height * 0.018),
+                              ),
                             ),
                           ],
                         ),

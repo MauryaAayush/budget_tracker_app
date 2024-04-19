@@ -66,7 +66,7 @@ class _AddTransactionState extends State<AddTransaction> {
               Map map1 = {
                 'amount': txtAmountIncome.text,
                 'category': transactionIncome['category'],
-                'payment': transactionIncome['payment'],
+                'payment': transactionIncome['category'],
                 'categoryIcon': transactionIncome['categoryIcon'],
                 'paymentIcon': transactionIncome['paymentIcon'],
                 'note': txtIncomeNote.text,
@@ -113,6 +113,7 @@ class _AddTransactionState extends State<AddTransaction> {
               Navigator.pushReplacementNamed(context, '/bottem');
             }
           }
+
           // txtExpenseNote.clear();
           // txtIncomeNote.clear();
           // transactionIncome.remove('amount');

@@ -1,6 +1,8 @@
 import 'package:budget_tracker_app/utils/global_variable.dart';
 import 'package:flutter/material.dart';
 
+import '../../../utils/color.dart';
+
 class Account extends StatefulWidget {
   const Account({super.key});
 
@@ -14,6 +16,7 @@ class _AccountState extends State<Account> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Backgruond,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
@@ -25,11 +28,13 @@ class _AccountState extends State<Account> {
                 Text(
                   "All Accounts",
                   style: TextStyle(
+                    color: text,
                       fontSize: height * 0.024, fontWeight: FontWeight.w700),
                 ),
                 Text(
                   "+ Add account",
                   style: TextStyle(
+                    color: text,
                       fontSize: height * 0.019, fontWeight: FontWeight.w400),
                 ),
               ],
@@ -42,14 +47,14 @@ class _AccountState extends State<Account> {
                   "Transactions based balance,actual may vary.",
                   style: TextStyle(
                       fontSize: height * 0.013,
-                      color: Colors.black45,
+                      color: text,
                       letterSpacing: -0.5),
                 ),
                 Text(
                   "Show balance",
                   style: TextStyle(
                       fontSize: height * 0.013,
-                      color: Colors.black45,
+                      color: text,
                       letterSpacing: -0.5),
                 ),
                 Switch(
@@ -72,11 +77,11 @@ class _AccountState extends State<Account> {
                   height: height * 0.1,
                   width: width * 0.43,
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Backgruond,
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow: const [
+                      boxShadow:  [
                         BoxShadow(
-                            color: Colors.black12,
+                            color: boder,
                             offset: Offset(2, 4),
                             blurRadius: 10,
                             spreadRadius: 2)
@@ -91,12 +96,14 @@ class _AccountState extends State<Account> {
                         Text(
                           "Available Balance",
                           style: TextStyle(
+                            color: text,
                             fontSize: height * 0.017,
                           ),
                         ),
                         Text(
                           "*****",
                           style: TextStyle(
+                            color: text,
                               fontSize: height * 0.025,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 2),
@@ -109,11 +116,11 @@ class _AccountState extends State<Account> {
                   height: height * 0.1,
                   width: width * 0.43,
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Backgruond,
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.black12,
+                            color: boder,
                             offset: Offset(2, 4),
                             blurRadius: 10,
                             spreadRadius: 2)
@@ -128,12 +135,14 @@ class _AccountState extends State<Account> {
                         Text(
                           "Available Credit",
                           style: TextStyle(
+                            color: text,
                             fontSize: height * 0.017,
                           ),
                         ),
                         Text(
                           "*****",
                           style: TextStyle(
+                            color: text,
                               fontSize: height * 0.025,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 2),
@@ -155,16 +164,18 @@ class _AccountState extends State<Account> {
                 Text(
                   "Bank Accounts",
                   style: TextStyle(
-                      fontSize: height * 0.018, color: Colors.black54),
+
+                      fontSize: height * 0.018, color: text),
                 ),
               ],
             ),
             SizedBox(height: height * 0.02),
             Card(
+              color: Backgruond,
               child: ListTile(
                 title: Text(
                   "Bank Account",
-                  style: TextStyle(fontSize: height * 0.02),
+                  style: TextStyle(color: text,fontSize: height * 0.02),
                 ),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -172,12 +183,13 @@ class _AccountState extends State<Account> {
                     Text(
                       "*****",
                       style: TextStyle(
+                        color: text,
                           fontSize: height * 0.02,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 2),
                     ),
                     SizedBox(width: width * 0.02),
-                    Icon(Icons.arrow_forward_ios)
+                    Icon(Icons.arrow_forward_ios,color: text,)
                   ],
                 ),
               ),
@@ -193,16 +205,17 @@ class _AccountState extends State<Account> {
                 Text(
                   "Cash",
                   style: TextStyle(
-                      fontSize: height * 0.018, color: Colors.black54),
+                      fontSize: height * 0.018, color: text),
                 ),
               ],
             ),
             SizedBox(height: height * 0.02),
             Card(
+              color: Backgruond,
               child: ListTile(
                 title: Text(
                   "Cash",
-                  style: TextStyle(fontSize: height * 0.02),
+                  style: TextStyle(color: text,fontSize: height * 0.02),
                 ),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -210,12 +223,13 @@ class _AccountState extends State<Account> {
                     Text(
                       "*****",
                       style: TextStyle(
+                        color: text,
                           fontSize: height * 0.02,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 2),
                     ),
                     SizedBox(width: width * 0.02),
-                    Icon(Icons.arrow_forward_ios)
+                    Icon(Icons.arrow_forward_ios,color: text,)
                   ],
                 ),
               ),

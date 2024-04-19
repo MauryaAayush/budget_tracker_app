@@ -1,3 +1,5 @@
+
+
 import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:budget_tracker_app/view/screens/homeScreen/providers/homeProvider.dart';
 import 'package:budget_tracker_app/view/screens/log_in/login.dart';
@@ -26,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     DateTime dateTime = DateTime.now();
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Backgruond,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -37,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   margin: const EdgeInsets.fromLTRB(15, 20, 10, 0),
                   height: height * 0.08,
                   width: width * 0.918,
-                  color: Colors.white,
+                  color: Backgruond,
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -107,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () {},
                       icon: Icon(
                         Icons.search,
-                        color: Colors.black,
+                        color: text,
                         size: 27,
                       ))
                 ],
@@ -238,6 +240,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Text(
                 'Balance: \$${countBalance()}',
                 style: TextStyle(
+                  color: text,
                     fontSize: height / 50, fontWeight: FontWeight.w500),
               )),
             ),
@@ -248,12 +251,12 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Text(
                   '  Recent transactions',
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 19),
+                  style: TextStyle(color: text,fontWeight: FontWeight.w500, fontSize: 19),
                 ),
                 Spacer(),
                 Text(
                   'see all   ',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
+                  style: TextStyle(color: text,fontSize: 14, fontWeight: FontWeight.w400),
                 ),
               ],
             ),
@@ -290,17 +293,18 @@ class _HomeScreenState extends State<HomeScreen> {
                               onLongPress: () {
                                 showDialog(
                                   context: context,
+                                  barrierColor: Backgruond,
                                   builder: (context) => AlertDialog(
                                     title:
 
-                                        Text("Are you sure you want to delete"),
+                                        Text("Are you sure you want to delete",style: TextStyle(color: text),),
                                     
                                     actions: [
                                       TextButton(
                                           onPressed: () {
                                             Navigator.pop(context);
                                           },
-                                          child: Text("Cancel")),
+                                          child: Text("Cancel",style: TextStyle(color: text),)),
                                       TextButton(
                                           onPressed: () {
                                             setState(() {
@@ -308,7 +312,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               Navigator.pop(context);
                                             });
                                           },
-                                          child: Text("Delete")),
+                                          child: Text("Delete",style: TextStyle(color: text),)),
                                     ],
                                   ),
                                 );
@@ -330,7 +334,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 margin: EdgeInsets.only(bottom: height / 60),
                                 decoration: BoxDecoration(
                                   color: (transactionData[index]['isExpense'])
-                                      ? Colors.white
+                                      ? Backgruond
                                       : Color(0xffE8F6E9),
                                   borderRadius: BorderRadius.circular(12),
                                   boxShadow: [
@@ -338,7 +342,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       offset: Offset(0, 1),
                                       spreadRadius: 1,
                                       blurRadius: 5,
-                                      color: Colors.black12,
+                                      color: (dark)?Colors.black12:Colors.white12,
                                     ),
                                   ],
                                 ),
@@ -399,7 +403,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                             style: TextStyle(
                                                 fontSize: height / 65,
                                                 fontWeight: FontWeight.w500,
-                                                color: Colors.black),
+                                                color: text),
                                           ),
                                           transactionData[index]['paymentIcon']
                                         ],
@@ -428,7 +432,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   begin: Alignment(0.0, -1.0), // top to bottom
                   end: Alignment(0.0, 1.0), // top to bottom
                   colors: [
-                    Colors.white,
+                    Backgruond,
                     Colors.grey.shade500, // Light grey as an intermediate color
                   ],
                   stops: [
@@ -440,7 +444,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   BoxShadow(
                     offset: Offset(2, 7),
                     blurRadius: 10,
-                    color: Colors.black.withOpacity(0.5),
+                    color: (dark)?Colors.black.withOpacity(0.5):Colors.white.withOpacity(0.5),
                   ),
                 ],
               ),
@@ -453,6 +457,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(
                         '    ${homeProviderfalse.formatTimer(homeProvidertrue.secondsRemaining)}',
                         style: TextStyle(
+                          color: text,
                             fontSize: height / 24, fontWeight: FontWeight.bold),
                       ),
                       Text(
@@ -501,6 +506,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text(
                               'Exdusive Offer',
                               style: TextStyle(
+                                color: text,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
                               ),
@@ -508,6 +514,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text(
                               'Limited Time Only-Act Fast!',
                               style: TextStyle(
+                                color: text,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 18,
                               ),
@@ -526,7 +533,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Text(
                             'Claim',
                             style: TextStyle(
-                                color: Colors.white,
+                                color: text,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 18),
                           ),
@@ -567,14 +574,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: height / 5,
                   width: width / 1.5,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Backgruond,
                     borderRadius: BorderRadius.circular(13),
                     boxShadow: [
                       BoxShadow(
                         offset: Offset(0, 1),
                         spreadRadius: 1,
                         blurRadius: 0.5,
-                        color: Colors.black12,
+                        color: boder,
                       )
                     ],
                   ),
@@ -586,12 +593,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           'Budget left',
                           style: TextStyle(
+                            color: text,
                               fontWeight: FontWeight.w400,
                               fontSize: height / 35),
                         ),
                         Text(
                           '\$55,944',
                           style: TextStyle(
+                              color: text,
                               fontWeight: FontWeight.w400,
                               fontSize: height / 40),
                         ),
@@ -602,14 +611,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: height / 30,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
-                            color: Colors.black12,
+                            color: (dark)?Colors.black12:Colors.white12,
                           ),
                           child: Row(
                             children: [
                               Text(
                                 '   \$56.0',
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: text,
                                     fontWeight: FontWeight.w500,
                                     fontSize: height / 55),
                               ),
@@ -617,7 +626,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               Text(
                                 '\$56,000   ',
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: text,
                                     fontWeight: FontWeight.w500,
                                     fontSize: height / 55),
                               ),
@@ -638,6 +647,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text(
                   '  Upcoming Reminders 💎',
                   style: TextStyle(
+                    color: text,
                     fontWeight: FontWeight.w600,
                     fontSize: height / 35,
                   ),
@@ -651,13 +661,13 @@ class _HomeScreenState extends State<HomeScreen> {
               height: height / 4.5,
               width: width / 1.1,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Backgruond,
                 boxShadow: [
                   BoxShadow(
                     offset: Offset(0, 1),
                     spreadRadius: 1,
                     blurRadius: 0.5,
-                    color: Colors.black12,
+                    color: boder,
                   )
                 ],
                 borderRadius: BorderRadius.circular(10),
@@ -670,6 +680,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text(
                     'Set Transaction Reminers',
                     style: TextStyle(
+                        color: text,
                         fontSize: height / 40, fontWeight: FontWeight.w500),
                   ),
                   SizedBox(
@@ -697,13 +708,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: width / 2,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: Colors.black,
+                      color: text,
                     ),
                     child: Center(
                         child: Text(
                       'Upgrade Now',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Backgruond,
                           fontSize: height / 45,
                           fontWeight: FontWeight.w600),
                     )),
@@ -720,7 +731,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text(
                   '  Articles  ',
                   style: TextStyle(
-                    color: Colors.black,
+                    color: text,
                     fontWeight: FontWeight.w600,
                     fontSize: height / 40,
                   ),
@@ -736,7 +747,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: TextStyle(
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
-                      color: Colors.black54),
+                      color: text),
                 )
               ],
             ),
@@ -747,14 +758,14 @@ class _HomeScreenState extends State<HomeScreen> {
               height: height / 9,
               width: width / 1.1,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Backgruond,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
                     offset: Offset(0, 1),
                     spreadRadius: 1,
                     blurRadius: 0.5,
-                    color: Colors.black12,
+                    color: boder,
                   )
                 ],
               ),
@@ -764,7 +775,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: height / 9,
                     width: width / 4,
                     decoration: BoxDecoration(
-                        color: Colors.black,
+                        color: Backgruond,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
                             bottomLeft: Radius.circular(10))),
@@ -777,6 +788,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           'How to integrate Expenes\nManager in your life?',
                           style: TextStyle(
+                            color: text,
                             fontWeight: FontWeight.w400,
                             fontSize: 16,
                           ),
@@ -786,7 +798,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 35, top: 50),
-                    child: Icon(Icons.share),
+                    child: Icon(Icons.share,color: text,),
                   )
                 ],
               ),
@@ -798,14 +810,14 @@ class _HomeScreenState extends State<HomeScreen> {
               height: height / 9,
               width: width / 1.1,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Backgruond,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
                     offset: Offset(0, 1),
                     spreadRadius: 1,
                     blurRadius: 0.5,
-                    color: Colors.black12,
+                    color: boder,
                   )
                 ],
               ),
@@ -815,7 +827,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: height / 9,
                     width: width / 4,
                     decoration: BoxDecoration(
-                        color: Colors.black,
+                        color: Backgruond,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
                             bottomLeft: Radius.circular(10))),
@@ -828,6 +840,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           'How to integrate Expenes\nManager in your life?',
                           style: TextStyle(
+                            color: text,
                             fontWeight: FontWeight.w400,
                             fontSize: 16,
                           ),
@@ -837,7 +850,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 35, top: 50),
-                    child: Icon(Icons.share),
+                    child: Icon(Icons.share,color: text,),
                   )
                 ],
               ),
@@ -849,14 +862,14 @@ class _HomeScreenState extends State<HomeScreen> {
               height: height / 9,
               width: width / 1.1,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Backgruond,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
                     offset: Offset(0, 1),
                     spreadRadius: 1,
                     blurRadius: 0.5,
-                    color: Colors.black12,
+                    color: boder,
                   )
                 ],
               ),
@@ -866,7 +879,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: height / 9,
                     width: width / 4,
                     decoration: BoxDecoration(
-                        color: Colors.black,
+                        color: Backgruond,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
                             bottomLeft: Radius.circular(10))),
@@ -879,6 +892,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           'How to integrate Expenes\nManager in your life?',
                           style: TextStyle(
+                            color: text,
                             fontWeight: FontWeight.w400,
                             fontSize: 16,
                           ),
@@ -888,13 +902,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 35, top: 50),
-                    child: Icon(Icons.share),
+                    child: Icon(Icons.share,color: text,),
                   )
                 ],
               ),
             ),
             SizedBox(
-              height: 50,
+              height: 100,
             ),
           ],
         ),

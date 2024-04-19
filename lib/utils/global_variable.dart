@@ -21,12 +21,19 @@ bool isEditing = false;
 int isEditingIndex = 0;
 double spending = 0, income = 0, balance = 0;
 
-Map<String, double> dataMap = {
+Map<String, double> dataMapIncome = {
+   'Flutter': 0,
+   'Dart': 0,
+   'Pie': 0,
+   'Chart': 0,
+};
+Map<String, double> dataMapEaxpens = {
   'Flutter': 5,
   'Dart': 3,
   'Pie': 2,
   'Chart': 2,
 };
+
 
 File? imgPath;
 
