@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 List categoriesList = [
   {
     'icon': Icon(
-      Icons.menu_outlined,
+      Icons.more_horiz,
       color: Colors.teal,
     ),
     'name': 'Others',
@@ -91,15 +91,28 @@ List incomeCategoryList = [
   {
     'icon': Icon(
       Icons.shopping_cart,
-      color: Colors.teal,
+      color: Colors.blueAccent,
     ),
     'name': 'Sold Items',
   },
   {
     'icon': Icon(
       Icons.discount,
-      color: Colors.purpleAccent,
+      color: Colors.purple,
     ),
     'name': 'Coupons',
   },
+];
+
+List categoryIconColorList = [
+  Colors.teal,
+  Colors.orange,
+  Colors.blueAccent,
+  Colors.purple,
+  Colors.green,
+  Colors.red,
+  Colors.orange,
+  Colors.purpleAccent,
+  Colors.black,
+  Colors.green,
 ];

@@ -25,7 +25,10 @@ class _AddIncomeState extends State<AddIncome> {
           textInputAction: TextInputAction.next,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
-            prefixIcon: Icon(Icons.currency_rupee),
+            prefixIcon: Icon(
+              Icons.currency_rupee,
+              color: categoryIconColorList[selectedCategoryIndexIncome],
+            ),
             suffixIcon: Icon(Icons.calculate_outlined),
             labelText: 'Amount',
             focusedBorder: OutlineInputBorder(
@@ -84,6 +87,7 @@ class _AddIncomeState extends State<AddIncome> {
                                         incomeCategoryList[index]['name'];
                                     transactionIncome['categoryIcon'] =
                                         incomeCategoryList[index]['icon'];
+                                    selectedCategoryIndexIncome = index;
                                     Navigator.pop(context);
                                   });
                                 },
@@ -135,16 +139,13 @@ class _AddIncomeState extends State<AddIncome> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      left: width / 29, right: width / 200, top: width / 100),
+                      left: width / 29, right: width / 200, top: width / 29),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                         children: [
-                          Icon(
-                            Icons.more_horiz,
-                            size: width / 15,
-                          ),
+                          categoriesList[selectedCategoryIndexIncome]['icon'],
                           SizedBox(
                             width: 15,
                           ),
@@ -155,8 +156,7 @@ class _AddIncomeState extends State<AddIncome> {
                           )
                         ],
                       ),
-                      IconButton(
-                          onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
+                      Icon(Icons.arrow_forward_ios)
                     ],
                   ),
                 )
@@ -212,8 +212,10 @@ class _AddIncomeState extends State<AddIncome> {
                         setState(() {
                           isCashInIncome = false;
                           transactionIncome['payment'] = "Bank";
-                          transactionIncome['paymentIcon'] =
-                              Icon(Icons.food_bank);
+                          transactionIncome['paymentIcon'] = Icon(
+                            Icons.account_balance,
+                            color: Colors.blue,
+                          );
                           Navigator.pop(context);
                         });
                       },
@@ -261,7 +263,10 @@ class _AddIncomeState extends State<AddIncome> {
                         setState(() {
                           isCashInIncome = true;
                           transactionIncome['payment'] = "Cash";
-                          transactionIncome['paymentIcon'] = Icon(Icons.money);
+                          transactionIncome['paymentIcon'] = Icon(
+                            Icons.money,
+                            color: Colors.green,
+                          );
                           Navigator.pop(context);
                         });
                       },
@@ -311,14 +316,18 @@ class _AddIncomeState extends State<AddIncome> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      left: width / 29, right: width / 30, top: width / 30),
+                      left: width / 29, right: width / 120, top: width / 30),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                         children: [
                           Icon(
-                            Icons.money,
+                            (!isCashInIncome)
+                                ? Icons.account_balance
+                                : Icons.money,
+                            color: categoryIconColorList[
+                                selectedCategoryIndexIncome],
                             size: width / 15,
                           ),
                           SizedBox(
@@ -352,7 +361,10 @@ class _AddIncomeState extends State<AddIncome> {
         TextField(
           controller: transactionIncome['note'],
           decoration: InputDecoration(
-            prefixIcon: Icon(Icons.note_alt_outlined),
+            prefixIcon: Icon(
+              Icons.note_alt_outlined,
+              color: categoryIconColorList[selectedCategoryIndexIncome],
+            ),
             labelText: 'Write a note',
             labelStyle: TextStyle(color: Colors.grey),
             focusedBorder: OutlineInputBorder(
@@ -365,7 +377,10 @@ class _AddIncomeState extends State<AddIncome> {
         ),
         TextField(
           decoration: InputDecoration(
-            prefixIcon: Icon(Icons.numbers),
+            prefixIcon: Icon(
+              Icons.numbers,
+              color: categoryIconColorList[selectedCategoryIndexIncome],
+            ),
             labelText: 'Add tags',
             labelStyle: TextStyle(color: Colors.grey),
             focusedBorder: OutlineInputBorder(
@@ -377,7 +392,10 @@ class _AddIncomeState extends State<AddIncome> {
           height: height / 35,
         ),
         ListTile(
-          leading: Icon(Icons.photo_album_outlined),
+          leading: Icon(
+            Icons.photo_album_outlined,
+            color: categoryIconColorList[selectedCategoryIndexIncome],
+          ),
           title: Text('Add photo'),
           trailing: Icon(Icons.arrow_forward_ios),
         ),

@@ -22,13 +22,12 @@ class _AddTransactionState extends State<AddTransaction> {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            if (isExpense) {
-              txtExpenseNote.clear();
-              txtAmountExpense.clear();
-            } else {
-              txtIncomeNote.clear();
-              txtAmountIncome.clear();
-            }
+            txtExpenseNote.clear();
+            txtAmountExpense.clear();
+
+            txtIncomeNote.clear();
+            txtAmountIncome.clear();
+            isExpense = true;
 
             Navigator.pop(context);
           },
@@ -50,46 +49,76 @@ class _AddTransactionState extends State<AddTransaction> {
         onPressed: () {
           // String tempAmount = transactionExpense[0]['amount'].text;
           // String tempAmountI = transactionIncome[0]['amount'].text;
-          Map map = {
-            'amount': txtAmountExpense.text,
-            'category': transactionExpense['category'],
-            'payment': "Cash",
-            'categoryIcon': transactionExpense['categoryIcon'],
-            'paymentIcon': transactionExpense['paymentIcon'],
-            'note': txtExpenseNote,
-            'isExpense': true,
-          };
+          if ((isExpense && txtAmountExpense.text.isNotEmpty && !isEditing) ||
+              (!isExpense && txtAmountIncome.text.isNotEmpty && !isEditing)) {
+            if (!isEditing) {
+              Map map = {
+                'amount': txtAmountExpense.text,
+                'category': transactionExpense['category'],
+                'payment': transactionExpense['payment'],
+                'categoryIcon': transactionExpense['categoryIcon'],
+                'paymentIcon': transactionExpense['paymentIcon'],
+                'note': txtExpenseNote.text,
+                'categoryIconColor': selectedCategoryIndexExpense,
+                'isExpense': true,
+              };
 
-          Map map1 = {
-            'amount': txtAmountIncome.text,
-            'category': "Others",
-            'payment': "Cash",
-            'categoryIcon': transactionIncome['categoryIcon'],
-            'paymentIcon': transactionIncome['paymentIcon'],
-            'note': txtIncomeNote,
-            'isExpense': false,
-          };
+              Map map1 = {
+                'amount': txtAmountIncome.text,
+                'category': transactionIncome['category'],
+                'payment': transactionIncome['payment'],
+                'categoryIcon': transactionIncome['categoryIcon'],
+                'paymentIcon': transactionIncome['paymentIcon'],
+                'note': txtIncomeNote.text,
+                'categoryIconColor': selectedCategoryIndexIncome,
+                'isExpense': false,
+              };
 
-          transactionExpense['category'] = "Others";
-          // transactionExpense['categoryIcon'] = Icon(Icons.more_horiz);
-          // transactionIncome['categoryIcon']=Icon(Icons.more_horiz);
-          // transactionExpense['amount'] =  txtAmountExpense.text;
-          // transactionIncome['amount'] =  txtAmountIncome.text;
+              setValuesDefault();
 
-          (isExpense)
-              ? transactionData.add(map)
-              : transactionData.add(map1);
+              (isExpense)
+                  ? transactionData.add(map)
+                  : transactionData.add(map1);
 
-          txtAmountExpense.clear();
-          txtAmountIncome.clear();
+              txtAmountExpense.clear();
+              txtAmountIncome.clear();
+              txtIncomeNote.clear();
+              txtExpenseNote.clear();
+              isExpense = true;
+              Navigator.pushReplacementNamed(context, '/bottem');
+            } else {
+              setState(() {
+                showText = true;
+                invalidInputTimer();
+              });
+            }
+          } else {
+            if (isExpense) {
+              transactionData[isEditingIndex]['amount'] = txtAmountExpense.text;
+              transactionData[isEditingIndex]['categoryIcon'] =
+                  transactionExpense['categoryIcon'];
+              transactionData[isEditingIndex]['paymentIcon'] =
+                  transactionExpense['paymentIcon'];
+              transactionData[isEditingIndex]['isExpense'] = true;
+              isEditing = false;
+              Navigator.pushReplacementNamed(context, '/bottem');
+            } else {
+              transactionData[isEditingIndex]['amount'] = txtAmountIncome.text;
+              transactionData[isEditingIndex]['categoryIcon'] =
+                  transactionIncome['categoryIcon'];
+              transactionData[isEditingIndex]['paymentIcon'] =
+                  transactionIncome['paymentIcon'];
+              transactionData[isEditingIndex]['isExpense'] = false;
+              isEditing = false;
+              Navigator.pushReplacementNamed(context, '/bottem');
+            }
+          }
           // txtExpenseNote.clear();
           // txtIncomeNote.clear();
           // transactionIncome.remove('amount');
-          Navigator.pushReplacementNamed(context, '/bottem');
         },
       ),
       body: SingleChildScrollView(
-
         scrollDirection: Axis.vertical,
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.03, vertical: 10),
@@ -214,5 +243,35 @@ class _AddTransactionState extends State<AddTransaction> {
         ),
       ),
     );
+  }
+
+  void invalidInputTimer() {
+    Future.delayed(Duration(seconds: 3), () {
+      setState(() {
+        showText = false;
+      });
+    });
+  }
+
+  void setValuesDefault() {
+    setState(() {
+      transactionExpense['category'] = "Others";
+      transactionExpense['payment'] = "Cash";
+      transactionExpense['categoryIcon'] = Icon(
+        Icons.more_horiz,
+      );
+      transactionIncome['categoryIcon'] = Icon(Icons.more_horiz);
+      transactionIncome['paymentIcon'] = Icon(
+        Icons.money,
+        color: Colors.green,
+      );
+      transactionExpense['paymentIcon'] = Icon(
+        Icons.money,
+        color: Colors.green,
+      );
+      transactionIndexedStackIndex = 0;
+      selectedCategoryIndexExpense = 0;
+      selectedCategoryIndexIncome = 0;
+    });
   }
 }

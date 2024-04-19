@@ -2,19 +2,29 @@ import 'package:budget_tracker_app/utils/color.dart';
 import 'package:budget_tracker_app/view/screens/About/about.dart';
 import 'package:budget_tracker_app/view/screens/Account/Account.dart';
 import 'package:budget_tracker_app/view/screens/Add_Transaction/Add-transaction.dart';
+import 'package:budget_tracker_app/view/screens/Refrencial/refrence1.dart';
 import 'package:budget_tracker_app/view/screens/Setting/setting.dart';
+import 'package:budget_tracker_app/view/screens/SplashScreen/intro_get_start.dart';
+import 'package:budget_tracker_app/view/screens/SplashScreen/introprivacy.dart';
 import 'package:budget_tracker_app/view/screens/SplashScreen/splash.dart';
+import 'package:budget_tracker_app/view/screens/SplashScreen/splash4.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytic_2.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
 import 'package:budget_tracker_app/view/screens/bottem_navigation_bar/bottem.dart';
 import 'package:budget_tracker_app/view/screens/homeScreen/home.dart';
 import 'package:budget_tracker_app/view/screens/homeScreen/providers/homeProvider.dart';
 import 'package:budget_tracker_app/view/screens/log_in/login.dart';
+import 'package:budget_tracker_app/view/screens/moreScreen/Transaction.dart';
+import 'package:budget_tracker_app/view/screens/moreScreen/budget.dart';
+import 'package:budget_tracker_app/view/screens/moreScreen/categories.dart';
 import 'package:budget_tracker_app/view/screens/moreScreen/more.dart';
+import 'package:budget_tracker_app/view/screens/moreScreen/reminder.dart';
+import 'package:budget_tracker_app/view/screens/moreScreen/tags.dart';
 import 'package:budget_tracker_app/view/screens/sign_up/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: (dark) ? Colors.white : Colors.black));
@@ -48,6 +58,15 @@ class BudgetTracker extends StatelessWidget {
           '/add': (context) => const AddTransaction(),
           '/setting': (context) => const Setting(),
           '/analytics2': (context) => const Analytics2(),
+          '/Referrals': (context) => const Referrals(),
+          '/Splash': (context) => const Splash(),
+          '/reminder': (context) => const Reminder(),
+          '/cat': (context) => const Categories(),
+          '/privacy': (context) => const Privacy(),
+          '/getstarted': (context) => const Get_started(),
+          '/transationa': (context) => const Transationa(),
+          '/budgets': (context) => const Budgets(),
+          '/tags': (context) => const Tags(),
         },
       ),
     );
