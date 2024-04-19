@@ -1,8 +1,9 @@
 import 'dart:io';
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-
 import '../../../utils/global_variable.dart';
 import '../log_in/login.dart';
 
@@ -27,7 +28,7 @@ class _MoreScreenState extends State<MoreScreen> {
                   EdgeInsets.symmetric(vertical: 10, horizontal: width / 29),
               child: Column(
                 children: [
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   Row(
                     children: [
                       InkWell(
@@ -84,7 +85,7 @@ class _MoreScreenState extends State<MoreScreen> {
                 ],
               ),
             ),
-            Divider(),
+            const Divider(),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: Column(
@@ -260,8 +261,8 @@ class _MoreScreenState extends State<MoreScreen> {
                                   color: Colors.black12,
                                   offset: Offset(2, 4),
                                   blurRadius: 10,
-                                  spreadRadius: 2)
-                            ]),
+                                  spreadRadius: 2),
+                            ],),
                         child: Row(
                           children: [
                             Padding(
@@ -285,35 +286,77 @@ class _MoreScreenState extends State<MoreScreen> {
                           ],
                         ),
                       ),
-                      Container(
-                        height: height * 0.068,
-                        width: width * 0.45,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.black12,
-                                  offset: Offset(2, 4),
-                                  blurRadius: 10,
-                                  spreadRadius: 2)
-                            ]),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: Icon(
-                                Icons.diamond_outlined,
-                                color: Colors.amber.shade400,
-                                size: height * 0.034,
+                      InkWell(
+                        onTap: () {
+                          showModalBottomSheet(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return SizedBox(
+                                height: 350,
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      height: height / 4,
+                                      width: width,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: AssetImage('assets/img/sheet.jpeg'),
+                                        )
+                                      ),
+                                      child: Image.asset('assets/img/logo.png'),
+                                    ),
+                                    SizedBox(height: height/20,),
+                                    Container(
+                                      alignment: Alignment.center,
+                                      height: height / 18,
+                                      width: width/1.2,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Text('Show Premium Plans',style: GoogleFonts.poppins(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w500,
+                                      ),),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        child: Container(
+                          height: height * 0.068,
+                          width: width * 0.45,
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: const [
+                                BoxShadow(
+                                    color: Colors.black12,
+                                    offset: Offset(2, 4),
+                                    blurRadius: 10,
+                                    spreadRadius: 2)
+                              ]),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 20),
+                                child: Icon(
+                                  Icons.diamond_outlined,
+                                  color: Colors.amber.shade400,
+                                  size: height * 0.034,
+                                ),
                               ),
-                            ),
-                            Text(
-                              "Go Premium",
-                              style: TextStyle(fontSize: height * 0.018),
-                            ),
-                          ],
+                              Text(
+                                "Go Premium",
+                                style: TextStyle(fontSize: height * 0.018),
+                              ),
+                            ],
+                          ),
                         ),
                       )
                     ],
@@ -332,7 +375,7 @@ class _MoreScreenState extends State<MoreScreen> {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                   color: Colors.black12,
                                   offset: Offset(2, 4),
@@ -356,14 +399,14 @@ class _MoreScreenState extends State<MoreScreen> {
                           ),
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
                         height: height * 0.11,
                         width: width * 0.28,
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                   color: Colors.black12,
                                   offset: Offset(2, 4),
@@ -387,7 +430,7 @@ class _MoreScreenState extends State<MoreScreen> {
                           ),
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
                         height: height * 0.11,
                         width: width * 0.28,
