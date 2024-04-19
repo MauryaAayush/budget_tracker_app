@@ -140,7 +140,7 @@ class _MainAnalyticsState extends State<MainAnalytics> {
             Container(
               height: height / 1.7,
               child: IndexedStack(
-                index: 1,
+                index: analyticsIndexedStack,
                 children: [
                   Analytics2(),
                   AnalyticsScreen(),
