@@ -1,4 +1,4 @@
-import 'package:budget_tracker_app/utils/transactionData.dart';
+//import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:curved_nav_bar/curved_bar/curved_action_bar.dart';
 import 'package:curved_nav_bar/fab_bar/fab_bottom_app_bar_item.dart';
 import 'package:curved_nav_bar/flutter_curved_bottom_nav_bar.dart';
@@ -7,19 +7,11 @@ import 'package:flutter/material.dart';
 import '../../../utils/color.dart';
 import '../../../utils/global_variable.dart';
 import '../Account/Account.dart';
-// import '../Add_Transaction/Add-transaction.dart';
+import '../analyticsScreen/analytic_2.dart';
 import '../analyticsScreen/analytics.dart';
 import '../homeScreen/home.dart';
 import '../moreScreen/more.dart';
 
-class bottemscreen extends StatelessWidget {
-  const bottemscreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return BottemScreen();
-  }
-}
 
 class BottemScreen extends StatefulWidget {
   const BottemScreen({super.key});
@@ -124,7 +116,7 @@ class _SectionState extends State<BottemScreen> {
           ],
           bodyItems: [
             HomeScreen(),
-            AnalyticsScreen(),
+            (analtic)?AnalyticsScreen():Analytics2(),
             Account(),
             MoreScreen(),
           ],

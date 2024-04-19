@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-
+bool analtic = true;
 bool switchValue = false;
 bool isExpense = true;
 int transactionIndexedStackIndex = 0;

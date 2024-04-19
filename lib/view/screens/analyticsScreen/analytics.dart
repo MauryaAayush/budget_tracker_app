@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/global_variable.dart';
+
 class AnalyticsScreen extends StatefulWidget {
   const AnalyticsScreen({super.key});
 
@@ -115,7 +117,8 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                 InkWell(
                   onTap: () {
                     setState(() {
-                      Navigator.pushNamed(context, '/analytics2');
+                      analtic = false;
+                      // Navigator.pushNamed(context, '/analytics2');
                     });
                   },
                     child: Icon(Icons.arrow_back_ios)),
