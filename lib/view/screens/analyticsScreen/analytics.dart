@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../utils/global_variable.dart';
+import '../pdf/pdfScreen.dart';
 
 class AnalyticsScreen extends StatefulWidget {
   const AnalyticsScreen({super.key});
@@ -29,9 +30,15 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                       color: Colors.black),
                 ),
                 Spacer(),
-                Icon(
-                  Icons.download,
-                  color: Colors.black,
+                IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => PdfScreen()));
+                  },
+                  icon: Icon(
+                    Icons.download,
+                    color: Colors.black,
+                  ),
                 )
               ],
             ),
@@ -115,12 +122,12 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InkWell(
-                  onTap: () {
-                    setState(() {
-                      analtic = false;
-                      // Navigator.pushNamed(context, '/analytics2');
-                    });
-                  },
+                    onTap: () {
+                      setState(() {
+                        analtic = false;
+                        // Navigator.pushNamed(context, '/analytics2');
+                      });
+                    },
                     child: Icon(Icons.arrow_back_ios)),
                 Text(
                   'May 2024',
