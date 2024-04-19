@@ -49,7 +49,7 @@ class BudgetTracker extends StatelessWidget {
           '/': (context) => const SplashScreen(),
           '/signUp': (context) => const SignUp(),
           '/login': (context) => const LogIn(),
-          '/bottem': (context) => BottemScreen(),
+          '/bottem': (context) => const BottemScreen(),
           '/home': (context) => const HomeScreen(),
           '/analytics': (context) => const AnalyticsScreen(),
           '/account': (context) => const Account(),

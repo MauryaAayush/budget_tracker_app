@@ -118,7 +118,13 @@ class _MainAnalyticsState extends State<MainAnalytics> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(Icons.arrow_back_ios),
+                IconButton(onPressed: () {
+                  setState(() {
+                    (analyticsIndexedStack == 1)
+                        ? analyticsIndexedStack = 0
+                        : null;
+                  });
+                },icon: Icon(Icons.arrow_back_ios)),
                 Text(
                   (analyticsIndexedStack == 0) ? 'April 2024' : 'May 2024',
                   style: TextStyle(
@@ -138,7 +144,7 @@ class _MainAnalyticsState extends State<MainAnalytics> {
               ],
             ),
             Container(
-              height: height / 1.7,
+              height: height / 1.5,
               child: IndexedStack(
                 index: analyticsIndexedStack,
                 children: [

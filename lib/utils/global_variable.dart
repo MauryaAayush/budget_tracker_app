@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:flutter/material.dart';
-
+bool Singup = false;
 bool analtic = true;
 bool switchValue = false;
 bool isExpense = true;
@@ -23,11 +23,13 @@ int isEditingIndex = 0;
 double spending = 0, income = 0, balance = 0;
 
 Map<String, double> dataMapIncome = {
-  'Flutter': 0,
+   'Flutter': 0,
 };
 Map<String, double> dataMapEaxpens = {
   'Flutter': 0,
+
 };
+
 
 File? imgPath;
 
@@ -63,5 +65,4 @@ double countBalance() {
   balance = income - spending;
   return balance;
 }
-
-int analyticsIndexedStack = 0;
+int analyticsIndexedStack =0;
