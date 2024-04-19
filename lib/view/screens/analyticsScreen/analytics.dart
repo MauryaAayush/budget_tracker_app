@@ -1,8 +1,6 @@
 import 'package:budget_tracker_app/utils/color.dart';
 import 'package:flutter/material.dart';
 
-import '../../../utils/global_variable.dart';
-
 class AnalyticsScreen extends StatefulWidget {
   const AnalyticsScreen({super.key});
 

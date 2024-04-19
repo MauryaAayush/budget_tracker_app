@@ -73,15 +73,19 @@ class _AboutAppState extends State<AboutApp> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Image.asset(
-                                "assets/img/socialmedia_Icon/instagram.png",
+                                "assets/img/socialmedia_icon/instagram.png",
                                 height: height * 0.03),
                             SizedBox(width: width * 0.05),
                             Image.asset(
-                                "assets/img/socialmedia_Icon/twitter.png",
+                                "assets/img/socialmedia_icon/twitter.png",
                                 height: height * 0.03),
                             SizedBox(width: width * 0.05),
                             Image.asset(
-                                "assets/img/socialmedia_Icon/facebook.png",
+                                "assets/img/socialmedia_icon/linkedin.png",
+                                height: height * 0.03),
+                            SizedBox(width: width * 0.05),
+                            Image.asset(
+                                "assets/img/socialmedia_icon/facebook.png",
                                 height: height * 0.03)
                           ],
                         ),
@@ -151,10 +155,10 @@ class _AboutAppState extends State<AboutApp> {
                       children: [
                         CircleAvatar(
                           maxRadius: height * 0.08,
-                          backgroundImage: AssetImage('assets/img/team/jaydeep.jpg'),
+                          backgroundImage: AssetImage('assets/img/team/Aayush.jpg'),
                         ),
                         Text(
-                          "Ayush Moriya",
+                          "Aayush Maurya",
                           style: TextStyle(
                               fontSize: height * 0.024,
                               fontWeight: FontWeight.w600),
@@ -268,7 +272,7 @@ class _AboutAppState extends State<AboutApp> {
                       children: [
                         CircleAvatar(
                           maxRadius: height * 0.08,
-                          backgroundImage: AssetImage('assets/img/team/jaydeep.jpg'),
+                          backgroundImage: AssetImage('assets/img/team/drashti.jpg'),
                         ),
                         Text(
                           "Drashti",
@@ -307,7 +311,7 @@ class _AboutAppState extends State<AboutApp> {
                       children: [
                         CircleAvatar(
                           maxRadius: height * 0.08,
-                          backgroundImage: AssetImage('assets/img/team/jaydeep.jpg'),
+                          backgroundImage: AssetImage('assets/img/team/Meshva.jpeg'),
                         ),
                         Text(
                           "Meshwa",
