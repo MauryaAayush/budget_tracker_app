@@ -1,3 +1,4 @@
+import 'package:budget_tracker_app/utils/global_variable.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytic_2.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
 import 'package:flutter/cupertino.dart';
@@ -119,10 +120,21 @@ class _MainAnalyticsState extends State<MainAnalytics> {
               children: [
                 Icon(Icons.arrow_back_ios),
                 Text(
-                  'April 2024',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                  (analyticsIndexedStack == 0) ? 'April 2024' : 'May 2024',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white),
                 ),
-                Icon(Icons.arrow_forward_ios),
+                IconButton(
+                    onPressed: () {
+                      setState(() {
+                        (analyticsIndexedStack == 0)
+                            ? analyticsIndexedStack = 1
+                            : null;
+                      });
+                    },
+                    icon: Icon(Icons.arrow_forward_ios)),
               ],
             ),
             Container(
