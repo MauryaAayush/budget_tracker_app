@@ -1,4 +1,5 @@
 //import 'package:budget_tracker_app/utils/transactionData.dart';
+import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:curved_nav_bar/curved_bar/curved_action_bar.dart';
 import 'package:curved_nav_bar/fab_bar/fab_bottom_app_bar_item.dart';
 import 'package:curved_nav_bar/flutter_curved_bottom_nav_bar.dart';
@@ -94,10 +95,11 @@ class _SectionState extends State<BottemScreen> {
                 ),
                 text: 'Analysis'),
             FABBottomAppBarItem(
-                activeIcon: Icon(
-                  Icons.home_work_rounded,
-                  color: (dark) ? Colors.black : Colors.white,
-                ),
+                activeIcon:
+                   Icon(
+                    Icons.home_work_rounded,
+                    color: (dark) ? Colors.black : Colors.white,
+                  ),
                 inActiveIcon: Icon(
                   Icons.home_work_rounded,
                   color: Colors.grey,
@@ -116,7 +118,7 @@ class _SectionState extends State<BottemScreen> {
           ],
           bodyItems: [
             HomeScreen(),
-            (analtic)?AnalyticsScreen():Analytics2(),
+            Analytics2(),
             Account(),
             MoreScreen(),
           ],

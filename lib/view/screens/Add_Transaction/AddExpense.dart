@@ -89,7 +89,6 @@ class _AddExpenseState extends State<AddExpense> {
                                         categoriesList[index]['name'];
                                     transactionExpense['categoryIcon'] =
                                         categoriesList[index]['icon'];
-                                    dataMapEaxpens.putIfAbsent(transactionExpense['category'], () =>txtAmountExpense as double);
                                     selectedCategoryIndexExpense = index;
                                     Navigator.pop(context);
                                   });

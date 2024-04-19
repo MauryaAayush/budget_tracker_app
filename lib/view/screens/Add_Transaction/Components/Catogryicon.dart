@@ -104,7 +104,7 @@ List incomeCategoryList = [
   },
 ];
 
-List categoryIconColorList = [
+List<Color> categoryIconColorList = [
   Colors.teal,
   Colors.orange,
   Colors.blueAccent,

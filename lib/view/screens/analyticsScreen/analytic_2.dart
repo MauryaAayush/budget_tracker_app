@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 import '../../../utils/global_variable.dart';
+import '../Add_Transaction/Components/Catogryicon.dart';
 
 class Analytics2 extends StatefulWidget {
   const Analytics2({super.key});
@@ -166,7 +167,7 @@ class _Analytics2State extends State<Analytics2> {
                                 ),
                               ),
                               Text(
-                                '\$0.00',
+                                  '\$${spendingCounting()}',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: height / 60,
@@ -219,7 +220,7 @@ class _Analytics2State extends State<Analytics2> {
                                 ),
                               ),
                               Text(
-                                '\$0.00',
+                                '\$${earningCounting()}',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: height / 60,
@@ -243,7 +244,7 @@ class _Analytics2State extends State<Analytics2> {
                     color: Colors.black12, borderRadius: BorderRadius.circular(15)),
                 child: Center(
                     child: Text(
-                      "Balance:1,000.0",
+                      "Balance:\u20B9${countBalance()}",
                       style: TextStyle(fontSize: 18),
                     )),
               ),
@@ -353,7 +354,7 @@ class _Analytics2State extends State<Analytics2> {
                           animationDuration: Duration(milliseconds: 800),
                           chartLegendSpacing: 32,
                           chartRadius: MediaQuery.of(context).size.width / 2.7,
-                          colorList: [Colors.blue, Colors.green, Colors.red, Colors.yellow],
+                          colorList: categoryIconColorList,
                            initialAngleInDegree: 10,
                           chartType: ChartType.ring,
                           ringStrokeWidth: 34,
@@ -435,7 +436,7 @@ class _Analytics2State extends State<Analytics2> {
                           animationDuration: Duration(milliseconds: 800),
                           chartLegendSpacing: 32,
                           chartRadius: MediaQuery.of(context).size.width / 2.7,
-                          colorList: [Colors.blue, Colors.green, Colors.red, Colors.yellow],
+                          colorList: categoryIconColorList,
                           initialAngleInDegree: 10,
                           chartType: ChartType.ring,
                           ringStrokeWidth: 34,

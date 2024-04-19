@@ -85,6 +85,18 @@ class _AddTransactionState extends State<AddTransaction> {
               txtIncomeNote.clear();
               txtExpenseNote.clear();
               isExpense = true;
+
+                for(int i=0; i<transactionData.length; i++)
+                {
+                  if(transactionData[i]['isExpense']){dataMapEaxpens.putIfAbsent(transactionData[i]['category'], () => double.parse(transactionData[i]['amount']));}
+                }
+              for(int i=0; i<transactionData.length; i++)
+              {
+                if(transactionData[i]['isExpense']==false){
+                dataMapIncome.putIfAbsent(transactionData[i]['category'], () => double.parse(transactionData[i]['amount']));}
+              }
+
+
               Navigator.pushReplacementNamed(context, '/bottem');
             } else {
               setState(() {

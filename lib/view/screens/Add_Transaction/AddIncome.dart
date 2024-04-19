@@ -87,7 +87,6 @@ class _AddIncomeState extends State<AddIncome> {
                                         incomeCategoryList[index]['name'];
                                     transactionIncome['categoryIcon'] =
                                         incomeCategoryList[index]['icon'];
-                                    dataMapIncome.putIfAbsent(transactionExpense['category'], () =>txtAmountExpense as double);
                                     selectedCategoryIndexIncome = index;
                                     Navigator.pop(context);
                                   });
