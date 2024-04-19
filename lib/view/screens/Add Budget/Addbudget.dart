@@ -182,7 +182,7 @@ class _AddBudgetState extends State<AddBudget> {
               children: [
                 Text('   It is an intuitive and simple plan to help you reach your\n   financial goal. This rule is a template that is intended\n   to help you manage your money and to save for \n   emergencies and retirement.',style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 15.5,
+                    fontSize: height/60,
                     color: Colors.black
                 ),)
               ],
@@ -194,7 +194,7 @@ class _AddBudgetState extends State<AddBudget> {
               children: [
                 Text('   It asks you to break your in-hand income into three \n   parts: 50% goes to your needs, 30% to wants and 20% \n   and investing. This will instill a sense of discipline at\n   same time ensuring you neither compromise on the\n   quality of living nor planning for your long term goals.',style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 15.5,
+                    fontSize: height/60,
                     color: Colors.black
                 ),)
               ],
