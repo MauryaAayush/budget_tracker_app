@@ -57,18 +57,34 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 28),
+                padding: EdgeInsets.symmetric(horizontal: width * 0.025),
                 child: Row(
                   children: [
-                    Text(
-                      'Week',
-                      style: TextStyle(fontSize: 16, color: text),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          weekMonthYear = 0;
+                        });
+                      },
+                      child: Container(
+                        height: height / 25,
+                        width: width / 7,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            color: (weekMonthYear == 0) ? Colors.white : null,
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Text(
+                          'Week',
+                          style: TextStyle(fontSize: 16, color: text),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: width / 25,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 4.0, vertical: 4),
                       child: VerticalDivider(
                         width: 1,
                         thickness: 2,
@@ -77,15 +93,31 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                     SizedBox(
                       width: width / 30,
                     ),
-                    Text(
-                      'Month',
-                      style: TextStyle(fontSize: 16, color: text),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          weekMonthYear = 1;
+                        });
+                      },
+                      child: Container(
+                        height: height / 25,
+                        width: width / 7,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            color: (weekMonthYear == 1) ? Colors.white : null,
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Text(
+                          'Month',
+                          style: TextStyle(fontSize: 16, color: text),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: width / 25,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 4.0, vertical: 4),
                       child: VerticalDivider(
                         width: 1,
                         thickness: 2,
@@ -94,15 +126,31 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                     SizedBox(
                       width: width / 30,
                     ),
-                    Text(
-                      'Year',
-                      style: TextStyle(fontSize: 16, color: text),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          weekMonthYear = 2;
+                        });
+                      },
+                      child: Container(
+                        height: height / 25,
+                        width: width / 7,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            color: (weekMonthYear == 2) ? Colors.white : null,
+                            borderRadius: BorderRadius.circular(8)),
+                        child: Text(
+                          'Year',
+                          style: TextStyle(fontSize: 16, color: text),
+                        ),
+                      ),
                     ),
                     SizedBox(
                       width: width / 25,
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 4.0, vertical: 4),
                       child: VerticalDivider(
                         width: 1,
                         thickness: 2,
@@ -135,7 +183,19 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                     },
                     icon: Icon(Icons.arrow_back_ios)),
                 Text(
-                  (analyticsIndexedStack == 0) ? 'April 2024' : 'May 2024',
+                  (weekMonthYear == 1)
+                      ? (analyticsIndexedStack == 0)
+                          ? 'April 2024'
+                          : 'May 2024'
+                      : (weekMonthYear == 0)
+                          ? (analyticsIndexedStack == 0)
+                              ? '1-7 April'
+                              : '8-14 April'
+                          : (weekMonthYear == 2)
+                              ? (analyticsIndexedStack == 0)
+                                  ? '2024'
+                                  : '2025'
+                              : "",
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
