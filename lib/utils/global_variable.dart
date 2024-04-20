@@ -21,7 +21,12 @@ TextEditingController txtIncomeNote = TextEditingController();
 bool showText = false;
 bool isEditing = false;
 int isEditingIndex = 0;
+int expenseLengthTransaction = 0;
+int incomeLengthTransaction = 0;
 double spending = 0, income = 0, balance = 0;
+
+String selectedCurrencyToShow = "INR";
+String currencyCode = "\u20B9";
 
 Map<String, double> dataMapIncome = {
   'Flutter': 0,
@@ -40,22 +45,36 @@ String? textPassword1;
 
 String spendingCounting() {
   double sum = 0;
+  int expenseLength = 0;
   for (int i = 0; i < transactionData.length; i++) {
     sum += (transactionData[i]['isExpense'])
         ? int.parse(transactionData[i]['amount'])
         : 0;
   }
+  for (int i = 0; i < transactionData.length; i++) {
+    if (transactionData[i]['isExpense']) {
+      expenseLength++;
+    }
+  }
+  expenseLengthTransaction = expenseLength;
   spending = sum;
   return sum.toString();
 }
 
 String earningCounting() {
+  int incomeLength = 0;
   double sum = 0;
   for (int i = 0; i < transactionData.length; i++) {
     sum += (transactionData[i]['isExpense'] == false)
         ? int.parse(transactionData[i]['amount'])
         : 0;
   }
+  for (int i = 0; i < transactionData.length; i++) {
+    if (!transactionData[i]['isExpense']) {
+      incomeLength++;
+    }
+  }
+  incomeLengthTransaction = incomeLength;
   income = sum;
   return sum.toString();
 }
@@ -63,6 +82,20 @@ String earningCounting() {
 double countBalance() {
   balance = income - spending;
   return balance;
+}
+
+void currencyChanger() {
+  if (selectedCurrencyToShow == "INR") {
+    currencyCode = "\u20B9";
+  } else if (selectedCurrencyToShow == "USD") {
+    currencyCode = "\$";
+  } else if (selectedCurrencyToShow == "CAD") {
+    currencyCode = "C\$";
+  } else if (selectedCurrencyToShow == "JPY") {
+    currencyCode = "¥";
+  } else if (selectedCurrencyToShow == "EUR") {
+    currencyCode = "€";
+  }
 }
 
 int analyticsIndexedStack = 0;

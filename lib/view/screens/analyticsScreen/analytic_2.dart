@@ -1,3 +1,4 @@
+import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 import '../../../utils/global_variable.dart';
@@ -59,7 +60,7 @@ class _Analytics2State extends State<Analytics2> {
                           ),
                         ),
                         Text(
-                          '\$${spendingCounting()}',
+                          '$currencyCode${spendingCounting()}',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: height / 60,
@@ -112,7 +113,7 @@ class _Analytics2State extends State<Analytics2> {
                           ),
                         ),
                         Text(
-                          '\$${earningCounting()}',
+                          '$currencyCode${earningCounting()}',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: height / 60,
@@ -136,7 +137,7 @@ class _Analytics2State extends State<Analytics2> {
               color: Colors.black12, borderRadius: BorderRadius.circular(15)),
           child: Center(
               child: Text(
-            "Balance:\u20B9${countBalance()}",
+            "Balance:$currencyCode${countBalance()}",
             style: TextStyle(fontSize: 18),
           )),
         ),
@@ -497,7 +498,7 @@ class _Analytics2State extends State<Analytics2> {
                       width: width / 4.9,
                     ),
                     Text(
-                      "2",
+                      "${transactionData.length}",
                       style: TextStyle(
                         fontSize: 18,
                       ),
@@ -516,25 +517,6 @@ class _Analytics2State extends State<Analytics2> {
                 Row(
                   children: [
                     Text(
-                      "Per day",
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
-                    SizedBox(
-                      width: width / 1.9,
-                    ),
-                    Text(
-                      "62.5",
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
                       "Per trandaction",
                       style: TextStyle(
                         fontSize: 18,
@@ -544,7 +526,7 @@ class _Analytics2State extends State<Analytics2> {
                       width: width / 3,
                     ),
                     Text(
-                      "500.0",
+                      "$currencyCode${spending / expenseLengthTransaction!}",
                       style: TextStyle(
                         fontSize: 18,
                       ),
@@ -563,25 +545,6 @@ class _Analytics2State extends State<Analytics2> {
                 Row(
                   children: [
                     Text(
-                      "Per day",
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
-                    ),
-                    SizedBox(
-                      width: width / 1.9,
-                    ),
-                    Text(
-                      "0.00",
-                      style: TextStyle(
-                        fontSize: 18,
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
                       "Per trandaction",
                       style: TextStyle(
                         fontSize: 18,
@@ -591,7 +554,7 @@ class _Analytics2State extends State<Analytics2> {
                       width: width / 2.9,
                     ),
                     Text(
-                      "0.00",
+                      "$currencyCode${income / incomeLengthTransaction!}",
                       style: TextStyle(
                         fontSize: 18,
                       ),

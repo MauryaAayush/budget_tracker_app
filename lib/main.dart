@@ -12,6 +12,7 @@ import 'package:budget_tracker_app/view/screens/SplashScreen/splash4.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytic_2.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
 import 'package:budget_tracker_app/view/screens/bottem_navigation_bar/bottem.dart';
+import 'package:budget_tracker_app/view/screens/currency/currencyScreen.dart';
 import 'package:budget_tracker_app/view/screens/homeScreen/home.dart';
 import 'package:budget_tracker_app/view/screens/homeScreen/providers/homeProvider.dart';
 import 'package:budget_tracker_app/view/screens/log_in/login.dart';
@@ -68,7 +69,8 @@ class BudgetTracker extends StatelessWidget {
           '/transationa': (context) => const Transationa(),
           '/budgets': (context) => const Budgets(),
           '/tags': (context) => const Tags(),
-          '/AddBudget':(context) => const AddBudget(),
+          '/AddBudget': (context) => const AddBudget(),
+          '/currency': (context) => const Currency(),
         },
       ),
     );

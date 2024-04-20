@@ -4,7 +4,6 @@ import 'package:flutter/widgets.dart';
 
 import '../../../utils/global_variable.dart';
 
-
 class Setting extends StatefulWidget {
   const Setting({super.key});
 
@@ -30,7 +29,7 @@ class _SettingState extends State<Setting> {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child:
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(
               "App Icon",
               style: TextStyle(
@@ -53,9 +52,13 @@ class _SettingState extends State<Setting> {
                         borderRadius: BorderRadius.circular(20),
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage("assets/img/images (1).jpeg",))),
+                            image: AssetImage(
+                              "assets/img/images (1).jpeg",
+                            ))),
                   ),
-                  SizedBox(width: width/30,),
+                  SizedBox(
+                    width: width / 30,
+                  ),
                   Container(
                     height: height / 9,
                     width: width / 4,
@@ -64,9 +67,13 @@ class _SettingState extends State<Setting> {
                         borderRadius: BorderRadius.circular(20),
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage("assets/img/img.png",))),
+                            image: AssetImage(
+                              "assets/img/img.png",
+                            ))),
                   ),
-                  SizedBox(width: width/30,),
+                  SizedBox(
+                    width: width / 30,
+                  ),
                   Container(
                     height: height / 9,
                     width: width / 4,
@@ -75,9 +82,13 @@ class _SettingState extends State<Setting> {
                         borderRadius: BorderRadius.circular(20),
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage("assets/img/unnamed.png",))),
+                            image: AssetImage(
+                              "assets/img/unnamed.png",
+                            ))),
                   ),
-                  SizedBox(width: width/30,),
+                  SizedBox(
+                    width: width / 30,
+                  ),
                   Container(
                     height: height / 9,
                     width: width / 4,
@@ -86,7 +97,9 @@ class _SettingState extends State<Setting> {
                         borderRadius: BorderRadius.circular(20),
                         image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: AssetImage("assets/img/images.png",))),
+                            image: AssetImage(
+                              "assets/img/images.png",
+                            ))),
                   )
                 ],
               ),
@@ -135,13 +148,18 @@ class _SettingState extends State<Setting> {
                         color: Colors.grey,
                       ),
                     ),
-                    ListTile(
-                      title: Text(
-                        "Currency & Format",
-                        style: TextStyle(fontSize: 20),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).pushNamed('/currency');
+                      },
+                      child: ListTile(
+                        title: Text(
+                          "Currency & Format",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        subtitle: Text("INR"),
+                        trailing: Icon(Icons.arrow_forward_ios_rounded),
                       ),
-                      subtitle: Text("INR"),
-                      trailing: Icon(Icons.arrow_forward_ios_rounded),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -236,7 +254,7 @@ class _SettingState extends State<Setting> {
                         style: TextStyle(fontSize: 20),
                       ),
                       subtitle:
-                      Text("Notify me Whrn i go off-track With my budget"),
+                          Text("Notify me Whrn i go off-track With my budget"),
                       trailing: Switch(
                         value: switchValue,
                         onChanged: (value) {
@@ -289,8 +307,8 @@ class _SettingState extends State<Setting> {
                       subtitle: Text("Backup my Expenses Manager data"),
                     ),
                     const Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 3),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 3),
                       child: Divider(
                         color: Colors.grey,
                       ),
@@ -357,7 +375,7 @@ class _SettingState extends State<Setting> {
                         style: TextStyle(fontSize: 20),
                       ),
                       subtitle:
-                      Text("Automatically backup data on my G-Drive daily"),
+                          Text("Automatically backup data on my G-Drive daily"),
                       trailing: Switch(
                         value: switchValue,
                         onChanged: (value) {
@@ -420,8 +438,8 @@ class _SettingState extends State<Setting> {
                         ),
                       ),
                       const Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 3),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 15, vertical: 3),
                         child: Divider(
                           color: Colors.grey,
                         ),
@@ -507,8 +525,8 @@ class _SettingState extends State<Setting> {
                       subtitle: Text("FAQs answered by our team"),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 3),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 3),
                       child: Divider(
                         color: Colors.grey,
                       ),
@@ -521,8 +539,8 @@ class _SettingState extends State<Setting> {
                       subtitle: Text("We generally reply within 24 hours"),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 3),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 3),
                       child: Divider(
                         color: Colors.grey,
                       ),
@@ -533,7 +551,7 @@ class _SettingState extends State<Setting> {
                         style: TextStyle(fontSize: 20),
                       ),
                       subtitle:
-                      Text("Not receiving notification for reminders set"),
+                          Text("Not receiving notification for reminders set"),
                     ),
                   ],
                 ),
@@ -575,8 +593,8 @@ class _SettingState extends State<Setting> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 3),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 3),
                       child: Divider(
                         color: Colors.grey,
                       ),
@@ -588,8 +606,8 @@ class _SettingState extends State<Setting> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 3),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 3),
                       child: Divider(
                         color: Colors.grey,
                       ),
@@ -601,8 +619,8 @@ class _SettingState extends State<Setting> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 3),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 3),
                       child: Divider(
                         color: Colors.grey,
                       ),
@@ -614,8 +632,8 @@ class _SettingState extends State<Setting> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 3),
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 15, vertical: 3),
                       child: Divider(
                         color: Colors.grey,
                       ),
@@ -664,12 +682,14 @@ class _SettingState extends State<Setting> {
                   ListTile(
                     title: Text(
                       "Delete Data & Start Afresh",
-                      style: TextStyle(color: Colors.red, fontSize: 20,fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                   Padding(
-                    padding:
-                    EdgeInsets.symmetric(horizontal: 15, vertical: 3),
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 3),
                     child: Divider(
                       color: Colors.grey,
                     ),
@@ -677,7 +697,10 @@ class _SettingState extends State<Setting> {
                   ListTile(
                     title: Text(
                       "Delete Account",
-                      style: TextStyle(color: Colors.red, fontSize: 20,fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.red,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
