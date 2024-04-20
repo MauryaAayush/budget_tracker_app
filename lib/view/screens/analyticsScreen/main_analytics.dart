@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../utils/color.dart';
+import '../pdf/pdfScreen.dart';
 
 class MainAnalytics extends StatefulWidget {
   const MainAnalytics({super.key});
@@ -33,9 +34,15 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                       fontSize: 25, fontWeight: FontWeight.w500, color: text),
                 ),
                 Spacer(),
-                Icon(
-                  Icons.download,
-                  color: text,
+                IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => PdfScreen()));
+                  },
+                  icon: Icon(
+                    Icons.download,
+                    color: text,
+                  ),
                 )
               ],
             ),
@@ -118,13 +125,15 @@ class _MainAnalyticsState extends State<MainAnalytics> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                IconButton(onPressed: () {
-                  setState(() {
-                    (analyticsIndexedStack == 1)
-                        ? analyticsIndexedStack = 0
-                        : null;
-                  });
-                },icon: Icon(Icons.arrow_back_ios)),
+                IconButton(
+                    onPressed: () {
+                      setState(() {
+                        (analyticsIndexedStack == 1)
+                            ? analyticsIndexedStack = 0
+                            : null;
+                      });
+                    },
+                    icon: Icon(Icons.arrow_back_ios)),
                 Text(
                   (analyticsIndexedStack == 0) ? 'April 2024' : 'May 2024',
                   style: TextStyle(
