@@ -17,8 +17,9 @@ class _BudgetsState extends State<Budgets> {
       floatingActionButton: FloatingActionButton(
         shape: CircleBorder(),
         backgroundColor: Colors.black,
-
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/AddBudget');
+        },
         child: Icon(
           Icons.add,
           color: Colors.white,

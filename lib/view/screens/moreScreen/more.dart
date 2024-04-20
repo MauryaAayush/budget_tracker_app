@@ -440,13 +440,20 @@ class _MoreScreenState extends State<MoreScreen> {
                       title: Text("Settings"),
                     ),
                   ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.campaign_outlined,
-                      size: height * 0.032,
-                      color: Colors.black54,
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        Navigator.pushNamed(context, '/Referrals');
+                      });
+                    },
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.campaign_outlined,
+                        size: height * 0.032,
+                        color: Colors.black54,
+                      ),
+                      title: Text("Referrals"),
                     ),
-                    title: Text("Referrals"),
                   ),
                   ListTile(
                     leading: Icon(

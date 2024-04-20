@@ -143,14 +143,16 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                     icon: Icon(Icons.arrow_forward_ios)),
               ],
             ),
-            Container(
-              height: height / 1.5,
-              child: IndexedStack(
-                index: analyticsIndexedStack,
-                children: [
-                  Analytics2(),
-                  AnalyticsScreen(),
-                ],
+            Expanded(
+              child: Container(
+                // height: height / 1.5,
+                child: IndexedStack(
+                  index: analyticsIndexedStack,
+                  children: [
+                    Analytics2(),
+                    AnalyticsScreen(),
+                  ],
+                ),
               ),
             )
           ],

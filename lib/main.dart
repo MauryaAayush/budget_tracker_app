@@ -2,6 +2,7 @@ import 'package:budget_tracker_app/utils/color.dart';
 import 'package:budget_tracker_app/view/screens/About/about.dart';
 import 'package:budget_tracker_app/view/screens/Account/Account.dart';
 import 'package:budget_tracker_app/view/screens/Add_Transaction/Add-transaction.dart';
+import 'package:budget_tracker_app/view/screens/Add_budget/AddBudget.dart';
 import 'package:budget_tracker_app/view/screens/Refrencial/refrence1.dart';
 import 'package:budget_tracker_app/view/screens/Setting/setting.dart';
 import 'package:budget_tracker_app/view/screens/SplashScreen/intro_get_start.dart';
@@ -67,6 +68,7 @@ class BudgetTracker extends StatelessWidget {
           '/transationa': (context) => const Transationa(),
           '/budgets': (context) => const Budgets(),
           '/tags': (context) => const Tags(),
+          '/AddBudget':(context) => const AddBudget(),
         },
       ),
     );
