@@ -2,27 +2,31 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../../utils/color.dart';
 import '../../../utils/global_variable.dart';
+import '../bottem_navigation_bar/bottem.dart';
+import '../homeScreen/home.dart';
 
 class Setting extends StatefulWidget {
   const Setting({super.key});
 
   @override
-  State<Setting> createState() => _SettingState();
+  State<Setting> createState() => SettingState();
 }
 
-class _SettingState extends State<Setting> {
+class SettingState extends State<Setting> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Backgruond,
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Backgruond,
+        iconTheme: IconThemeData(color: text),
         title: Text(
           "Settings",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: text),
         ),
       ),
       body: SingleChildScrollView(
@@ -33,7 +37,7 @@ class _SettingState extends State<Setting> {
             Text(
               "App Icon",
               style: TextStyle(
-                  color: Colors.black,
+                  color: text,
                   fontWeight: FontWeight.w500,
                   fontSize: 25),
             ),
@@ -110,7 +114,7 @@ class _SettingState extends State<Setting> {
             Text(
               "General",
               style: TextStyle(
-                  color: Colors.black,
+                  color: text,
                   fontWeight: FontWeight.w500,
                   fontSize: 25),
             ),
@@ -120,26 +124,84 @@ class _SettingState extends State<Setting> {
                 height: height / 2.3,
                 width: width,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Backgruond,
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.shade300,
 
                         // offset: const Offset(1, 5),
-                        blurRadius: 5,
+                        blurRadius: 0.2,
                         spreadRadius: 1,
                       )
                     ]),
                 child: Column(
                   children: [
-                    ListTile(
-                      title: Text(
-                        "Theme",
-                        style: TextStyle(fontSize: 20),
+                    InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          backgroundColor: Backgruond,
+                          builder: (BuildContext context) {
+                            return Container(
+                              height:height*0.5,
+                              width: width,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  InkWell(
+                                      onTap: () {
+                                        setState(() {
+                                           dark = true;
+                                           Contain = (dark)?Colors.white24: Color(0xff202022) as Color;
+                                           boder =(dark)?Colors.black12:Colors.white24 as Color;
+                                           Backgruond = ((dark)?Colors.white:Colors.black) as Color;
+                                           text = ((dark)?Colors.black:Colors.white) as Color;
+                                           color_sigin_and_login = (dark)?Color(0xff059e2e):Color(0xffffffff);
+                                           Color_backgrond = Color(0xffC8D2CB);
+                                           swithact = (dark)?Colors.black87: Colors.blueAccent as Color;
+                                          Navigator.pop(context);
+                                        });
+                                      },
+                                      child: Text(
+                                    'Light',
+                                    style: TextStyle(color: text,fontSize: 20),
+                                  ),
+                                  ),
+                                  SizedBox(height: 20,),
+                                  InkWell(
+                                    onTap: () {
+                                      setState(() {
+                                        dark = false;
+                                        Contain = (dark)?Colors.white24: Color(0xff202022) as Color;
+                                        boder =(dark)?Colors.black12:Colors.white24 as Color;
+                                         Backgruond = ((dark)?Colors.white:Colors.black) as Color;
+                                         text = ((dark)?Colors.black:Colors.white) as Color;
+                                         color_sigin_and_login = (dark)?Color(0xff059e2e):Color(0xffffffff);
+                                         Color_backgrond = Color(0xffC8D2CB);
+                                        swithact = (dark)?Colors.black87: Colors.blueAccent as Color;
+                                        Navigator.pop(context);
+                                      });
+                                    },
+                                    child: Text(
+                                      'Dark',
+                                      style: TextStyle(color: text,fontSize: 20),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      child: ListTile(
+                        title: Text(
+                          "Theme",
+                          style: TextStyle(color: text,fontSize: 20),
+                        ),
+                        subtitle: (dark)?Text("Light",style: TextStyle(color: text),):Text("Dark",style: TextStyle(color: text),),
+                        trailing: Icon(Icons.arrow_forward_ios_rounded,color: text,),
                       ),
-                      subtitle: Text("Light"),
-                      trailing: Icon(Icons.arrow_forward_ios_rounded),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -155,10 +217,10 @@ class _SettingState extends State<Setting> {
                       child: ListTile(
                         title: Text(
                           "Currency & Format",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 20,color: text),
                         ),
-                        subtitle: Text("INR"),
-                        trailing: Icon(Icons.arrow_forward_ios_rounded),
+                        subtitle: Text("INR",style: TextStyle(color: text),),
+                        trailing: Icon(Icons.arrow_forward_ios_rounded,color: text,),
                       ),
                     ),
                     Padding(
@@ -171,10 +233,10 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Default Payment Mode",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
-                      subtitle: Text("Cash"),
-                      trailing: Icon(Icons.arrow_forward_ios_rounded),
+                      subtitle: Text("Cash",style: TextStyle(color: text),),
+                      trailing: Icon(Icons.arrow_forward_ios_rounded,color: text,),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -186,10 +248,10 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Home Page Balance View",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
-                      subtitle: Text("Show net balance for current month"),
-                      trailing: Icon(Icons.arrow_forward_ios_rounded),
+                      subtitle: Text("Show net balance for current month",style: TextStyle(color: text),),
+                      trailing: Icon(Icons.arrow_forward_ios_rounded,color: text,),
                     ),
                   ],
                 ),
@@ -201,7 +263,7 @@ class _SettingState extends State<Setting> {
             Text(
               "Notifications",
               style: TextStyle(
-                  color: Colors.black,
+                  color: text,
                   fontWeight: FontWeight.w500,
                   fontSize: 25),
             ),
@@ -211,14 +273,14 @@ class _SettingState extends State<Setting> {
                 height: height / 4.4,
                 width: width,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Backgruond,
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.shade300,
 
-                        // offset: const Offset(1, 5),
-                        blurRadius: 5,
+                         //offset: const Offset(1, 5),
+                        blurRadius: 2,
                         spreadRadius: 1,
                       )
                     ]),
@@ -227,9 +289,9 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Daily Reminder",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
-                      subtitle: Text("Remind me daily at 7:00 PM"),
+                      subtitle: Text("Remind me daily at 7:00 PM",style: TextStyle(color: text),),
                       trailing: Switch(
                         value: switchValue,
                         onChanged: (value) {
@@ -251,10 +313,10 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Budget Alerts 💎",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
                       subtitle:
-                          Text("Notify me Whrn i go off-track With my budget"),
+                          Text("Notify me Whrn i go off-track With my budget",style: TextStyle(color: text),),
                       trailing: Switch(
                         value: switchValue,
                         onChanged: (value) {
@@ -276,7 +338,7 @@ class _SettingState extends State<Setting> {
             Text(
               "Backup,Restore & Export",
               style: TextStyle(
-                  color: Colors.black,
+                  color: text,
                   fontWeight: FontWeight.w500,
                   fontSize: 25),
             ),
@@ -286,7 +348,7 @@ class _SettingState extends State<Setting> {
                 height: height / 1.5,
                 width: width,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Backgruond,
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
@@ -299,12 +361,12 @@ class _SettingState extends State<Setting> {
                     ]),
                 child: Column(
                   children: [
-                    const ListTile(
+                    ListTile(
                       title: Text(
                         "Backup Data",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
-                      subtitle: Text("Backup my Expenses Manager data"),
+                      subtitle: Text("Backup my Expenses Manager data",style: TextStyle(color: text),),
                     ),
                     const Padding(
                       padding:
@@ -316,9 +378,9 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Restore Data ",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
-                      subtitle: Text("Restore from an existing backup"),
+                      subtitle: Text("Restore from an existing backup",style: TextStyle(color: text),),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -330,9 +392,9 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Export Data 💎",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
-                      subtitle: Text("Export data to a speadsheet or aPDF"),
+                      subtitle: Text("Export data to a speadsheet or aPDF",style: TextStyle(color: text),),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -344,9 +406,9 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Import Data 💎",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
-                      subtitle: Text("import data from a spreadsheet"),
+                      subtitle: Text("import data from a spreadsheet",style: TextStyle(color: text),),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -358,9 +420,9 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Export Images 💎",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
-                      subtitle: Text("Export all your images to a.Zip file"),
+                      subtitle: Text("Export all your images to a.Zip file",style: TextStyle(color: text),),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(
@@ -372,10 +434,10 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Automatic G-Drive Backup 💎",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
                       subtitle:
-                          Text("Automatically backup data on my G-Drive daily"),
+                          Text("Automatically backup data on my G-Drive daily",style: TextStyle(color: text),),
                       trailing: Switch(
                         value: switchValue,
                         onChanged: (value) {
@@ -397,7 +459,7 @@ class _SettingState extends State<Setting> {
             Text(
               "Security",
               style: TextStyle(
-                  color: Colors.black,
+                  color: text,
                   fontWeight: FontWeight.w500,
                   fontSize: 25),
             ),
@@ -407,7 +469,7 @@ class _SettingState extends State<Setting> {
                   height: height / 3.2,
                   width: width,
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Backgruond,
                       borderRadius: BorderRadius.circular(15),
                       boxShadow: [
                         BoxShadow(
@@ -421,11 +483,11 @@ class _SettingState extends State<Setting> {
                   child: Column(
                     children: [
                       ListTile(
-                        title: const Text(
+                        title:  Text(
                           "Account Balance Lock",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 20,color: text),
                         ),
-                        subtitle: Text("Require biometric to view balances"),
+                        subtitle: Text("Require biometric to view balances",style: TextStyle(color: text),),
                         trailing: Switch(
                           value: switchValue,
                           onChanged: (value) {
@@ -447,9 +509,9 @@ class _SettingState extends State<Setting> {
                       ListTile(
                         title: Text(
                           "App Lock 💎 ",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 20,color: text),
                         ),
-                        subtitle: Text("Set up a security passcode"),
+                        subtitle: Text("Set up a security passcode",style: TextStyle(color: text),),
                         trailing: Switch(
                           value: switchValue,
                           onChanged: (value) {
@@ -471,9 +533,9 @@ class _SettingState extends State<Setting> {
                       ListTile(
                         title: Text(
                           "Biometric Login  💎",
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 20,color: text),
                         ),
-                        subtitle: Text("Unlock the app using biometric login"),
+                        subtitle: Text("Unlock the app using biometric login",style: TextStyle(color: text),),
                         trailing: Switch(
                           value: switchValue,
                           onChanged: (value) {
@@ -494,7 +556,7 @@ class _SettingState extends State<Setting> {
             Text(
               "Help",
               style: TextStyle(
-                  color: Colors.black,
+                  color: text,
                   fontWeight: FontWeight.w500,
                   fontSize: 25),
             ),
@@ -504,7 +566,7 @@ class _SettingState extends State<Setting> {
                 height: height / 3.1,
                 width: width,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Backgruond,
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.shade300,
@@ -515,14 +577,14 @@ class _SettingState extends State<Setting> {
                       )
                     ],
                     borderRadius: BorderRadius.circular(15)),
-                child: const Column(
+                child:  Column(
                   children: [
                     ListTile(
                       title: Text(
                         "FAQ",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
-                      subtitle: Text("FAQs answered by our team"),
+                      subtitle: Text("FAQs answered by our team",style: TextStyle(color: text),),
                     ),
                     Padding(
                       padding:
@@ -534,9 +596,9 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Query And Feedback",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
-                      subtitle: Text("We generally reply within 24 hours"),
+                      subtitle: Text("We generally reply within 24 hours", style: TextStyle(color: text),),
                     ),
                     Padding(
                       padding:
@@ -548,10 +610,10 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Not Receiving Notification?",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
                       subtitle:
-                          Text("Not receiving notification for reminders set"),
+                          Text("Not receiving notification for reminders set",style: TextStyle(color: text),),
                     ),
                   ],
                 ),
@@ -563,7 +625,7 @@ class _SettingState extends State<Setting> {
             Text(
               "More",
               style: TextStyle(
-                  color: Colors.black,
+                  color: text,
                   fontWeight: FontWeight.w500,
                   fontSize: 25),
             ),
@@ -573,7 +635,7 @@ class _SettingState extends State<Setting> {
                 height: height / 2.2,
                 width: width,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Backgruond,
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.shade300,
@@ -584,12 +646,12 @@ class _SettingState extends State<Setting> {
                       )
                     ],
                     borderRadius: BorderRadius.circular(15)),
-                child: const Column(
+                child:  Column(
                   children: [
                     ListTile(
                       title: Text(
                         "Unlock Premium",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
                     ),
                     Padding(
@@ -602,7 +664,7 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Restore Purchases",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
                     ),
                     Padding(
@@ -615,7 +677,7 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Privacy Policy",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
                     ),
                     Padding(
@@ -628,7 +690,7 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "Contact Us",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
                     ),
                     Padding(
@@ -641,7 +703,7 @@ class _SettingState extends State<Setting> {
                     ListTile(
                       title: Text(
                         "About App",
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 20,color: text),
                       ),
                     ),
                   ],
@@ -654,7 +716,7 @@ class _SettingState extends State<Setting> {
             Text(
               "Danger Zone",
               style: TextStyle(
-                  color: Colors.black,
+                  color: text,
                   fontWeight: FontWeight.w500,
                   fontSize: 25),
             ),
@@ -665,7 +727,7 @@ class _SettingState extends State<Setting> {
               height: height / 5.9,
               width: width,
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Backgruond,
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(

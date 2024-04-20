@@ -2,6 +2,8 @@ import 'package:budget_tracker_app/utils/global_variable.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../utils/color.dart';
+
 class Currency extends StatefulWidget {
   const Currency({Key? key});
 
@@ -18,7 +20,7 @@ class _CurrencyState extends State<Currency> {
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Backgruond,
         iconTheme: IconThemeData(color: Colors.white),
         title: Text(
           "Select Your Currency",
@@ -28,42 +30,45 @@ class _CurrencyState extends State<Currency> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          currency("INR", "Indian Rupee", "assets/img/india.jpg"),
-          currency("USD", "United States Dollar", "assets/img/USD.png"),
-          currency("CAD", "Canadian Dollar", "assets/img/CAD.png"),
-          currency("JPY", "Japanese Yen", "assets/img/jpy.jpg"),
-          currency("EUR", "Euro", "assets/img/euro.png"),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 120),
-            child: GestureDetector(
-              onTap: () {
-                selectedCurrencyToShow = selectedCurrency!;
-                currencyChanger();
-                Navigator.of(context).pushReplacementNamed('/bottem');
-              },
-              child: Container(
-                height: height / 15,
-                width: width / 1.5,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Center(
-                  child: Text(
-                    "Confirm",
-                    style: GoogleFonts.poppins(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
+      body: SingleChildScrollView(
+        physics: ScrollPhysics(),
+        child: Column(
+          children: [
+            currency("INR", "Indian Rupee", "assets/img/india.jpg"),
+            currency("USD", "United States Dollar", "assets/img/USD.png"),
+            currency("CAD", "Canadian Dollar", "assets/img/CAD.png"),
+            currency("JPY", "Japanese Yen", "assets/img/jpy.jpg"),
+            currency("EUR", "Euro", "assets/img/euro.png"),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 120),
+              child: GestureDetector(
+                onTap: () {
+                  selectedCurrencyToShow = selectedCurrency!;
+                  currencyChanger();
+                  Navigator.of(context).pushReplacementNamed('/bottem');
+                },
+                child: Container(
+                  height: height/15,
+                  width: width / 1.5,
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Confirm",
+                      style: GoogleFonts.poppins(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

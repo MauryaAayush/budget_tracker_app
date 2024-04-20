@@ -1,3 +1,5 @@
+
+
 import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:budget_tracker_app/view/screens/homeScreen/providers/homeProvider.dart';
 import 'package:budget_tracker_app/view/screens/log_in/login.dart';
@@ -157,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Text(
-                              '$currencyCode${spendingCounting()}',
+                              '\$${spendingCounting()}',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: height / 60,
@@ -210,7 +212,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Text(
-                              '$currencyCode${earningCounting()}',
+                              '\$${earningCounting()}',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: height / 60,
@@ -233,14 +235,13 @@ class _HomeScreenState extends State<HomeScreen> {
               width: width * 0.4,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: Colors.black12),
+                  color: Contain),
               child: Center(
                   child: Text(
-                'Balance: $currencyCode${countBalance()}',
+                'Balance: \$${countBalance()}',
                 style: TextStyle(
-                    color: text,
-                    fontSize: height / 50,
-                    fontWeight: FontWeight.w500),
+                  color: Colors.white,
+                    fontSize: height / 50, fontWeight: FontWeight.w500),
               )),
             ),
             SizedBox(
@@ -250,14 +251,12 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Text(
                   '  Recent transactions',
-                  style: TextStyle(
-                      color: text, fontWeight: FontWeight.w500, fontSize: 19),
+                  style: TextStyle(color: text,fontWeight: FontWeight.w500, fontSize: 19),
                 ),
                 Spacer(),
                 Text(
                   'see all   ',
-                  style: TextStyle(
-                      color: text, fontSize: 14, fontWeight: FontWeight.w400),
+                  style: TextStyle(color: text,fontSize: 14, fontWeight: FontWeight.w400),
                 ),
               ],
             ),
@@ -296,19 +295,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                   context: context,
                                   barrierColor: Backgruond,
                                   builder: (context) => AlertDialog(
-                                    title: Text(
-                                      "Are you sure you want to delete",
-                                      style: TextStyle(color: text),
-                                    ),
+                                    title:
+
+                                        Text("Are you sure you want to delete",style: TextStyle(color: text),),
+                                    
                                     actions: [
                                       TextButton(
                                           onPressed: () {
                                             Navigator.pop(context);
                                           },
-                                          child: Text(
-                                            "Cancel",
-                                            style: TextStyle(color: text),
-                                          )),
+                                          child: Text("Cancel",style: TextStyle(color: text),)),
                                       TextButton(
                                           onPressed: () {
                                             setState(() {
@@ -316,10 +312,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               Navigator.pop(context);
                                             });
                                           },
-                                          child: Text(
-                                            "Delete",
-                                            style: TextStyle(color: text),
-                                          )),
+                                          child: Text("Delete",style: TextStyle(color: text),)),
                                     ],
                                   ),
                                 );
@@ -341,7 +334,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 margin: EdgeInsets.only(bottom: height / 60),
                                 decoration: BoxDecoration(
                                   color: (transactionData[index]['isExpense'])
-                                      ? Backgruond
+                                      ? Colors.red.shade200
                                       : Color(0xffE8F6E9),
                                   borderRadius: BorderRadius.circular(12),
                                   boxShadow: [
@@ -349,9 +342,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       offset: Offset(0, 1),
                                       spreadRadius: 1,
                                       blurRadius: 5,
-                                      color: (dark)
-                                          ? Colors.black12
-                                          : Colors.white12,
+                                      color: (dark)?Colors.black12:Colors.white12,
                                     ),
                                   ],
                                 ),
@@ -378,9 +369,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            '$currencyCode${transactionData[index]['amount']}',
+                                            '${transactionData[index]['amount']}',
                                             style: TextStyle(
-                                                color: Colors.black,
+                                                color: text,
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: height / 45),
                                           ),
@@ -453,9 +444,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   BoxShadow(
                     offset: Offset(2, 7),
                     blurRadius: 10,
-                    color: (dark)
-                        ? Colors.black.withOpacity(0.5)
-                        : Colors.white.withOpacity(0.5),
+                    color: (dark)?Colors.black.withOpacity(0.5):Colors.white.withOpacity(0.5),
                   ),
                 ],
               ),
@@ -468,9 +457,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       Text(
                         '    ${homeProviderfalse.formatTimer(homeProvidertrue.secondsRemaining)}',
                         style: TextStyle(
-                            color: text,
-                            fontSize: height / 24,
-                            fontWeight: FontWeight.bold),
+                          color: text,
+                            fontSize: height / 24, fontWeight: FontWeight.bold),
                       ),
                       Text(
                         '💎',
@@ -565,12 +553,12 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Text(
                   '  Monthly budeget',
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
+                  style: TextStyle(color: text,fontWeight: FontWeight.w500, fontSize: 17),
                 ),
                 Spacer(),
                 Text(
                   'Edit budget   ',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                  style: TextStyle(color:text,fontSize: 16, fontWeight: FontWeight.w400),
                 ),
               ],
             ),
@@ -586,7 +574,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: height / 5,
                   width: width / 1.5,
                   decoration: BoxDecoration(
-                    color: Backgruond,
+                    color: Contain,
                     borderRadius: BorderRadius.circular(13),
                     boxShadow: [
                       BoxShadow(
@@ -605,7 +593,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           'Budget left',
                           style: TextStyle(
-                              color: text,
+                            color: text,
                               fontWeight: FontWeight.w400,
                               fontSize: height / 35),
                         ),
@@ -623,7 +611,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           height: height / 30,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(30),
-                            color: (dark) ? Colors.black12 : Colors.white12,
+                            color: Backgruond,
                           ),
                           child: Row(
                             children: [
@@ -673,7 +661,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: height / 4.5,
               width: width / 1.1,
               decoration: BoxDecoration(
-                color: Backgruond,
+                color: Contain,
                 boxShadow: [
                   BoxShadow(
                     offset: Offset(0, 1),
@@ -693,8 +681,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Set Transaction Reminers',
                     style: TextStyle(
                         color: text,
-                        fontSize: height / 40,
-                        fontWeight: FontWeight.w500),
+                        fontSize: height / 40, fontWeight: FontWeight.w500),
                   ),
                   SizedBox(
                     height: 10,
@@ -703,14 +690,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     'Effortlessly manage your finances by setting reminders\n       for all your future and recurring transactions with',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
-                      color: Colors.grey,
+                      color: text,
                     ),
                   ),
                   Text(
                     'premium.',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
-                      color: Colors.grey,
+                      color: text,
                     ),
                   ),
                   SizedBox(
@@ -758,7 +745,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text(
                   'See more   ',
                   style: TextStyle(
-                      fontSize: 15, fontWeight: FontWeight.w500, color: text),
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500,
+                      color: text),
                 )
               ],
             ),
@@ -769,7 +758,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: height / 9,
               width: width / 1.1,
               decoration: BoxDecoration(
-                color: Backgruond,
+                color: Contain,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
@@ -786,7 +775,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: height / 9,
                     width: width / 4,
                     decoration: BoxDecoration(
-                        color: Backgruond,
+                        color: Contain,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
                             bottomLeft: Radius.circular(10))),
@@ -809,10 +798,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 35, top: 50),
-                    child: Icon(
-                      Icons.share,
-                      color: text,
-                    ),
+                    child: Icon(Icons.share,color: text,),
                   )
                 ],
               ),
@@ -824,7 +810,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: height / 9,
               width: width / 1.1,
               decoration: BoxDecoration(
-                color: Backgruond,
+                color: Contain,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
@@ -841,7 +827,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: height / 9,
                     width: width / 4,
                     decoration: BoxDecoration(
-                        color: Backgruond,
+                        color: Contain,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
                             bottomLeft: Radius.circular(10))),
@@ -864,10 +850,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 35, top: 50),
-                    child: Icon(
-                      Icons.share,
-                      color: text,
-                    ),
+                    child: Icon(Icons.share,color: text,),
                   )
                 ],
               ),
@@ -879,7 +862,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: height / 9,
               width: width / 1.1,
               decoration: BoxDecoration(
-                color: Backgruond,
+                color: Contain,
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
@@ -896,7 +879,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     height: height / 9,
                     width: width / 4,
                     decoration: BoxDecoration(
-                        color: Backgruond,
+                        color: Contain,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
                             bottomLeft: Radius.circular(10))),
@@ -919,10 +902,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 35, top: 50),
-                    child: Icon(
-                      Icons.share,
-                      color: text,
-                    ),
+                    child: Icon(Icons.share,color: text,),
                   )
                 ],
               ),

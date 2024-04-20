@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../../../utils/color.dart';
 import '../../../utils/global_variable.dart';
 import '../log_in/login.dart';
 
@@ -19,6 +20,7 @@ class _MoreScreenState extends State<MoreScreen> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Backgruond,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -53,11 +55,13 @@ class _MoreScreenState extends State<MoreScreen> {
                           subtitle: Text(
                             "Sign in",
                             style: TextStyle(
+                              color: text,
                                 fontSize: height * 0.017,
                                 fontWeight: FontWeight.w600),
                           ),
                           trailing: Icon(
                             Icons.security,
+                            color: text,
                             size: height * 0.03,
                           ),
                         ),
@@ -73,11 +77,11 @@ class _MoreScreenState extends State<MoreScreen> {
                       Text(
                         "Last backup: No backups created.",
                         style: TextStyle(
-                            color: Colors.grey, fontSize: height * 0.016),
+                            color: text, fontSize: height * 0.016),
                       ),
                       Text(
                         "Backup now",
-                        style: TextStyle(fontSize: height * 0.018),
+                        style: TextStyle(color: text,fontSize: height * 0.018),
                       ),
                     ],
                   ),
@@ -97,13 +101,13 @@ class _MoreScreenState extends State<MoreScreen> {
                         height: height * 0.068,
                         width: width * 0.45,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Contain,
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.black12,
-                                  offset: Offset(2, 4),
-                                  blurRadius: 10,
+                                  color: boder,
+                                  // offset: Offset(2, 4),
+                                  blurRadius: 0.5,
                                   spreadRadius: 2)
                             ]),
                         child: Row(
@@ -123,7 +127,7 @@ class _MoreScreenState extends State<MoreScreen> {
                               },
                               child: Text(
                                 "Transactions",
-                                style: TextStyle(fontSize: height * 0.018),
+                                style: TextStyle(color: text,fontSize: height * 0.018),
                               ),
                             ),
                           ],
@@ -133,13 +137,13 @@ class _MoreScreenState extends State<MoreScreen> {
                         height: height * 0.068,
                         width: width * 0.45,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color:Contain,
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.black12,
-                                  offset: Offset(2, 4),
-                                  blurRadius: 10,
+                                  color: boder,
+                                  //offset: Offset(2, 4),
+                                  blurRadius: 0.5,
                                   spreadRadius: 2)
                             ]),
                         child: Row(
@@ -159,7 +163,7 @@ class _MoreScreenState extends State<MoreScreen> {
                               },
                               child: Text(
                                 "Reminders",
-                                style: TextStyle(fontSize: height * 0.018),
+                                style: TextStyle(color: text,fontSize: height * 0.018),
                               ),
                             ),
                           ],
@@ -175,13 +179,13 @@ class _MoreScreenState extends State<MoreScreen> {
                         height: height * 0.068,
                         width: width * 0.45,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Contain,
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.black12,
-                                  offset: Offset(2, 4),
-                                  blurRadius: 10,
+                                  color: boder,
+                                 // offset: Offset(2, 4),
+                                  blurRadius: 0.5,
                                   spreadRadius: 2)
                             ]),
                         child: Row(
@@ -201,7 +205,7 @@ class _MoreScreenState extends State<MoreScreen> {
                               },
                               child: Text(
                                 "Budgets",
-                                style: TextStyle(fontSize: height * 0.018),
+                                style: TextStyle(color: text,fontSize: height * 0.018),
                               ),
                             ),
                           ],
@@ -211,13 +215,13 @@ class _MoreScreenState extends State<MoreScreen> {
                         height: height * 0.068,
                         width: width * 0.45,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Contain,
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.black12,
-                                  offset: Offset(2, 4),
-                                  blurRadius: 10,
+                                  color: boder,
+                                  //offset: Offset(2, 4),
+                                  blurRadius: 0.5,
                                   spreadRadius: 2)
                             ]),
                         child: Row(
@@ -237,7 +241,7 @@ class _MoreScreenState extends State<MoreScreen> {
                               },
                               child: Text(
                                 "Categories",
-                                style: TextStyle(fontSize: height * 0.018),
+                                style: TextStyle(color: text,fontSize: height * 0.018),
                               ),
                             ),
                           ],
@@ -253,13 +257,13 @@ class _MoreScreenState extends State<MoreScreen> {
                         height: height * 0.068,
                         width: width * 0.45,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Contain,
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.black12,
-                                  offset: Offset(2, 4),
-                                  blurRadius: 10,
+                                  color: boder,
+                                  //offset: Offset(2, 4),
+                                  blurRadius: 0.5,
                                   spreadRadius: 2)
                             ]),
                         child: Row(
@@ -275,11 +279,11 @@ class _MoreScreenState extends State<MoreScreen> {
                             ),
                             InkWell(
                               onTap: () {
-                                Navigator.pushNamed(context, '/tags');
+                               Navigator.pushNamed(context, '/tags');
                               },
                               child: Text(
                                 "Tags",
-                                style: TextStyle(fontSize: height * 0.018),
+                                style: TextStyle(color: text,fontSize: height * 0.018),
                               ),
                             ),
                           ],
@@ -289,13 +293,13 @@ class _MoreScreenState extends State<MoreScreen> {
                         height: height * 0.068,
                         width: width * 0.45,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Contain,
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.black12,
-                                  offset: Offset(2, 4),
-                                  blurRadius: 10,
+                                  color: boder,
+                                  //offset: Offset(2, 4),
+                                  blurRadius: 0.5,
                                   spreadRadius: 2)
                             ]),
                         child: Row(
@@ -311,7 +315,7 @@ class _MoreScreenState extends State<MoreScreen> {
                             ),
                             Text(
                               "Go Premium",
-                              style: TextStyle(fontSize: height * 0.018),
+                              style: TextStyle(color: text,fontSize: height * 0.018),
                             ),
                           ],
                         ),
@@ -321,6 +325,7 @@ class _MoreScreenState extends State<MoreScreen> {
                   SizedBox(height: height * 0.03),
                   Text("Views",
                       style: TextStyle(
+                        color: text,
                           fontSize: height * 0.02,
                           fontWeight: FontWeight.bold)),
                   SizedBox(height: height * 0.012),
@@ -330,13 +335,13 @@ class _MoreScreenState extends State<MoreScreen> {
                         height: height * 0.11,
                         width: width * 0.28,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Contain,
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.black12,
-                                  offset: Offset(2, 4),
-                                  blurRadius: 10,
+                                  color: boder,
+                                  //offset: Offset(2, 4),
+                                  blurRadius: 0.5,
                                   spreadRadius: 2)
                             ]),
                         child: Padding(
@@ -346,11 +351,12 @@ class _MoreScreenState extends State<MoreScreen> {
                             children: [
                               Icon(
                                 Icons.calendar_view_day_outlined,
+                                color: text,
                                 size: height * 0.04,
                               ),
                               Text(
                                 "Day",
-                                style: TextStyle(fontSize: height * 0.02),
+                                style: TextStyle(color: text,fontSize: height * 0.02),
                               )
                             ],
                           ),
@@ -361,13 +367,13 @@ class _MoreScreenState extends State<MoreScreen> {
                         height: height * 0.11,
                         width: width * 0.28,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Contain,
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.black12,
-                                  offset: Offset(2, 4),
-                                  blurRadius: 10,
+                                  color: boder,
+                                  //offset: Offset(2, 4),
+                                  blurRadius: 0.5,
                                   spreadRadius: 2)
                             ]),
                         child: Padding(
@@ -377,11 +383,12 @@ class _MoreScreenState extends State<MoreScreen> {
                             children: [
                               Icon(
                                 Icons.calendar_month_outlined,
+                                color: text,
                                 size: height * 0.04,
                               ),
                               Text(
                                 "Month",
-                                style: TextStyle(fontSize: height * 0.02),
+                                style: TextStyle( color: text,fontSize: height * 0.02),
                               )
                             ],
                           ),
@@ -392,13 +399,13 @@ class _MoreScreenState extends State<MoreScreen> {
                         height: height * 0.11,
                         width: width * 0.28,
                         decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Contain,
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
                               BoxShadow(
-                                  color: Colors.black12,
-                                  offset: Offset(2, 4),
-                                  blurRadius: 10,
+                                  color: boder,
+                                  //offset: Offset(2, 4),
+                                  blurRadius: 0.5,
                                   spreadRadius: 2)
                             ]),
                         child: Padding(
@@ -408,11 +415,12 @@ class _MoreScreenState extends State<MoreScreen> {
                             children: [
                               Icon(
                                 Icons.tune_outlined,
+                                color: text,
                                 size: height * 0.04,
                               ),
                               Text(
                                 "Custom",
-                                style: TextStyle(fontSize: height * 0.02),
+                                style: TextStyle(color: text,fontSize: height * 0.02),
                               )
                             ],
                           ),
@@ -423,6 +431,7 @@ class _MoreScreenState extends State<MoreScreen> {
                   SizedBox(height: height * 0.02),
                   Text("More options",
                       style: TextStyle(
+                        color: text,
                           fontSize: height * 0.02,
                           fontWeight: FontWeight.bold)),
                   InkWell(
@@ -435,9 +444,9 @@ class _MoreScreenState extends State<MoreScreen> {
                       leading: Icon(
                         Icons.settings_outlined,
                         size: height * 0.032,
-                        color: Colors.black54,
+                        color: text,
                       ),
-                      title: Text("Settings"),
+                      title: Text("Settings",style: TextStyle(color: text),),
                     ),
                   ),
                   InkWell(
@@ -450,34 +459,34 @@ class _MoreScreenState extends State<MoreScreen> {
                       leading: Icon(
                         Icons.campaign_outlined,
                         size: height * 0.032,
-                        color: Colors.black54,
+                        color: text,
                       ),
-                      title: Text("Referrals"),
+                      title: Text("Referrals",style: TextStyle(color: text),),
                     ),
                   ),
                   ListTile(
                     leading: Icon(
                       Icons.star_border_purple500,
                       size: height * 0.032,
-                      color: Colors.black54,
+                      color: text,
                     ),
-                    title: Text("Rate App"),
+                    title: Text("Rate App",style: TextStyle(color: text),),
                   ),
                   ListTile(
                     leading: Icon(
                       Icons.chat_outlined,
                       size: height * 0.032,
-                      color: Colors.black54,
+                      color: text,
                     ),
-                    title: Text("Query/feedback"),
+                    title: Text("Query/feedback",style: TextStyle(color: text),),
                   ),
                   ListTile(
                     leading: Icon(
                       Icons.help_outline,
                       size: height * 0.032,
-                      color: Colors.black54,
+                      color: text,
                     ),
-                    title: Text("FAQ"),
+                    title: Text("FAQ",style: TextStyle(color: text),),
                   ),
                   InkWell(
                     onTap: () {
@@ -489,9 +498,9 @@ class _MoreScreenState extends State<MoreScreen> {
                       leading: Icon(
                         Icons.error_outline,
                         size: height * 0.032,
-                        color: Colors.black54,
+                        color: text,
                       ),
-                      title: Text("About app"),
+                      title: Text("About app",style: TextStyle(color: text),),
                     ),
                   ),
                   SizedBox(

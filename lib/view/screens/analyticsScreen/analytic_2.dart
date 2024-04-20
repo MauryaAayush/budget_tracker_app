@@ -1,6 +1,7 @@
 import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
+import '../../../utils/color.dart';
 import '../../../utils/global_variable.dart';
 import '../Add_Transaction/Components/Catogryicon.dart';
 
@@ -40,7 +41,7 @@ class _Analytics2State extends State<Analytics2> {
                       backgroundColor: Colors.white54,
                       child: Icon(
                         Icons.arrow_upward,
-                        color: Colors.white,
+                        color: text,
                       ),
                     ),
                     SizedBox(
@@ -144,7 +145,7 @@ class _Analytics2State extends State<Analytics2> {
         ListTile(
           leading: Text(
             "Trends",
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+            style: TextStyle(color: text,fontSize: 25, fontWeight: FontWeight.w500),
           ),
           title: Row(
             children: [
@@ -157,14 +158,15 @@ class _Analytics2State extends State<Analytics2> {
           height: height / 4.5,
           width: width,
           decoration: BoxDecoration(
-              color: Colors.white,
+              color: Contain,
               borderRadius: BorderRadius.circular(15),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.shade300,
+                  color:boder,
+                  //Colors.grey.shade300,
 
                   // offset: const Offset(1, 5),
-                  blurRadius: 5,
+                  blurRadius: 0.2,
                   spreadRadius: 1,
                 )
               ]),
@@ -174,15 +176,15 @@ class _Analytics2State extends State<Analytics2> {
               children: [
                 Text(
                   "Discover Financial Trends",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  style: TextStyle(color: text,fontSize: 25, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   "Gain insights into your sepending patterns with",
-                  style: TextStyle(fontSize: 15),
+                  style: TextStyle(color: text,fontSize: 15),
                 ),
                 Text(
                   "trend analysis in premium.",
-                  style: TextStyle(fontSize: 15),
+                  style: TextStyle(color: text,fontSize: 15),
                 ),
                 SizedBox(
                   height: height / 30,
@@ -209,21 +211,21 @@ class _Analytics2State extends State<Analytics2> {
         ListTile(
           leading: Text(
             "Categories",
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+            style: TextStyle(color: text,fontSize: 25, fontWeight: FontWeight.w500),
           ),
         ),
         Container(
           height: height / 2.3,
           width: width,
           decoration: BoxDecoration(
-              color: Colors.white,
+              color: Contain,
               borderRadius: BorderRadius.circular(15),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.shade300,
+                  color: boder,
 
                   // offset: const Offset(1, 5),
-                  blurRadius: 5,
+                  blurRadius: 0.2,
                   spreadRadius: 1,
                 )
               ]),
@@ -235,7 +237,7 @@ class _Analytics2State extends State<Analytics2> {
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 child: Text(
                   "Category-Wise Spending",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  style: TextStyle(color:text,fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ),
               // graph ////----------------------------------------
@@ -260,6 +262,7 @@ class _Analytics2State extends State<Analytics2> {
                       showLegends: true,
                       legendShape: BoxShape.circle,
                       legendTextStyle: TextStyle(
+                        color: text,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -281,21 +284,21 @@ class _Analytics2State extends State<Analytics2> {
                         height: height / 10.9,
                         width: width / 9,
                         decoration: BoxDecoration(
-                            shape: BoxShape.circle, color: Colors.black12),
+                            shape: BoxShape.circle, color: boder),
                         child: Icon(Icons.more_horiz)),
                     SizedBox(
                       width: width / 15,
                     ),
                     Text(
                       "Others",
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(color: text,fontSize: 18),
                     ),
                     SizedBox(
                       width: width / 2.9,
                     ),
                     Text(
                       "1,000.0",
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(color: text,fontSize: 18),
                     ),
                   ],
                 ),
@@ -310,14 +313,14 @@ class _Analytics2State extends State<Analytics2> {
           height: height / 2.3,
           width: width,
           decoration: BoxDecoration(
-              color: Colors.white,
+              color: Contain,
               borderRadius: BorderRadius.circular(15),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.shade300,
+                  color:boder,
 
                   // offset: const Offset(1, 5),
-                  blurRadius: 5,
+                  blurRadius: 0.2,
                   spreadRadius: 1,
                 )
               ]),
@@ -329,7 +332,7 @@ class _Analytics2State extends State<Analytics2> {
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 child: Text(
                   "Category-Wise Income",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  style: TextStyle(color: text,fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ),
               // graph ////----------------------------------------
@@ -354,6 +357,7 @@ class _Analytics2State extends State<Analytics2> {
                       showLegends: true,
                       legendShape: BoxShape.circle,
                       legendTextStyle: TextStyle(
+                        color: text,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -375,21 +379,21 @@ class _Analytics2State extends State<Analytics2> {
                         height: height / 10.9,
                         width: width / 9,
                         decoration: BoxDecoration(
-                            shape: BoxShape.circle, color: Colors.black12),
+                            shape: BoxShape.circle, color: boder),
                         child: Icon(Icons.more_horiz)),
                     SizedBox(
                       width: width / 15,
                     ),
                     Text(
                       "Others",
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(color: text,fontSize: 18),
                     ),
                     SizedBox(
                       width: width / 2.9,
                     ),
                     Text(
                       "1,000.0",
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(color: text,fontSize: 18),
                     ),
                   ],
                 ),
@@ -403,19 +407,20 @@ class _Analytics2State extends State<Analytics2> {
         ListTile(
           leading: Text(
             "Payment modes",
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+            style: TextStyle(color: text,fontSize: 25, fontWeight: FontWeight.w500),
+
           ),
         ),
         Container(
           height: height / 6.4,
           width: width,
           decoration: BoxDecoration(
-              color: Colors.white,
+              color: Contain,
               borderRadius: BorderRadius.circular(15),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.shade300,
-                  blurRadius: 5,
+                  color: boder,
+                  blurRadius: 0.2,
                   spreadRadius: 1,
                 )
               ]),
@@ -426,7 +431,7 @@ class _Analytics2State extends State<Analytics2> {
               children: [
                 Text(
                   "Spending",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  style: TextStyle(color: text,fontSize: 18, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
                   height: height / 30,
@@ -444,6 +449,7 @@ class _Analytics2State extends State<Analytics2> {
                     Text(
                       "Cash",
                       style: TextStyle(
+                        color: text,
                         fontSize: 18,
                       ),
                     ),
@@ -452,7 +458,7 @@ class _Analytics2State extends State<Analytics2> {
                     ),
                     Text(
                       "1,000.0",
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(color: text,fontSize: 18),
                     ),
                   ],
                 )
@@ -466,19 +472,19 @@ class _Analytics2State extends State<Analytics2> {
         ListTile(
           leading: Text(
             "Stats",
-            style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
+            style: TextStyle(color: text,fontSize: 25, fontWeight: FontWeight.w500),
           ),
         ),
         Container(
           height: height / 2.9,
           width: width,
           decoration: BoxDecoration(
-              color: Colors.white,
+              color: Contain,
               borderRadius: BorderRadius.circular(15),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.shade300,
-                  blurRadius: 5,
+                  color: boder,
+                  blurRadius: 0.2,
                   spreadRadius: 1,
                 )
               ]),
@@ -492,7 +498,7 @@ class _Analytics2State extends State<Analytics2> {
                     Text(
                       "Number of transactions",
                       style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                          TextStyle(color: text,fontSize: 18, fontWeight: FontWeight.w500),
                     ),
                     SizedBox(
                       width: width / 4.9,
@@ -500,6 +506,7 @@ class _Analytics2State extends State<Analytics2> {
                     Text(
                       "${transactionData.length}",
                       style: TextStyle(
+                        color: text,
                         fontSize: 18,
                       ),
                     ),
@@ -510,7 +517,7 @@ class _Analytics2State extends State<Analytics2> {
                 ),
                 Text("Average spending",
                     style:
-                        TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+                        TextStyle(color: text,fontSize: 18, fontWeight: FontWeight.w500)),
                 SizedBox(
                   height: height / 80,
                 ),
@@ -519,6 +526,7 @@ class _Analytics2State extends State<Analytics2> {
                     Text(
                       "Per trandaction",
                       style: TextStyle(
+                        color: text,
                         fontSize: 18,
                       ),
                     ),
@@ -528,6 +536,7 @@ class _Analytics2State extends State<Analytics2> {
                     Text(
                       "$currencyCode${spending / expenseLengthTransaction!}",
                       style: TextStyle(
+                        color: text,
                         fontSize: 18,
                       ),
                     ),
@@ -538,7 +547,7 @@ class _Analytics2State extends State<Analytics2> {
                 ),
                 Text("Average income",
                     style:
-                        TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+                        TextStyle(color: text,fontSize: 18, fontWeight: FontWeight.w500)),
                 SizedBox(
                   height: height / 80,
                 ),
@@ -547,6 +556,7 @@ class _Analytics2State extends State<Analytics2> {
                     Text(
                       "Per trandaction",
                       style: TextStyle(
+                        color: text,
                         fontSize: 18,
                       ),
                     ),
@@ -556,6 +566,7 @@ class _Analytics2State extends State<Analytics2> {
                     Text(
                       "$currencyCode${income / incomeLengthTransaction!}",
                       style: TextStyle(
+                        color: text,
                         fontSize: 18,
                       ),
                     ),

@@ -3,6 +3,7 @@ import 'package:budget_tracker_app/view/screens/Add_Transaction/AddIncome.dart';
 import 'package:budget_tracker_app/view/screens/Add_Transaction/addExpense.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../utils/color.dart';
 import '../../../utils/global_variable.dart';
 
 class AddTransaction extends StatefulWidget {
@@ -19,6 +20,7 @@ class _AddTransactionState extends State<AddTransaction> {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Backgruond,
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
@@ -33,18 +35,18 @@ class _AddTransactionState extends State<AddTransaction> {
           },
           icon: Icon(Icons.arrow_back),
         ),
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Colors.black87,
+        iconTheme: IconThemeData(color: text),
+        backgroundColor: Backgruond,
         title: Text(
           'Add Transaction',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+          style: TextStyle(color: text, fontWeight: FontWeight.w500),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.black87,
+        backgroundColor: text,
         child: Icon(
           Icons.save,
-          color: Colors.white,
+          color: Backgruond,
         ),
         onPressed: () {
           // String tempAmount = transactionExpense[0]['amount'].text;
@@ -213,12 +215,13 @@ class _AddTransactionState extends State<AddTransaction> {
                           context: context,
                           builder: (context) => Container(
                             width: width,
+                            color: Backgruond,
                             child: Column(
                               children: [
                                 Center(
                                     child: Text(
                                   "Premium lelo",
-                                  style: TextStyle(fontSize: 40),
+                                  style: TextStyle(fontSize: 40,color: text),
                                 ))
                               ],
                             ),

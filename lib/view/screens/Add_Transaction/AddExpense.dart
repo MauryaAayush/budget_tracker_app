@@ -1,7 +1,9 @@
 import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
+import '../../../utils/color.dart';
 import '../../../utils/global_variable.dart';
 import 'Components/Catogryicon.dart';
 
@@ -25,13 +27,14 @@ class _AddExpenseState extends State<AddExpense> {
         TextField(
           controller: txtAmountExpense,
           textInputAction: TextInputAction.next,
+          style: TextStyle(color: text),
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
             prefixIcon: Icon(
               Icons.currency_rupee,
               color: categoryIconColorList[selectedCategoryIndexExpense],
             ),
-            suffixIcon: Icon(Icons.calculate_outlined),
+            suffixIcon: Icon(Icons.calculate_outlined,color: text,),
             labelText: 'Amount',
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
@@ -49,6 +52,7 @@ class _AddExpenseState extends State<AddExpense> {
               context: context,
               builder: (context) => Container(
                 width: width,
+                color: Backgruond,
                 child: Padding(
                   padding: EdgeInsets.only(
                       left: width / 25, right: width / 29, top: width / 50),
@@ -60,6 +64,7 @@ class _AddExpenseState extends State<AddExpense> {
                           Text(
                             "Select Category",
                             style: TextStyle(
+                              color: text,
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
                           IconButton(
@@ -75,6 +80,7 @@ class _AddExpenseState extends State<AddExpense> {
                       Container(
                         height: height / 3,
                         width: width,
+                        color: Backgruond,
                         child: GridView.builder(
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
@@ -109,6 +115,7 @@ class _AddExpenseState extends State<AddExpense> {
                                 width: height / 10,
                                 child: Text(
                                   categoriesList[index]['name'],
+                                  style: TextStyle(color: text),
                                   overflow: TextOverflow.fade,
                                   textAlign: TextAlign.center,
                                 ),
@@ -154,11 +161,11 @@ class _AddExpenseState extends State<AddExpense> {
                           Text(
                             transactionExpense['category'],
                             style: TextStyle(
-                                color: Colors.black, fontSize: width * 0.045),
+                                color: text, fontSize: width * 0.045),
                           )
                         ],
                       ),
-                      Icon(Icons.arrow_forward_ios)
+                      Icon(Icons.arrow_forward_ios,color: text,)
                     ],
                   ),
                 )
@@ -170,6 +177,7 @@ class _AddExpenseState extends State<AddExpense> {
           onTap: () {
             showModalBottomSheet(
               context: context,
+              backgroundColor: Backgruond,
               builder: (context) => Padding(
                 padding: EdgeInsets.symmetric(horizontal: width / 20),
                 child: Column(
@@ -182,7 +190,7 @@ class _AddExpenseState extends State<AddExpense> {
                           "Select Payment Mode",
                           style: TextStyle(
                               fontSize: height * 0.023,
-                              color: Colors.black,
+                              color: text,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 0),
                         ),
@@ -204,7 +212,7 @@ class _AddExpenseState extends State<AddExpense> {
                         Text(
                           "Bank Accounts",
                           style: TextStyle(
-                              fontSize: height * 0.018, color: Colors.black54),
+                              fontSize: height * 0.018, color: text),
                         ),
                       ],
                     ),
@@ -255,7 +263,7 @@ class _AddExpenseState extends State<AddExpense> {
                         Text(
                           "Cash",
                           style: TextStyle(
-                              fontSize: height * 0.018, color: Colors.black54),
+                              fontSize: height * 0.018, color: text),
                         ),
                       ],
                     ),
@@ -338,7 +346,7 @@ class _AddExpenseState extends State<AddExpense> {
                           Text(
                             (isCashInExpense) ? "Cash" : "Bank",
                             style: TextStyle(
-                                color: Colors.black, fontSize: width * 0.045),
+                                color: text, fontSize: width * 0.045),
                           )
                         ],
                       ),
@@ -355,13 +363,14 @@ class _AddExpenseState extends State<AddExpense> {
         ),
         Text(
           'Other details',
-          style: TextStyle(fontSize: 16),
+          style: TextStyle(fontSize: 16,color: text),
         ),
         SizedBox(
           height: height / 35,
         ),
         TextField(
           controller: transactionExpense['note'],
+          style:TextStyle(color: text),
           decoration: InputDecoration(
             prefixIcon: Icon(
               Icons.note_alt_outlined,
@@ -398,7 +407,7 @@ class _AddExpenseState extends State<AddExpense> {
             Icons.photo_album_outlined,
             color: categoryIconColorList[selectedCategoryIndexExpense],
           ),
-          title: Text('Add photo'),
+          title: Text('Add photo',style: TextStyle(color: text),),
           trailing: Icon(Icons.arrow_forward_ios),
         ),
         SizedBox(

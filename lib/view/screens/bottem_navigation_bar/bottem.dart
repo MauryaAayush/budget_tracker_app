@@ -12,10 +12,10 @@ class BottemScreen extends StatefulWidget {
   const BottemScreen({super.key});
 
   @override
-  State<BottemScreen> createState() => _SectionState();
+  State<BottemScreen> createState() => SectionState();
 }
 
-class _SectionState extends State<BottemScreen> {
+class SectionState extends State<BottemScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -64,8 +64,8 @@ class _SectionState extends State<BottemScreen> {
                 ),
               ),
               text: ''),
-          activeColor: (dark) ? Colors.black : Colors.white,
-          navBarBackgroundColor: (dark) ? Colors.white : Colors.black,
+          activeColor: text,
+          navBarBackgroundColor: Backgruond,
           inActiveColor: Colors.black45,
           appBarItems: [
             FABBottomAppBarItem(
@@ -74,14 +74,14 @@ class _SectionState extends State<BottemScreen> {
                   color: (dark) ? Colors.black : Colors.white,
                 ),
                 inActiveIcon: Icon(
-                  Icons.home,
-                  color: Colors.grey,
-                ),
+                    Icons.home,
+                    color: Colors.grey,
+                  ),
                 text: 'Home'),
             FABBottomAppBarItem(
                 activeIcon: Icon(
                   Icons.bar_chart_rounded,
-                  color: (dark) ? Colors.black : Colors.white,
+                  color: text,
                 ),
                 inActiveIcon: Icon(
                   Icons.bar_chart_rounded,

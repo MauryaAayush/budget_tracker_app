@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../utils/color.dart';
+
 class Transationa extends StatefulWidget {
   const Transationa({super.key});
 
@@ -14,30 +16,31 @@ class _TransationaState extends State<Transationa> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Backgruond,
       floatingActionButton: FloatingActionButton(
         shape: CircleBorder(),
-        backgroundColor: Colors.black,
+        backgroundColor:  Backgruond,
 
         onPressed: () {},
         child: Icon(
           Icons.add,
-          color: Colors.white,
+          color: text,
         ),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor:Backgruond,
+        iconTheme: IconThemeData(color: text),
         title: Text(
           "Transactions",
           style: GoogleFonts.poppins(
             fontSize: 22,
-            color: Colors.white,
+            color: text,
           ),
         ),
-        actions: const [
+        actions:  [
           Padding(
             padding: EdgeInsets.all(8.0),
-            child: Icon(Icons.menu),
+            child: Icon(Icons.menu,color: text,),
           ),
         ],
       ),
@@ -51,7 +54,7 @@ class _TransationaState extends State<Transationa> {
                   height: height / 20,
                   width: width / 1.2,
                   decoration: BoxDecoration(
-                      color: Colors.black12,
+                      color: Colors.grey,
                       borderRadius: BorderRadius.circular(15)),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),

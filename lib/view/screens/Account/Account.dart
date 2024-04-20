@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/color.dart';
 
+
+
+
+
 class Account extends StatefulWidget {
   const Account({super.key});
 
@@ -34,7 +38,7 @@ class _AccountState extends State<Account> {
                 Text(
                   "+ Add account",
                   style: TextStyle(
-                    color: text,
+                     color: text,
                       fontSize: height * 0.019, fontWeight: FontWeight.w400),
                 ),
               ],
@@ -60,10 +64,37 @@ class _AccountState extends State<Account> {
                 Switch(
                   value: switchValue,
                   activeColor: Colors.white,
-                  activeTrackColor: Colors.black87,
+                  activeTrackColor: swithact,
                   onChanged: (value) {
                     setState(() {
                       switchValue = value;
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(
+                            color: Contain,
+                            height:height*0.5,
+                            width: width,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                InkWell(
+                                    onLongPress: () {
+                                      Navigator.pop(context);
+                                    },
+                                    child: Icon(Icons.fingerprint_outlined,color: Colors.blueAccent,size: 100,)),
+                                SizedBox(height: 30),
+                                Text(
+                                  'Unlock By Fingerprint',
+                                  style: TextStyle(color: text,fontSize: 20),
+                                ),
+                                SizedBox(height: 20),
+
+                              ],
+                            ),
+                          );
+                        },
+                      );
                     });
                   },
                 )
@@ -77,14 +108,14 @@ class _AccountState extends State<Account> {
                   height: height * 0.1,
                   width: width * 0.43,
                   decoration: BoxDecoration(
-                      color: Backgruond,
+                      color: Contain,
                       borderRadius: BorderRadius.circular(10),
                       boxShadow:  [
                         BoxShadow(
                             color: boder,
-                            offset: Offset(2, 4),
-                            blurRadius: 10,
-                            spreadRadius: 2)
+                            //offset: Offset(2, 4),
+                            blurRadius: 0.2,
+                            spreadRadius: 1)
                       ]),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -103,7 +134,7 @@ class _AccountState extends State<Account> {
                         Text(
                           "*****",
                           style: TextStyle(
-                            color: text,
+                              color: text,
                               fontSize: height * 0.025,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 2),
@@ -116,14 +147,14 @@ class _AccountState extends State<Account> {
                   height: height * 0.1,
                   width: width * 0.43,
                   decoration: BoxDecoration(
-                      color: Backgruond,
+                      color: Contain,
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
                             color: boder,
-                            offset: Offset(2, 4),
-                            blurRadius: 10,
-                            spreadRadius: 2)
+                            //offset: Offset(2, 4),
+                            blurRadius: 0.5,
+                            spreadRadius: 1)
                       ]),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
@@ -164,14 +195,13 @@ class _AccountState extends State<Account> {
                 Text(
                   "Bank Accounts",
                   style: TextStyle(
-
                       fontSize: height * 0.018, color: text),
                 ),
               ],
             ),
             SizedBox(height: height * 0.02),
             Card(
-              color: Backgruond,
+              color: Contain,
               child: ListTile(
                 title: Text(
                   "Bank Account",
@@ -183,7 +213,7 @@ class _AccountState extends State<Account> {
                     Text(
                       "*****",
                       style: TextStyle(
-                        color: text,
+                          color: text,
                           fontSize: height * 0.02,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 2),
@@ -211,7 +241,7 @@ class _AccountState extends State<Account> {
             ),
             SizedBox(height: height * 0.02),
             Card(
-              color: Backgruond,
+              color: Contain,
               child: ListTile(
                 title: Text(
                   "Cash",
@@ -223,7 +253,7 @@ class _AccountState extends State<Account> {
                     Text(
                       "*****",
                       style: TextStyle(
-                        color: text,
+                          color: text,
                           fontSize: height * 0.02,
                           fontWeight: FontWeight.bold,
                           letterSpacing: 2),
@@ -240,3 +270,4 @@ class _AccountState extends State<Account> {
     );
   }
 }
+

@@ -2,6 +2,7 @@ import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import '../../../utils/color.dart';
 import '../../../utils/global_variable.dart';
 import 'Components/Catogryicon.dart';
 
@@ -23,6 +24,7 @@ class _AddIncomeState extends State<AddIncome> {
         TextField(
           controller: txtAmountIncome,
           textInputAction: TextInputAction.next,
+          style: TextStyle(color: text),
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
             prefixIcon: Icon(
@@ -47,6 +49,7 @@ class _AddIncomeState extends State<AddIncome> {
               context: context,
               builder: (context) => Container(
                 width: width,
+                color: Backgruond,
                 child: Padding(
                   padding: EdgeInsets.only(
                       left: width / 25, right: width / 29, top: width / 50),
@@ -58,7 +61,7 @@ class _AddIncomeState extends State<AddIncome> {
                           Text(
                             "Select Category",
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
+                                fontSize: 20, fontWeight: FontWeight.bold,color: text),
                           ),
                           IconButton(
                               onPressed: () {
@@ -107,6 +110,7 @@ class _AddIncomeState extends State<AddIncome> {
                                 width: height / 10,
                                 child: Text(
                                   incomeCategoryList[index]['name'],
+                                  style: TextStyle(color: text),
                                   overflow: TextOverflow.fade,
                                   textAlign: TextAlign.center,
                                 ),
@@ -152,11 +156,11 @@ class _AddIncomeState extends State<AddIncome> {
                           Text(
                             transactionIncome['category'],
                             style: TextStyle(
-                                color: Colors.black, fontSize: width * 0.045),
+                                color: text, fontSize: width * 0.045),
                           )
                         ],
                       ),
-                      Icon(Icons.arrow_forward_ios)
+                      Icon(Icons.arrow_forward_ios,color: text,)
                     ],
                   ),
                 )
@@ -167,6 +171,7 @@ class _AddIncomeState extends State<AddIncome> {
         InkWell(
           onTap: () {
             showModalBottomSheet(
+              backgroundColor: Backgruond,
               context: context,
               builder: (context) => Padding(
                 padding: EdgeInsets.symmetric(horizontal: width / 20),
@@ -180,7 +185,7 @@ class _AddIncomeState extends State<AddIncome> {
                           "Select Payment Mode",
                           style: TextStyle(
                               fontSize: height * 0.023,
-                              color: Colors.black,
+                              color: text,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 0),
                         ),
@@ -202,7 +207,7 @@ class _AddIncomeState extends State<AddIncome> {
                         Text(
                           "Bank Accounts",
                           style: TextStyle(
-                              fontSize: height * 0.018, color: Colors.black54),
+                              fontSize: height * 0.018, color: text),
                         ),
                       ],
                     ),
@@ -253,7 +258,7 @@ class _AddIncomeState extends State<AddIncome> {
                         Text(
                           "Cash",
                           style: TextStyle(
-                              fontSize: height * 0.018, color: Colors.black54),
+                              fontSize: height * 0.018, color: text),
                         ),
                       ],
                     ),
@@ -336,11 +341,11 @@ class _AddIncomeState extends State<AddIncome> {
                           Text(
                             (isCashInIncome) ? "Cash" : "Bank",
                             style: TextStyle(
-                                color: Colors.black, fontSize: width * 0.045),
+                                color: text, fontSize: width * 0.045),
                           )
                         ],
                       ),
-                      Icon(Icons.arrow_forward_ios),
+                      Icon(Icons.arrow_forward_ios,color: text,),
                     ],
                   ),
                 )
@@ -359,6 +364,7 @@ class _AddIncomeState extends State<AddIncome> {
           height: height / 35,
         ),
         TextField(
+          style: TextStyle(color: text),
           controller: transactionIncome['note'],
           decoration: InputDecoration(
             prefixIcon: Icon(
@@ -376,6 +382,7 @@ class _AddIncomeState extends State<AddIncome> {
           height: height / 70,
         ),
         TextField(
+          style: TextStyle(color: text),
           decoration: InputDecoration(
             prefixIcon: Icon(
               Icons.numbers,
@@ -396,8 +403,8 @@ class _AddIncomeState extends State<AddIncome> {
             Icons.photo_album_outlined,
             color: categoryIconColorList[selectedCategoryIndexIncome],
           ),
-          title: Text('Add photo'),
-          trailing: Icon(Icons.arrow_forward_ios),
+          title: Text('Add photo',style: TextStyle(color: text),),
+          trailing: Icon(Icons.arrow_forward_ios,color: text,),
         ),
       ],
     );

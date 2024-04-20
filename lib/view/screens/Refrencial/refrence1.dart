@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../utils/color.dart';
+
 class Referrals extends StatefulWidget {
   const Referrals({super.key});
 
@@ -14,12 +16,14 @@ class _ReferralsState extends State<Referrals> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Backgruond,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        iconTheme: IconThemeData(color: text),
+        backgroundColor: Backgruond,
         title: Text(
           'Referrals',
           style: TextStyle(
-              color: Colors.white, fontSize: 21, fontWeight: FontWeight.w400),
+              color: text, fontSize: 21, fontWeight: FontWeight.w400),
         ),
       ),
       body: Column(
@@ -60,7 +64,7 @@ class _ReferralsState extends State<Referrals> {
                   child: Text(
                     'Invite Friends',
                     style: TextStyle(
-                        color: Colors.white,
+                        color: text,
                         fontWeight: FontWeight.w400,
                         fontSize: 19),
                   )),
@@ -80,7 +84,7 @@ class _ReferralsState extends State<Referrals> {
                   offset: Offset(0, 1),
                   spreadRadius: 0.5,
                   blurRadius: 1,
-                  color: Colors.black12,
+                  color: Colors.grey.shade300,
                 ),
               ],
             ),

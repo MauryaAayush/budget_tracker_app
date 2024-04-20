@@ -71,7 +71,7 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                         width: width / 7,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                            color: (weekMonthYear == 0) ? Colors.white : null,
+                            color: (weekMonthYear == 0) ? Colors.white54 : null,
                             borderRadius: BorderRadius.circular(8)),
                         child: Text(
                           'Week',
@@ -104,7 +104,7 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                         width: width / 7,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                            color: (weekMonthYear == 1) ? Colors.white : null,
+                            color: (weekMonthYear == 1) ? Colors.white54 : null,
                             borderRadius: BorderRadius.circular(8)),
                         child: Text(
                           'Month',
@@ -137,7 +137,7 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                         width: width / 7,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                            color: (weekMonthYear == 2) ? Colors.white : null,
+                            color: (weekMonthYear == 2) ? Colors.white54 : null,
                             borderRadius: BorderRadius.circular(8)),
                         child: Text(
                           'Year',
@@ -181,7 +181,7 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                             : null;
                       });
                     },
-                    icon: Icon(Icons.arrow_back_ios)),
+                    icon: Icon(Icons.arrow_back_ios),color: text,),
                 Text(
                   (weekMonthYear == 1)
                       ? (analyticsIndexedStack == 0)
@@ -199,7 +199,7 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
-                      color: Colors.white),
+                      color: text),
                 ),
                 IconButton(
                     onPressed: () {
@@ -209,7 +209,7 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                             : null;
                       });
                     },
-                    icon: Icon(Icons.arrow_forward_ios)),
+                    icon: Icon(Icons.arrow_forward_ios),color: text,),
               ],
             ),
             Expanded(
