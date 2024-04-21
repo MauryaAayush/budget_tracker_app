@@ -66,12 +66,13 @@ class _HomeScreenState extends State<HomeScreen> {
                                 color: text,
                               ),
                             ),
+
                             Text(
                               textName.text,
                               style: TextStyle(
                                   color: text,
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 16),
+                                  fontSize: 12),
                             ),
                           ],
                         ),
@@ -137,6 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         CircleAvatar(
                           backgroundColor: Colors.white54,
+                          radius: 18,
                           child: Icon(
                             Icons.arrow_upward,
                             color: Colors.white,
@@ -155,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               'Spending',
                               style: TextStyle(
                                 color: Colors.white54,
-                                fontSize: height / 50,
+                                fontSize: height / 60,
                               ),
                             ),
                             Text(
@@ -190,6 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         CircleAvatar(
                           backgroundColor: Colors.white54,
+                          radius: 18,
                           child: Icon(
                             Icons.arrow_downward,
                             color: Colors.white,
@@ -208,7 +211,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               'Income',
                               style: TextStyle(
                                 color: Colors.white54,
-                                fontSize: height / 50,
+                                fontSize: height / 60,
                               ),
                             ),
                             Text(
@@ -231,7 +234,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             //Balance button
             Container(
-              height: height * 0.04,
+              height: height * 0.05,
               width: width * 0.4,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
@@ -241,7 +244,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 'Balance: \$${countBalance()}',
                 style: TextStyle(
                   color: Colors.white,
-                    fontSize: height / 50, fontWeight: FontWeight.w500),
+                    fontSize: height / 60, fontWeight: FontWeight.w500),
               )),
             ),
             SizedBox(
@@ -251,12 +254,12 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 Text(
                   '  Recent transactions',
-                  style: TextStyle(color: text,fontWeight: FontWeight.w500, fontSize: 19),
+                  style: TextStyle(color: text,fontWeight: FontWeight.w400, fontSize: height/48),
                 ),
                 Spacer(),
                 Text(
                   'see all   ',
-                  style: TextStyle(color: text,fontSize: 14, fontWeight: FontWeight.w400),
+                  style: TextStyle(color: text,fontSize: height/65, fontWeight: FontWeight.w400),
                 ),
               ],
             ),
@@ -423,7 +426,7 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20,
             ),
             Container(
-              height: height / 5,
+              height: height / 4,
               width: width / 1.060,
               padding: EdgeInsets.only(top: 20, bottom: 20, left: 20),
               decoration: BoxDecoration(
@@ -458,12 +461,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         '    ${homeProviderfalse.formatTimer(homeProvidertrue.secondsRemaining)}',
                         style: TextStyle(
                           color: text,
-                            fontSize: height / 24, fontWeight: FontWeight.bold),
+                            fontSize: height / 28, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        '💎',
+                        '   💎',
                         style: TextStyle(
-                            fontSize: height / 24,
+                            fontSize: height / 25,
                             fontWeight: FontWeight.bold,
                             color: Colors.amber),
                       ),
@@ -473,26 +476,29 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        ' hours ',
+                        'hours',
                         style: TextStyle(
                             fontSize: height / 85,
                             fontWeight: FontWeight.w500,
                             color: Colors.grey.shade700),
                       ),
+                      SizedBox(width: width*0.04,),
                       Text(
-                        ' minutes ',
+                        'minutes',
                         style: TextStyle(
                             fontSize: height / 85,
                             fontWeight: FontWeight.w500,
                             color: Colors.grey.shade700),
                       ),
+                      SizedBox(width: width*0.04,),
                       Text(
-                        ' seconds',
+                        'seconds',
                         style: TextStyle(
                             fontSize: height / 85,
                             fontWeight: FontWeight.w500,
                             color: Colors.grey.shade700),
                       ),
+                      SizedBox(width: width*0.08,),
                     ],
                   ),
                   Padding(
@@ -504,11 +510,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Exdusive Offer',
+                              'Exclusive Offer',
                               style: TextStyle(
                                 color: text,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 20,
+                                fontSize: height/40,
                               ),
                             ),
                             Text(
@@ -516,7 +522,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               style: TextStyle(
                                 color: text,
                                 fontWeight: FontWeight.w400,
-                                fontSize: 18,
+                                fontSize: height/50,
                               ),
                             ),
                           ],
@@ -524,7 +530,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Container(
                           height: height / 20,
                           width: width / 4,
-                          margin: EdgeInsets.only(left: width / 18),
+                          // margin: EdgeInsets.only(left: width / 8),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
                             color: Colors.black,
