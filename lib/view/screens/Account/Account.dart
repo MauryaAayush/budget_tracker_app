@@ -3,10 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../../utils/color.dart';
 
-
-
-
-
 class Account extends StatefulWidget {
   const Account({super.key});
 
@@ -32,14 +28,16 @@ class _AccountState extends State<Account> {
                 Text(
                   "All Accounts",
                   style: TextStyle(
-                    color: text,
-                      fontSize: height * 0.024, fontWeight: FontWeight.w700),
+                      color: text,
+                      fontSize: height * 0.024,
+                      fontWeight: FontWeight.w700),
                 ),
                 Text(
                   "+ Add account",
                   style: TextStyle(
-                     color: text,
-                      fontSize: height * 0.019, fontWeight: FontWeight.w400),
+                      color: text,
+                      fontSize: height * 0.019,
+                      fontWeight: FontWeight.w400),
                 ),
               ],
             ),
@@ -73,7 +71,7 @@ class _AccountState extends State<Account> {
                         builder: (BuildContext context) {
                           return Container(
                             color: Contain,
-                            height:height*0.5,
+                            height: height * 0.5,
                             width: width,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -82,14 +80,17 @@ class _AccountState extends State<Account> {
                                     onLongPress: () {
                                       Navigator.pop(context);
                                     },
-                                    child: Icon(Icons.fingerprint_outlined,color: Colors.blueAccent,size: 100,)),
+                                    child: Icon(
+                                      Icons.fingerprint_outlined,
+                                      color: Colors.blueAccent,
+                                      size: 100,
+                                    )),
                                 SizedBox(height: 30),
                                 Text(
                                   'Unlock By Fingerprint',
-                                  style: TextStyle(color: text,fontSize: 20),
+                                  style: TextStyle(color: text, fontSize: 20),
                                 ),
                                 SizedBox(height: 20),
-
                               ],
                             ),
                           );
@@ -110,7 +111,7 @@ class _AccountState extends State<Account> {
                   decoration: BoxDecoration(
                       color: Contain,
                       borderRadius: BorderRadius.circular(10),
-                      boxShadow:  [
+                      boxShadow: [
                         BoxShadow(
                             color: boder,
                             //offset: Offset(2, 4),
@@ -132,7 +133,9 @@ class _AccountState extends State<Account> {
                           ),
                         ),
                         Text(
-                          (switchValue)?'\$${countBalance()}':"*****",
+                          (switchValue)
+                              ? '$currencyCode${countBalance()}'
+                              : "*****",
                           style: TextStyle(
                               color: text,
                               fontSize: height * 0.025,
@@ -171,9 +174,11 @@ class _AccountState extends State<Account> {
                           ),
                         ),
                         Text(
-                          (switchValue)?'\$${earningCounting()}':"*****",
+                          (switchValue)
+                              ? '$currencyCode${earningCounting()}'
+                              : "*****",
                           style: TextStyle(
-                            color: text,
+                              color: text,
                               fontSize: height * 0.025,
                               fontWeight: FontWeight.bold,
                               letterSpacing: 2),
@@ -194,8 +199,7 @@ class _AccountState extends State<Account> {
                 SizedBox(width: width * 0.04),
                 Text(
                   "Bank Accounts",
-                  style: TextStyle(
-                      fontSize: height * 0.018, color: text),
+                  style: TextStyle(fontSize: height * 0.018, color: text),
                 ),
               ],
             ),
@@ -205,13 +209,15 @@ class _AccountState extends State<Account> {
               child: ListTile(
                 title: Text(
                   "Bank Account",
-                  style: TextStyle(color: text,fontSize: height * 0.02),
+                  style: TextStyle(color: text, fontSize: height * 0.02),
                 ),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      (switchValue)?'\$${countBalance()}':"*****",
+                      (switchValue)
+                          ? '$currencyCode${countBalance()}'
+                          : "*****",
                       style: TextStyle(
                           color: text,
                           fontSize: height * 0.02,
@@ -219,7 +225,10 @@ class _AccountState extends State<Account> {
                           letterSpacing: 2),
                     ),
                     SizedBox(width: width * 0.02),
-                    Icon(Icons.arrow_forward_ios,color: text,)
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: text,
+                    )
                   ],
                 ),
               ),
@@ -234,8 +243,7 @@ class _AccountState extends State<Account> {
                 SizedBox(width: width * 0.04),
                 Text(
                   "Cash",
-                  style: TextStyle(
-                      fontSize: height * 0.018, color: text),
+                  style: TextStyle(fontSize: height * 0.018, color: text),
                 ),
               ],
             ),
@@ -245,13 +253,15 @@ class _AccountState extends State<Account> {
               child: ListTile(
                 title: Text(
                   "Cash",
-                  style: TextStyle(color: text,fontSize: height * 0.02),
+                  style: TextStyle(color: text, fontSize: height * 0.02),
                 ),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      (switchValue)?'\$${earningCounting()}':"*****",
+                      (switchValue)
+                          ? '$currencyCode${earningCounting()}'
+                          : "*****",
                       style: TextStyle(
                           color: text,
                           fontSize: height * 0.02,
@@ -259,7 +269,10 @@ class _AccountState extends State<Account> {
                           letterSpacing: 2),
                     ),
                     SizedBox(width: width * 0.02),
-                    Icon(Icons.arrow_forward_ios,color: text,)
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: text,
+                    )
                   ],
                 ),
               ),
@@ -270,4 +283,3 @@ class _AccountState extends State<Account> {
     );
   }
 }
-
