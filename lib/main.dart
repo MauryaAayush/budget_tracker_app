@@ -41,12 +41,13 @@ class BudgetTracker extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
+
           create: (context) => HomeProvider(),
         ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: '/bottem',
+        initialRoute: '/signUp',
         routes: {
           '/': (context) =>  SplashScreen(),
           '/signUp': (context) =>  SignUp(),

@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import '../../../utils/color.dart';
 import '../../../utils/global_variable.dart';
 import '../log_in/components/show_dilioge.dart';
-// import 'components/text_field.dart';
+
 import 'components/usermodal.dart';
 
 class SignUp extends StatefulWidget {
@@ -46,105 +46,109 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
                 height: height / 45,
               ),
-
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              onChanged: (value) {
-                setState(() {
-                  textname1 = value; // Store the entered text in the variable
-                });
-              },
-              textInputAction: TextInputAction.next,
-              controller: textName,
-              keyboardType: TextInputType.emailAddress,
-              onTapOutside: (event) {
-                FocusManager.instance.primaryFocus!.unfocus();
-              },
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xff059E2E), width: 2),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10),
-                  ),
-                ),
-                hintText:'Full Name',focusColor: Color(0xff059E2E),
-                label: Text('Full Name'),
-              ),
-            ),
-          ),
-
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              onChanged: (value) {
-                setState(() {
-                  textEmail1 = value; // Store the entered text in the variable
-                });
-              },
-              textInputAction: TextInputAction.next,
-              controller: textEmail,
-              keyboardType: TextInputType.emailAddress,
-              onTapOutside: (event) {
-                FocusManager.instance.primaryFocus!.unfocus();
-              },
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xff059E2E), width: 2),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10),
-                  ),
-                ),
-                hintText:'Email ID',focusColor: Color(0xff059E2E),
-                label: Text('Email ID'),
-              ),
-            ),
-          ),
-
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              onChanged: (value) {
-                setState(() {
-                  textMobileNum1 = value; // Store the entered text in the variable
-                });
-              },
-              textInputAction: TextInputAction.next,
-              controller: textMobileNum,
-              keyboardType: TextInputType.emailAddress,
-              onTapOutside: (event) {
-                FocusManager.instance.primaryFocus!.unfocus();
-              },
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Color(0xff059E2E), width: 2),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10),
-                  ),
-                ),
-                hintText:'Mobile Number',focusColor: Color(0xff059E2E),
-                label: Text('Mobile Number'),
-              ),
-            ),
-          ),
-
-
-
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   onChanged: (value) {
                     setState(() {
-                      textPassword1 = value; // Store the entered text in the variable
+                      textname1 =
+                          value; // Store the entered text in the variable
+                    });
+                  },
+                  textInputAction: TextInputAction.next,
+                  controller: textName,
+                  keyboardType: TextInputType.emailAddress,
+                  onTapOutside: (event) {
+                    FocusManager.instance.primaryFocus!.unfocus();
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xff059E2E), width: 2),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                    hintText: 'Full Name',
+                    focusColor: Color(0xff059E2E),
+                    label: Text('Full Name'),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  onChanged: (value) {
+                    setState(() {
+                      textEmail1 =
+                          value; // Store the entered text in the variable
+                    });
+                  },
+                  textInputAction: TextInputAction.next,
+                  controller: textEmail,
+                  keyboardType: TextInputType.emailAddress,
+                  onTapOutside: (event) {
+                    FocusManager.instance.primaryFocus!.unfocus();
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xff059E2E), width: 2),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                    hintText: 'Email ID',
+                    focusColor: Color(0xff059E2E),
+                    label: Text('Email ID'),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  onChanged: (value) {
+                    setState(() {
+                      textMobileNum1 =
+                          value; // Store the entered text in the variable
+                    });
+                  },
+                  textInputAction: TextInputAction.next,
+                  controller: textMobileNum,
+                  keyboardType: TextInputType.emailAddress,
+                  onTapOutside: (event) {
+                    FocusManager.instance.primaryFocus!.unfocus();
+                  },
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Color(0xff059E2E), width: 2),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
+                      ),
+                    ),
+                    hintText: 'Mobile Number',
+                    focusColor: Color(0xff059E2E),
+                    label: Text('Mobile Number'),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  onChanged: (value) {
+                    setState(() {
+                      textPassword1 =
+                          value; // Store the entered text in the variable
                     });
                   },
                   textInputAction: TextInputAction.next,
@@ -158,24 +162,25 @@ class _SignUpState extends State<SignUp> {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xff059E2E), width: 2),
+                      borderSide:
+                          BorderSide(color: Color(0xff059E2E), width: 2),
                       borderRadius: BorderRadius.all(
                         Radius.circular(10),
                       ),
                     ),
-                    hintText:'Password',focusColor: Color(0xff059E2E),
+                    hintText: 'Password',
+                    focusColor: Color(0xff059E2E),
                     label: Text('Password'),
                   ),
                 ),
               ),
-
-
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
                   onChanged: (value) {
                     setState(() {
-                      textConfirm1 = value; // Store the entered text in the variable
+                      textConfirm1 =
+                          value; // Store the entered text in the variable
                     });
                   },
                   textInputAction: TextInputAction.next,
@@ -189,48 +194,47 @@ class _SignUpState extends State<SignUp> {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Color(0xff059E2E), width: 2),
+                      borderSide:
+                          BorderSide(color: Color(0xff059E2E), width: 2),
                       borderRadius: BorderRadius.all(
                         Radius.circular(10),
                       ),
                     ),
-                    hintText:'Confirm Password',focusColor: Color(0xff059E2E),
+                    hintText: 'Confirm Password',
+                    focusColor: Color(0xff059E2E),
                     label: Text('Confirm Password'),
                   ),
                 ),
               ),
-
-
-
-
-              // textFieldBox(
-              //   textName,
-              //   'Full Name',
-              //   'Full Name',
-              // ),
-              // textFieldBox_signup(textEmail, 'Email ID', 'Email ID ',),
-              // textFieldBox(textMobileNum, 'Mobile Number', 'Mobile Number'),
-              // textFieldBox(textPassword, 'Password', 'Password '),
-              // textFieldBox(textConfirm, 'Confirm Password', 'Confirm Password'),
               SizedBox(
                 height: height / 35,
               ),
               GestureDetector(
                 onTap: () {
                   //login chek for account
-                  (login(username: textName.text, password: textConfirm.text, userid: textEmail.text))?showDialogBoxlogin(context):Singup=true;
-                  (textname1 != null && textMobileNum1 !=null&& textConfirm1!=null && textEmail1 != null&& textPassword1 != null )?
+                  (login(
+                          username: textName.text,
+                          password: textConfirm.text,
+                          userid: textEmail.text))
+                      ? showDialogBoxlogin(context)
+                      : Singup = true;
+                  (textname1 != null &&
+                          textMobileNum1 != null &&
+                          textConfirm1 != null &&
+                          textEmail1 != null &&
+                          textPassword1 != null)
+                      ? (textPassword.text == textConfirm.text)
+                          ? (Singup)
+                              ? signUp(
+                                  username: textName.text,
+                                  userid: textEmail.text,
+                                  num: textMobileNum.text,
+                                  password: textConfirm.text)
+                              : null
+                          : showDialogBox(context)
+                      : showDialogBoxnull(context);
 
-
-                  (textPassword.text == textConfirm.text)?
-                  (Singup)?signUp(username: textName.text,userid: textEmail.text,num: textMobileNum.text,password: textConfirm.text):null
-                      :showDialogBox(context)
-                      :showDialogBoxnull(context);
-
-                  (navigation)?
-                  Navigator.pushNamed(context, '/login'):null;
-                  //showDialogBoxerror(context);
-
+                  (navigation) ? Navigator.pushNamed(context, '/login') : null;
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 75),
@@ -308,26 +312,22 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
                 height: height / 35,
               ),
-
               Padding(
-                padding:  EdgeInsets.only(left: width/5),
+                padding: EdgeInsets.only(left: width / 5),
                 child: Row(
                   children: [
-                    Text("Dont Have An Account?",style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.black
-                    ),),
-
-                    TextButton(onPressed: () {
-                      Navigator.pushNamed(context, '/login');
-                    }, child: Text("Login"))
-
-
+                    Text(
+                      "Dont Have An Account?",
+                      style: TextStyle(fontSize: 15, color: Colors.black),
+                    ),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/login');
+                        },
+                        child: Text("Login"))
                   ],
                 ),
               ),
-
-
             ],
           ),
         ),
