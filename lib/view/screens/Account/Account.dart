@@ -132,7 +132,7 @@ class _AccountState extends State<Account> {
                           ),
                         ),
                         Text(
-                          "*****",
+                          (switchValue)?'\$${countBalance()}':"*****",
                           style: TextStyle(
                               color: text,
                               fontSize: height * 0.025,
@@ -171,7 +171,7 @@ class _AccountState extends State<Account> {
                           ),
                         ),
                         Text(
-                          "*****",
+                          (switchValue)?'\$${earningCounting()}':"*****",
                           style: TextStyle(
                             color: text,
                               fontSize: height * 0.025,
@@ -211,7 +211,7 @@ class _AccountState extends State<Account> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "*****",
+                      (switchValue)?'\$${countBalance()}':"*****",
                       style: TextStyle(
                           color: text,
                           fontSize: height * 0.02,
@@ -251,7 +251,7 @@ class _AccountState extends State<Account> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "*****",
+                      (switchValue)?'\$${earningCounting()}':"*****",
                       style: TextStyle(
                           color: text,
                           fontSize: height * 0.02,

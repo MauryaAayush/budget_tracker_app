@@ -160,7 +160,7 @@ class SettingState extends State<Setting> {
                                            color_sigin_and_login = (dark)?Color(0xff059e2e):Color(0xffffffff);
                                            Color_backgrond = Color(0xffC8D2CB);
                                            swithact = (dark)?Colors.black87: Colors.blueAccent as Color;
-                                          Navigator.pop(context);
+                                          Navigator.pushNamed(context, '/bottem');
                                         });
                                       },
                                       child: Text(
@@ -180,7 +180,7 @@ class SettingState extends State<Setting> {
                                          color_sigin_and_login = (dark)?Color(0xff059e2e):Color(0xffffffff);
                                          Color_backgrond = Color(0xffC8D2CB);
                                         swithact = (dark)?Colors.black87: Colors.blueAccent as Color;
-                                        Navigator.pop(context);
+                                        Navigator.pushNamed(context, '/bottem');
                                       });
                                     },
                                     child: Text(

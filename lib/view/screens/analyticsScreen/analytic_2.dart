@@ -135,11 +135,11 @@ class _Analytics2State extends State<Analytics2> {
           height: height / 17.9,
           width: width / 2,
           decoration: BoxDecoration(
-              color: Colors.black12, borderRadius: BorderRadius.circular(15)),
+              color: boder, borderRadius: BorderRadius.circular(15)),
           child: Center(
               child: Text(
             "Balance:$currencyCode${countBalance()}",
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 18,color: text),
           )),
         ),
         ListTile(

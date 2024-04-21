@@ -296,8 +296,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               onLongPress: () {
                                 showDialog(
                                   context: context,
-                                  barrierColor: Backgruond,
                                   builder: (context) => AlertDialog(
+                                    backgroundColor: Backgruond,
                                     title:
 
                                         Text("Are you sure you want to delete",style: TextStyle(color: text),),
@@ -374,7 +374,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Text(
                                             '${transactionData[index]['amount']}',
                                             style: TextStyle(
-                                                color: text,
+                                                color: Colors.black,
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: height / 45),
                                           ),
