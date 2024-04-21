@@ -41,7 +41,7 @@ class _Analytics2State extends State<Analytics2> {
                       backgroundColor: Colors.white54,
                       child: Icon(
                         Icons.arrow_upward,
-                        color: text,
+                        color: Colors.white,
                       ),
                     ),
                     SizedBox(
@@ -534,7 +534,7 @@ class _Analytics2State extends State<Analytics2> {
                       width: width / 3,
                     ),
                     Text(
-                      "$currencyCode${spending / expenseLengthTransaction!}",
+                      "$currencyCode${spending / expenseLengthTransaction}",
                       style: TextStyle(
                         color: text,
                         fontSize: 18,
@@ -564,7 +564,7 @@ class _Analytics2State extends State<Analytics2> {
                       width: width / 2.9,
                     ),
                     Text(
-                      "$currencyCode${income / incomeLengthTransaction!}",
+                      "$currencyCode${income / incomeLengthTransaction}",
                       style: TextStyle(
                         color: text,
                         fontSize: 18,

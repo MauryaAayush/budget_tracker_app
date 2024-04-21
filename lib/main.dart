@@ -29,7 +29,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: (dark) ? Colors.white : Colors.black));
+      statusBarColor: (dark) ? Colors.black12 : Colors.black));
   runApp(const BudgetTracker());
 }
 

@@ -803,6 +803,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: width / 4,
                     decoration: BoxDecoration(
                         color: Contain,
+                        image: DecorationImage(
+                            image: AssetImage('assets/img/m1.png')),
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
                             bottomLeft: Radius.circular(10))),
@@ -858,6 +860,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: width / 4,
                     decoration: BoxDecoration(
                         color: Contain,
+                        image: DecorationImage(
+                            image: AssetImage('assets/img/m2.webp')),
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
                             bottomLeft: Radius.circular(10))),
@@ -896,6 +900,7 @@ class _HomeScreenState extends State<HomeScreen> {
               width: width / 1.1,
               decoration: BoxDecoration(
                 color: Contain,
+
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
@@ -913,6 +918,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: width / 4,
                     decoration: BoxDecoration(
                         color: Contain,
+                        image: DecorationImage(
+                            image: AssetImage('assets/img/m3.png')),
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(10),
                             bottomLeft: Radius.circular(10))),

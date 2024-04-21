@@ -311,10 +311,10 @@ class _AboutAppState extends State<AboutApp> {
                       children: [
                         CircleAvatar(
                           maxRadius: height * 0.08,
-                          backgroundImage: AssetImage('assets/img/team/Meshva.jpeg'),
+                          backgroundImage: AssetImage('assets/img/team/Meshva.jpg'),
                         ),
                         Text(
-                          "Meshwa",
+                          "Meshva",
                           style: TextStyle(
                               fontSize: height * 0.024,
                               fontWeight: FontWeight.w600),
@@ -389,7 +389,7 @@ class _AboutAppState extends State<AboutApp> {
                       children: [
                         CircleAvatar(
                           maxRadius: height * 0.08,
-                          backgroundImage: AssetImage('assets/img/team/jaydeep.jpg'),
+                          backgroundImage: AssetImage('assets/img/team/Darshan.jpg'),
                         ),
                         Text(
                           "Darshan",
