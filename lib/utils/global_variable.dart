@@ -29,10 +29,10 @@ String selectedCurrencyToShow = "INR";
 String currencyCode = "\u20B9";
 
 Map<String, double> dataMapIncome = {
-  'Flutter': 0,
+  'Other': 0,
 };
 Map<String, double> dataMapEaxpens = {
-  'Flutter': 0,
+  'Other': 0,
 };
 
 File? imgPath;

@@ -139,13 +139,14 @@ class _Analytics2State extends State<Analytics2> {
           child: Center(
               child: Text(
             "Balance:$currencyCode${countBalance()}",
-            style: TextStyle(fontSize: 18,color: text),
+            style: TextStyle(fontSize: 18, color: text),
           )),
         ),
         ListTile(
           leading: Text(
             "Trends",
-            style: TextStyle(color: text,fontSize: 25, fontWeight: FontWeight.w500),
+            style: TextStyle(
+                color: text, fontSize: 25, fontWeight: FontWeight.w500),
           ),
           title: Row(
             children: [
@@ -162,7 +163,7 @@ class _Analytics2State extends State<Analytics2> {
               borderRadius: BorderRadius.circular(15),
               boxShadow: [
                 BoxShadow(
-                  color:boder,
+                  color: boder,
                   //Colors.grey.shade300,
 
                   // offset: const Offset(1, 5),
@@ -176,15 +177,16 @@ class _Analytics2State extends State<Analytics2> {
               children: [
                 Text(
                   "Discover Financial Trends",
-                  style: TextStyle(color: text,fontSize: 25, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: text, fontSize: 25, fontWeight: FontWeight.bold),
                 ),
                 Text(
                   "Gain insights into your sepending patterns with",
-                  style: TextStyle(color: text,fontSize: 15),
+                  style: TextStyle(color: text, fontSize: 15),
                 ),
                 Text(
                   "trend analysis in premium.",
-                  style: TextStyle(color: text,fontSize: 15),
+                  style: TextStyle(color: text, fontSize: 15),
                 ),
                 SizedBox(
                   height: height / 30,
@@ -211,7 +213,8 @@ class _Analytics2State extends State<Analytics2> {
         ListTile(
           leading: Text(
             "Categories",
-            style: TextStyle(color: text,fontSize: 25, fontWeight: FontWeight.w500),
+            style: TextStyle(
+                color: text, fontSize: 25, fontWeight: FontWeight.w500),
           ),
         ),
         Container(
@@ -237,7 +240,8 @@ class _Analytics2State extends State<Analytics2> {
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 child: Text(
                   "Category-Wise Spending",
-                  style: TextStyle(color:text,fontSize: 18, fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                      color: text, fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ),
               // graph ////----------------------------------------
@@ -283,22 +287,22 @@ class _Analytics2State extends State<Analytics2> {
                     Container(
                         height: height / 10.9,
                         width: width / 9,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle, color: boder),
+                        decoration:
+                            BoxDecoration(shape: BoxShape.circle, color: boder),
                         child: Icon(Icons.more_horiz)),
                     SizedBox(
                       width: width / 15,
                     ),
                     Text(
                       "Others",
-                      style: TextStyle(color: text,fontSize: 18),
+                      style: TextStyle(color: text, fontSize: 18),
                     ),
                     SizedBox(
                       width: width / 2.9,
                     ),
                     Text(
-                      "1,000.0",
-                      style: TextStyle(color: text,fontSize: 18),
+                      '$currencyCode${spendingCounting()}',
+                      style: TextStyle(color: text, fontSize: 18),
                     ),
                   ],
                 ),
@@ -317,7 +321,7 @@ class _Analytics2State extends State<Analytics2> {
               borderRadius: BorderRadius.circular(15),
               boxShadow: [
                 BoxShadow(
-                  color:boder,
+                  color: boder,
 
                   // offset: const Offset(1, 5),
                   blurRadius: 0.2,
@@ -332,7 +336,8 @@ class _Analytics2State extends State<Analytics2> {
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                 child: Text(
                   "Category-Wise Income",
-                  style: TextStyle(color: text,fontSize: 18, fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                      color: text, fontSize: 18, fontWeight: FontWeight.w500),
                 ),
               ),
               // graph ////----------------------------------------
@@ -378,22 +383,22 @@ class _Analytics2State extends State<Analytics2> {
                     Container(
                         height: height / 10.9,
                         width: width / 9,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle, color: boder),
+                        decoration:
+                            BoxDecoration(shape: BoxShape.circle, color: boder),
                         child: Icon(Icons.more_horiz)),
                     SizedBox(
                       width: width / 15,
                     ),
                     Text(
                       "Others",
-                      style: TextStyle(color: text,fontSize: 18),
+                      style: TextStyle(color: text, fontSize: 18),
                     ),
                     SizedBox(
                       width: width / 2.9,
                     ),
                     Text(
-                      "1,000.0",
-                      style: TextStyle(color: text,fontSize: 18),
+                      '$currencyCode${earningCounting()}',
+                      style: TextStyle(color: text, fontSize: 18),
                     ),
                   ],
                 ),
@@ -407,12 +412,12 @@ class _Analytics2State extends State<Analytics2> {
         ListTile(
           leading: Text(
             "Payment modes",
-            style: TextStyle(color: text,fontSize: 25, fontWeight: FontWeight.w500),
-
+            style: TextStyle(
+                color: text, fontSize: 25, fontWeight: FontWeight.w500),
           ),
         ),
         Container(
-          height: height / 6.4,
+          height: height / 3.4,
           width: width,
           decoration: BoxDecoration(
               color: Contain,
@@ -431,7 +436,8 @@ class _Analytics2State extends State<Analytics2> {
               children: [
                 Text(
                   "Spending",
-                  style: TextStyle(color: text,fontSize: 18, fontWeight: FontWeight.w500),
+                  style: TextStyle(
+                      color: text, fontSize: 18, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
                   height: height / 30,
@@ -457,8 +463,45 @@ class _Analytics2State extends State<Analytics2> {
                       width: width / 2.3,
                     ),
                     Text(
-                      "1,000.0",
-                      style: TextStyle(color: text,fontSize: 18),
+                      '$currencyCode${spendingCounting()}',
+                      style: TextStyle(color: text, fontSize: 18),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: height / 30,
+                ),
+                Text(
+                  "Income",
+                  style: TextStyle(
+                      color: text, fontSize: 18, fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  height: height / 30,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.indeterminate_check_box,
+                      color: Colors.green,
+                      size: 28,
+                    ),
+                    SizedBox(
+                      width: width / 15,
+                    ),
+                    Text(
+                      "Cash",
+                      style: TextStyle(
+                        color: text,
+                        fontSize: 18,
+                      ),
+                    ),
+                    SizedBox(
+                      width: width / 2.3,
+                    ),
+                    Text(
+                      '$currencyCode${earningCounting()}',
+                      style: TextStyle(color: text, fontSize: 18),
                     ),
                   ],
                 )
@@ -472,7 +515,8 @@ class _Analytics2State extends State<Analytics2> {
         ListTile(
           leading: Text(
             "Stats",
-            style: TextStyle(color: text,fontSize: 25, fontWeight: FontWeight.w500),
+            style: TextStyle(
+                color: text, fontSize: 25, fontWeight: FontWeight.w500),
           ),
         ),
         Container(
@@ -497,8 +541,10 @@ class _Analytics2State extends State<Analytics2> {
                   children: [
                     Text(
                       "Number of transactions",
-                      style:
-                          TextStyle(color: text,fontSize: 18, fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                          color: text,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
                     ),
                     SizedBox(
                       width: width / 4.9,
@@ -516,8 +562,10 @@ class _Analytics2State extends State<Analytics2> {
                   height: height / 60,
                 ),
                 Text("Average spending",
-                    style:
-                        TextStyle(color: text,fontSize: 18, fontWeight: FontWeight.w500)),
+                    style: TextStyle(
+                        color: text,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500)),
                 SizedBox(
                   height: height / 80,
                 ),
@@ -546,15 +594,17 @@ class _Analytics2State extends State<Analytics2> {
                   height: height / 60,
                 ),
                 Text("Average income",
-                    style:
-                        TextStyle(color: text,fontSize: 18, fontWeight: FontWeight.w500)),
+                    style: TextStyle(
+                        color: text,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500)),
                 SizedBox(
                   height: height / 80,
                 ),
                 Row(
                   children: [
                     Text(
-                      "Per trandaction",
+                      "Per transaction",
                       style: TextStyle(
                         color: text,
                         fontSize: 18,
