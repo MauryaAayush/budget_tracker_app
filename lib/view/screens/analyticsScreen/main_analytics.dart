@@ -1,3 +1,4 @@
+import 'package:budget_tracker_app/utils/Globla_methods.dart';
 import 'package:budget_tracker_app/utils/global_variable.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytic_2.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytics.dart';
@@ -159,9 +160,14 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                     SizedBox(
                       width: width / 30,
                     ),
-                    Text(
-                      'Custom',
-                      style: TextStyle(fontSize: 16, color: text),
+                    InkWell(
+                      onTap: () {
+                        Premium_lelo(context, height, width);
+                      },
+                      child: Text(
+                        'Custom',
+                        style: TextStyle(fontSize: 16, color: text),
+                      ),
                     ),
                   ],
                 ),

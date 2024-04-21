@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -58,19 +59,24 @@ class _Get_startedState extends State<Get_started> {
                 SizedBox(
                   height: height / 30,
                 ),
-                Container(
-                  height: height / 15,
-                  width: width,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Center(
-                    child: Text(
-                      "Get Started",
-                      style: GoogleFonts.poppins(
-                        fontSize: 22,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).pushReplacementNamed('/s2');
+                  },
+                  child: Container(
+                    height: height / 15,
+                    width: width,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Center(
+                      child: Text(
+                        "Get Started",
+                        style: GoogleFonts.poppins(
+                          fontSize: 22,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ),

@@ -14,19 +14,28 @@ class _SplashState extends State<Splash> {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Column(
-
         children: [
-          SizedBox(height: 100,),
-          Center(child: Text("What's your Primary Goal? ",style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: height/30,
-          ),)),
-          SizedBox(height: 50,),
+          SizedBox(
+            height: 100,
+          ),
+          Center(
+              child: Text(
+            "What's your Primary Goal? ",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: height / 30,
+            ),
+          )),
+          SizedBox(
+            height: 50,
+          ),
 
           Container(
-            height: height/7,
-            width: width/1.080,
+            height: height / 7,
+            width: width / 1.080,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
@@ -38,33 +47,41 @@ class _SplashState extends State<Splash> {
                   color: Colors.black12,
                 ),
               ],
-            ),child: Row(
-            children: [
-              Text('     Budgeting',style: TextStyle(
-                  fontSize: 21,
-                  fontWeight: FontWeight.w500
-              ),),
-              Spacer(),
-              Container(
-                height: height/7,
-                width: width/3,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(10),topRight: Radius.circular(10)),
-                  color: Colors.black,
-
+            ),
+            child: Row(
+              children: [
+                Text(
+                  '     Budgeting',
+                  style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
                 ),
-                child: ClipRRect(
-                    borderRadius: BorderRadiusDirectional.only(bottomEnd: Radius.circular(10),topEnd: Radius.circular(10)),
-                    child: Image.asset('assets/img/5.jpeg',fit: BoxFit.cover,)),
-              ),
-
-            ],
+                Spacer(),
+                Container(
+                  height: height / 7,
+                  width: width / 3,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(10),
+                        topRight: Radius.circular(10)),
+                    color: Colors.black,
+                  ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadiusDirectional.only(
+                          bottomEnd: Radius.circular(10),
+                          topEnd: Radius.circular(10)),
+                      child: Image.asset(
+                        'assets/img/s2.jpg',
+                        fit: BoxFit.cover,
+                      )),
+                ),
+              ],
+            ),
           ),
+          SizedBox(
+            height: 20,
           ),
-          SizedBox(height: 20,),
           Container(
-            height: height/7,
-            width: width/1.080,
+            height: height / 7,
+            width: width / 1.080,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
@@ -76,33 +93,41 @@ class _SplashState extends State<Splash> {
                   color: Colors.black12,
                 ),
               ],
-            ),child: Row(
-            children: [
-              Text('     Track My Spending',style: TextStyle(
-                  fontSize: 21,
-                  fontWeight: FontWeight.w500
-              ),),
-              Spacer(),
-              Container(
-                height: height/7,
-                width: width/3,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(10),topRight: Radius.circular(10)),
-                  color: Colors.black,
-
+            ),
+            child: Row(
+              children: [
+                Text(
+                  '     Track My Spending',
+                  style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
                 ),
-                child: ClipRRect(
-                    borderRadius: BorderRadiusDirectional.only(bottomEnd: Radius.circular(10),topEnd: Radius.circular(10)),
-                    child: Image.asset('assets/img/4.jpeg',fit: BoxFit.cover,)),
-              ),
-
-            ],
+                Spacer(),
+                Container(
+                  height: height / 7,
+                  width: width / 3,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(10),
+                        topRight: Radius.circular(10)),
+                    color: Colors.black,
+                  ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadiusDirectional.only(
+                          bottomEnd: Radius.circular(10),
+                          topEnd: Radius.circular(10)),
+                      child: Image.asset(
+                        'assets/img/s1.jpg',
+                        fit: BoxFit.cover,
+                      )),
+                ),
+              ],
+            ),
           ),
+          SizedBox(
+            height: 20,
           ),
-          SizedBox(height: 20,),
           Container(
-            height: height/7,
-            width: width/1.080,
+            height: height / 7,
+            width: width / 1.080,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
@@ -114,55 +139,63 @@ class _SplashState extends State<Splash> {
                   color: Colors.black12,
                 ),
               ],
-            ),child: Row(
-            children: [
-              Text('     Save Money',style: TextStyle(
-                  fontSize: 21,
-                  fontWeight: FontWeight.w500
-              ),),
-              Spacer(),
-              Container(
-                height: height/7,
-                width: width/3,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(bottomRight: Radius.circular(10),topRight: Radius.circular(10)),
-                  color: Colors.black,
-
+            ),
+            child: Row(
+              children: [
+                Text(
+                  '     Save Money',
+                  style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
                 ),
-                child: ClipRRect(
-                    borderRadius: BorderRadiusDirectional.only(bottomEnd: Radius.circular(10),topEnd: Radius.circular(10)),
-                    child: Image.asset('assets/img/3.jpeg',fit: BoxFit.cover,)),
-              ),
-
-            ],
+                Spacer(),
+                Container(
+                  height: height / 7,
+                  width: width / 3,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(10),
+                        topRight: Radius.circular(10)),
+                    color: Colors.black,
+                  ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadiusDirectional.only(
+                          bottomEnd: Radius.circular(10),
+                          topEnd: Radius.circular(10)),
+                      child: Image.asset(
+                        'assets/img/s3.jpg',
+                        fit: BoxFit.cover,
+                      )),
+                ),
+              ],
+            ),
           ),
+          SizedBox(
+            height: 120,
           ),
-          SizedBox(height: 120,),
           //Next button
           InkWell(
             onTap: () {
-
+              Navigator.of(context).pushReplacementNamed('/signUp');
             },
             child: Container(
-              height: height/16,
-              width: width/1.3,
+              height: height / 16,
+              width: width / 1.3,
               decoration: BoxDecoration(
-                color: Colors.black,
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
-              ),child: Center(
-              child: Text('Next',style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w400,
-                  fontSize: 20
               ),
+              child: Center(
+                child: Text(
+                  'Next',
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 20),
+                ),
               ),
-            ),
             ),
           )
-
         ],
       ),
-
     );
   }
 }

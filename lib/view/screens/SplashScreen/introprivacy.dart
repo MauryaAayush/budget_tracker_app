@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -47,19 +48,24 @@ class _PrivacyState extends State<Privacy> {
               ),
             ),
             SizedBox(height: height/15,),
-            Container(
-              height: height/15,
-              width: width,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed('/s3');
+              },
+              child: Container(
+                height: height/15,
+                width: width,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                alignment: Alignment.center,
+                child: Text('Embrace Privacy',style: GoogleFonts.poppins(
+                  fontSize: 22,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                ),),
               ),
-              alignment: Alignment.center,
-              child: Text('Embrace Privacy',style: GoogleFonts.poppins(
-                fontSize: 22,
-                color: Colors.black,
-                fontWeight: FontWeight.w600,
-              ),),
             ),
           ],
         ),

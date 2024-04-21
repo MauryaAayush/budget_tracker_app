@@ -1,4 +1,6 @@
+import 'package:budget_tracker_app/utils/Globla_methods.dart';
 import 'package:budget_tracker_app/utils/global_variable.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/color.dart';
@@ -32,12 +34,17 @@ class _AccountState extends State<Account> {
                       fontSize: height * 0.024,
                       fontWeight: FontWeight.w700),
                 ),
-                Text(
-                  "+ Add account",
-                  style: TextStyle(
-                      color: text,
-                      fontSize: height * 0.019,
-                      fontWeight: FontWeight.w400),
+                GestureDetector(
+                  onTap: () {
+                    Premium_lelo(context, height, width);
+                  },
+                  child: Text(
+                    "+ Add account",
+                    style: TextStyle(
+                        color: text,
+                        fontSize: height * 0.019,
+                        fontWeight: FontWeight.w400),
+                  ),
                 ),
               ],
             ),

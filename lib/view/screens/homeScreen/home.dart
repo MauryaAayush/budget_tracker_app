@@ -1,8 +1,10 @@
+import 'package:budget_tracker_app/utils/Globla_methods.dart';
 import 'package:budget_tracker_app/utils/transactionData.dart';
 import 'package:budget_tracker_app/view/screens/homeScreen/providers/homeProvider.dart';
 import 'package:budget_tracker_app/view/screens/log_in/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../../../utils/color.dart';
@@ -596,7 +598,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               children: [
                 SizedBox(
-                  width: 15,
+                  width: width*0.16,
                 ),
                 Container(
                   height: height / 5,
@@ -616,7 +618,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(10),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
                           'Budget left',
@@ -626,7 +628,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontSize: height / 35),
                         ),
                         Text(
-                          '\$55,944',
+                          '$currencyCode${countBalance()}',
                           style: TextStyle(
                               color: text,
                               fontWeight: FontWeight.w400,
@@ -644,7 +646,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Row(
                             children: [
                               Text(
-                                '   \$56.0',
+                                '$currencyCode${spendingCounting()}',
                                 style: TextStyle(
                                     color: text,
                                     fontWeight: FontWeight.w500,
@@ -652,7 +654,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               Spacer(),
                               Text(
-                                '\$56,000   ',
+                                '$currencyCode${earningCounting()}',
                                 style: TextStyle(
                                     color: text,
                                     fontWeight: FontWeight.w500,
@@ -732,21 +734,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    height: height / 20,
-                    width: width / 2,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: text,
+                  GestureDetector(
+                    onTap: () {
+                      Premium_lelo(context, height, width);
+                    },
+                    child: Container(
+                      height: height / 20,
+                      width: width / 2,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: text,
+                      ),
+                      child: Center(
+                          child: Text(
+                        'Upgrade Now',
+                        style: TextStyle(
+                            color: Backgruond,
+                            fontSize: height / 45,
+                            fontWeight: FontWeight.w600),
+                      )),
                     ),
-                    child: Center(
-                        child: Text(
-                      'Upgrade Now',
-                      style: TextStyle(
-                          color: Backgruond,
-                          fontSize: height / 45,
-                          fontWeight: FontWeight.w600),
-                    )),
                   ),
                 ],
               ),

@@ -1,4 +1,6 @@
+import 'package:budget_tracker_app/utils/Globla_methods.dart';
 import 'package:budget_tracker_app/utils/transactionData.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 import '../../../utils/color.dart';
@@ -191,17 +193,22 @@ class _Analytics2State extends State<Analytics2> {
                 SizedBox(
                   height: height / 30,
                 ),
-                Container(
-                  height: height / 17.9,
-                  width: width / 2,
-                  decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Center(
-                      child: Text(
-                    "Upgrade Now",
-                    style: TextStyle(color: Colors.white, fontSize: 19),
-                  )),
+                GestureDetector(
+                  onTap: () {
+                    Premium_lelo(context, height, width);
+                  },
+                  child: Container(
+                    height: height / 17.9,
+                    width: width / 2,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Center(
+                        child: Text(
+                      "Upgrade Now",
+                      style: TextStyle(color: Colors.white, fontSize: 19),
+                    )),
+                  ),
                 )
               ],
             ),

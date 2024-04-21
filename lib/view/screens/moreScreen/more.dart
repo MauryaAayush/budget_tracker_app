@@ -1,8 +1,12 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+
 import 'package:image_picker/image_picker.dart';
 
+import '../../../utils/Globla_methods.dart';
 import '../../../utils/color.dart';
 import '../../../utils/global_variable.dart';
 import '../log_in/login.dart';
@@ -50,12 +54,13 @@ class _MoreScreenState extends State<MoreScreen> {
                             textName.text,
                             style: TextStyle(
                                 fontSize: height * 0.02,
-                                fontWeight: FontWeight.w600),
+                                fontWeight: FontWeight.w600,
+                                color: text),
                           ),
                           subtitle: Text(
-                            "Sign in",
+                            textEmail.text,
                             style: TextStyle(
-                              color: text,
+                                color: text,
                                 fontSize: height * 0.017,
                                 fontWeight: FontWeight.w600),
                           ),
@@ -76,12 +81,11 @@ class _MoreScreenState extends State<MoreScreen> {
                     children: [
                       Text(
                         "Last backup: No backups created.",
-                        style: TextStyle(
-                            color: text, fontSize: height * 0.016),
+                        style: TextStyle(color: text, fontSize: height * 0.016),
                       ),
                       Text(
                         "Backup now",
-                        style: TextStyle(color: text,fontSize: height * 0.018),
+                        style: TextStyle(color: text, fontSize: height * 0.018),
                       ),
                     ],
                   ),
@@ -127,7 +131,8 @@ class _MoreScreenState extends State<MoreScreen> {
                               },
                               child: Text(
                                 "Transactions",
-                                style: TextStyle(color: text,fontSize: height * 0.018),
+                                style: TextStyle(
+                                    color: text, fontSize: height * 0.018),
                               ),
                             ),
                           ],
@@ -137,7 +142,7 @@ class _MoreScreenState extends State<MoreScreen> {
                         height: height * 0.068,
                         width: width * 0.45,
                         decoration: BoxDecoration(
-                            color:Contain,
+                            color: Contain,
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
                               BoxShadow(
@@ -163,7 +168,8 @@ class _MoreScreenState extends State<MoreScreen> {
                               },
                               child: Text(
                                 "Reminders",
-                                style: TextStyle(color: text,fontSize: height * 0.018),
+                                style: TextStyle(
+                                    color: text, fontSize: height * 0.018),
                               ),
                             ),
                           ],
@@ -184,7 +190,7 @@ class _MoreScreenState extends State<MoreScreen> {
                             boxShadow: [
                               BoxShadow(
                                   color: boder,
-                                 // offset: Offset(2, 4),
+                                  // offset: Offset(2, 4),
                                   blurRadius: 0.5,
                                   spreadRadius: 2)
                             ]),
@@ -205,7 +211,8 @@ class _MoreScreenState extends State<MoreScreen> {
                               },
                               child: Text(
                                 "Budgets",
-                                style: TextStyle(color: text,fontSize: height * 0.018),
+                                style: TextStyle(
+                                    color: text, fontSize: height * 0.018),
                               ),
                             ),
                           ],
@@ -241,7 +248,8 @@ class _MoreScreenState extends State<MoreScreen> {
                               },
                               child: Text(
                                 "Categories",
-                                style: TextStyle(color: text,fontSize: height * 0.018),
+                                style: TextStyle(
+                                    color: text, fontSize: height * 0.018),
                               ),
                             ),
                           ],
@@ -279,45 +287,52 @@ class _MoreScreenState extends State<MoreScreen> {
                             ),
                             InkWell(
                               onTap: () {
-                               Navigator.pushNamed(context, '/tags');
+                                Navigator.pushNamed(context, '/tags');
                               },
                               child: Text(
                                 "Tags",
-                                style: TextStyle(color: text,fontSize: height * 0.018),
+                                style: TextStyle(
+                                    color: text, fontSize: height * 0.018),
                               ),
                             ),
                           ],
                         ),
                       ),
-                      Container(
-                        height: height * 0.068,
-                        width: width * 0.45,
-                        decoration: BoxDecoration(
-                            color: Contain,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: boder,
-                                  //offset: Offset(2, 4),
-                                  blurRadius: 0.5,
-                                  spreadRadius: 2)
-                            ]),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: Icon(
-                                Icons.diamond_outlined,
-                                color: Colors.amber.shade400,
-                                size: height * 0.034,
+                      InkWell(
+                        onTap: () {
+                          Premium_lelo(context, height, width);
+                        },
+                        child: Container(
+                          height: height * 0.068,
+                          width: width * 0.45,
+                          decoration: BoxDecoration(
+                              color: Contain,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: boder,
+                                    //offset: Offset(2, 4),
+                                    blurRadius: 0.5,
+                                    spreadRadius: 2)
+                              ]),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 20),
+                                child: Icon(
+                                  Icons.diamond_outlined,
+                                  color: Colors.amber.shade400,
+                                  size: height * 0.034,
+                                ),
                               ),
-                            ),
-                            Text(
-                              "Go Premium",
-                              style: TextStyle(color: text,fontSize: height * 0.018),
-                            ),
-                          ],
+                              Text(
+                                "Go Premium",
+                                style: TextStyle(
+                                    fontSize: height * 0.018, color: text),
+                              ),
+                            ],
+                          ),
                         ),
                       )
                     ],
@@ -325,7 +340,7 @@ class _MoreScreenState extends State<MoreScreen> {
                   SizedBox(height: height * 0.03),
                   Text("Views",
                       style: TextStyle(
-                        color: text,
+                          color: text,
                           fontSize: height * 0.02,
                           fontWeight: FontWeight.bold)),
                   SizedBox(height: height * 0.012),
@@ -356,7 +371,8 @@ class _MoreScreenState extends State<MoreScreen> {
                               ),
                               Text(
                                 "Day",
-                                style: TextStyle(color: text,fontSize: height * 0.02),
+                                style: TextStyle(
+                                    color: text, fontSize: height * 0.02),
                               )
                             ],
                           ),
@@ -388,7 +404,8 @@ class _MoreScreenState extends State<MoreScreen> {
                               ),
                               Text(
                                 "Month",
-                                style: TextStyle( color: text,fontSize: height * 0.02),
+                                style: TextStyle(
+                                    color: text, fontSize: height * 0.02),
                               )
                             ],
                           ),
@@ -420,7 +437,8 @@ class _MoreScreenState extends State<MoreScreen> {
                               ),
                               Text(
                                 "Custom",
-                                style: TextStyle(color: text,fontSize: height * 0.02),
+                                style: TextStyle(
+                                    color: text, fontSize: height * 0.02),
                               )
                             ],
                           ),
@@ -431,7 +449,7 @@ class _MoreScreenState extends State<MoreScreen> {
                   SizedBox(height: height * 0.02),
                   Text("More options",
                       style: TextStyle(
-                        color: text,
+                          color: text,
                           fontSize: height * 0.02,
                           fontWeight: FontWeight.bold)),
                   InkWell(
@@ -446,7 +464,10 @@ class _MoreScreenState extends State<MoreScreen> {
                         size: height * 0.032,
                         color: text,
                       ),
-                      title: Text("Settings",style: TextStyle(color: text),),
+                      title: Text(
+                        "Settings",
+                        style: TextStyle(color: text),
+                      ),
                     ),
                   ),
                   InkWell(
@@ -461,33 +482,65 @@ class _MoreScreenState extends State<MoreScreen> {
                         size: height * 0.032,
                         color: text,
                       ),
-                      title: Text("Referrals",style: TextStyle(color: text),),
+                      title: Text(
+                        "Referrals",
+                        style: TextStyle(color: text),
+                      ),
                     ),
                   ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.star_border_purple500,
-                      size: height * 0.032,
-                      color: text,
+
+                  InkWell(
+                    onTap: () {
+                      Play_Store(context, height, width);
+                    },
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.star_border_purple500,
+                        size: height * 0.032,
+                        color: text,
+                      ),
+                      title: Text(
+                        "Rate App",
+                        style: TextStyle(color: text),
+                      ),
                     ),
-                    title: Text("Rate App",style: TextStyle(color: text),),
                   ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.chat_outlined,
-                      size: height * 0.032,
-                      color: text,
+
+
+                  InkWell(
+                    onTap: () {
+                      Play_Store(context, height, width);
+                    },
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.chat_outlined,
+                        size: height * 0.032,
+                        color: text,
+                      ),
+                      title: Text(
+                        "Query/feedback",
+                        style: TextStyle(color: text),
+                      ),
                     ),
-                    title: Text("Query/feedback",style: TextStyle(color: text),),
                   ),
-                  ListTile(
-                    leading: Icon(
-                      Icons.help_outline,
-                      size: height * 0.032,
-                      color: text,
+
+                  InkWell(
+                    onTap: () {
+                      Play_Store(context, height, width);
+                    },
+                    child: ListTile(
+                      leading: Icon(
+                        Icons.help_outline,
+                        size: height * 0.032,
+                        color: text,
+                      ),
+                      title: Text(
+                        "FAQ",
+                        style: TextStyle(color: text),
+                      ),
                     ),
-                    title: Text("FAQ",style: TextStyle(color: text),),
                   ),
+
                   InkWell(
                     onTap: () {
                       setState(() {
@@ -500,7 +553,10 @@ class _MoreScreenState extends State<MoreScreen> {
                         size: height * 0.032,
                         color: text,
                       ),
-                      title: Text("About app",style: TextStyle(color: text),),
+                      title: Text(
+                        "About app",
+                        style: TextStyle(color: text),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -514,6 +570,8 @@ class _MoreScreenState extends State<MoreScreen> {
       ),
     );
   }
+
+
 
   ImagePicker imagePicker = ImagePicker();
 

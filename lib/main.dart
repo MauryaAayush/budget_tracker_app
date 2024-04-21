@@ -7,6 +7,7 @@ import 'package:budget_tracker_app/view/screens/Refrencial/refrence1.dart';
 import 'package:budget_tracker_app/view/screens/Setting/setting.dart';
 import 'package:budget_tracker_app/view/screens/SplashScreen/intro_get_start.dart';
 import 'package:budget_tracker_app/view/screens/SplashScreen/introprivacy.dart';
+import 'package:budget_tracker_app/view/screens/SplashScreen/introsave.dart';
 import 'package:budget_tracker_app/view/screens/SplashScreen/splash.dart';
 import 'package:budget_tracker_app/view/screens/SplashScreen/splash4.dart';
 import 'package:budget_tracker_app/view/screens/analyticsScreen/analytic_2.dart';
@@ -50,6 +51,10 @@ class BudgetTracker extends StatelessWidget {
         initialRoute: '/bottem',
         routes: {
           '/': (context) =>  const SplashScreen(),
+          '/s1': (context) =>  const Get_started(),
+          '/s2': (context) =>  const Privacy(),
+          '/s3': (context) =>  const Saving(),
+          '/s4': (context) =>  const Splash(),
           '/signUp': (context) =>  const SignUp(),
           '/login': (context) =>  const LogIn(),
           '/bottem': (context) => const BottemScreen(),
