@@ -550,16 +550,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         Container(
                           height: height / 20,
                           width: width / 4,
-                          // margin: EdgeInsets.only(left: width / 8),
+                          margin: EdgeInsets.only(left: width / 15),
                           alignment: Alignment.center,
                           decoration: BoxDecoration(
-                            color: Colors.black,
+                            color: text,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Text(
                             'Claim',
                             style: TextStyle(
-                                color: text,
+                                color: Backgruond,
                                 fontWeight: FontWeight.w400,
                                 fontSize: 18),
                           ),
