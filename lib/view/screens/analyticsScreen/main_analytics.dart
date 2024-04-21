@@ -67,7 +67,7 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                         });
                       },
                       child: Container(
-                        height: height / 25,
+                        height: height / 28,
                         width: width / 7,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
@@ -100,7 +100,7 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                         });
                       },
                       child: Container(
-                        height: height / 25,
+                        height: height / 28,
                         width: width / 7,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
@@ -133,7 +133,7 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                         });
                       },
                       child: Container(
-                        height: height / 25,
+                        height: height / 28,
                         width: width / 7,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
