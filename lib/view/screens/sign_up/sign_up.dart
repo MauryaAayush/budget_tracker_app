@@ -212,29 +212,19 @@ class _SignUpState extends State<SignUp> {
               GestureDetector(
                 onTap: () {
                   //login chek for account
-                  (login(
-                          username: textName.text,
-                          password: textConfirm.text,
-                          userid: textEmail.text))
-                      ? showDialogBoxlogin(context)
-                      : Singup = true;
-                  (textname1 != null &&
-                          textMobileNum1 != null &&
-                          textConfirm1 != null &&
-                          textEmail1 != null &&
-                          textPassword1 != null)
-                      ? (textPassword.text == textConfirm.text)
-                          ? (Singup)
-                              ? signUp(
-                                  username: textName.text,
-                                  userid: textEmail.text,
-                                  num: textMobileNum.text,
-                                  password: textConfirm.text)
-                              : null
-                          : showDialogBox(context)
-                      : showDialogBoxnull(context);
+                  ((Singup)?login(username: textName.text, password: textConfirm.text, userid: textEmail.text):false)?showDialogBoxlogin(context):Singup=true;
+                  (textname1 != null && textMobileNum1 !=null&& textConfirm1!=null && textEmail1 != null&& textPassword1 != null )?
 
-                  (navigation) ? Navigator.pushNamed(context, '/login') : null;
+
+                  (textPassword.text == textConfirm.text)?
+                  (Singup)?signUp(username: textName.text,userid: textEmail.text,num: textMobileNum.text,password: textConfirm.text):null
+                      :showDialogBox(context)
+                      :showDialogBoxnull(context);
+
+                  (navigation)?
+                  Navigator.pushNamed(context, '/login'):null;
+                  //showDialogBoxerror(context);
+
                 },
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 75),
