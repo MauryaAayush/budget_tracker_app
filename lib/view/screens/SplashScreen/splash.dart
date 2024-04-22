@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(child: Image.asset("assets/img/budget.png")),
-          Text("Expenses Maneger", style: GoogleFonts.lato(
+          Text("Expense Manager", style: GoogleFonts.lato(
             fontSize: 30,
             color: Colors.white,
             fontWeight: FontWeight.w600,

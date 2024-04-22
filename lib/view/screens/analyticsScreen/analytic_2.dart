@@ -579,7 +579,7 @@ class _Analytics2State extends State<Analytics2> {
                 Row(
                   children: [
                     Text(
-                      "Per trandaction",
+                      "Per transaction",
                       style: TextStyle(
                         color: text,
                         fontSize: 18,
@@ -589,7 +589,7 @@ class _Analytics2State extends State<Analytics2> {
                       width: width / 3,
                     ),
                     Text(
-                      "$currencyCode${spending / expenseLengthTransaction}",
+                      "$currencyCode${(spending / expenseLengthTransaction).toStringAsFixed(2)}",
                       style: TextStyle(
                         color: text,
                         fontSize: 18,

@@ -194,7 +194,7 @@ class _AboutAppState extends State<AboutApp> {
                       children: [
                         CircleAvatar(
                           maxRadius: height * 0.08,
-                          backgroundImage: AssetImage('assets/img/avtar.png'),
+                          backgroundImage: AssetImage('assets/img/team/ashupal.jpg'),
                         ),
                         Text(
                           "Aashupal",

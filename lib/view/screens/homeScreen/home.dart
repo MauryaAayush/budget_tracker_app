@@ -236,12 +236,12 @@ class _HomeScreenState extends State<HomeScreen> {
               height: height * 0.05,
               width: width * 0.4,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30), color: Contain),
+                  borderRadius: BorderRadius.circular(30), color: boder),
               child: Center(
                   child: Text(
                 'Balance: $currencyCode${countBalance()}',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: text,
                     fontSize: height / 60,
                     fontWeight: FontWeight.w500),
               )),
