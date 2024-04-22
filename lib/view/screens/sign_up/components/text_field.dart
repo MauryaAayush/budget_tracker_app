@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '../../../../utils/color.dart';
+
 Widget textFieldBox(
     TextEditingController controller, String name, String lname) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: TextFormField(
       textInputAction: TextInputAction.next,
+      style: TextStyle(color: text),
       controller: controller,
       keyboardType: TextInputType.emailAddress,
       onTapOutside: (event) {

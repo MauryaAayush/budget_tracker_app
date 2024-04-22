@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../utils/color.dart';
 import '../sign_up/components/text_field.dart';
 import '../sign_up/components/usermodal.dart';
 import 'components/show_dilioge.dart';
@@ -21,6 +22,7 @@ class _LogInState extends State<LogIn> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Backgruond,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 15),
@@ -36,7 +38,7 @@ class _LogInState extends State<LogIn> {
               ),
               Text(
                 "Login With Budget Friendly",
-                style: TextStyle(fontSize: 15),
+                style: TextStyle(fontSize: 15,color: text),
               ),
               SizedBox(
                 height: 10,
@@ -91,11 +93,11 @@ class _LogInState extends State<LogIn> {
                       color: Colors.grey,
                     ),
                   ),
-                  const Padding(
+                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
                       'or',
-                      style: TextStyle(color: Colors.black54, fontSize: 17),
+                      style: TextStyle(color: text, fontSize: 17),
                     ),
                   ),
                   Expanded(
@@ -119,12 +121,13 @@ class _LogInState extends State<LogIn> {
                     border: Border.all(color: Colors.black, width: 2),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  child: const Row(
+                  child:  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Sign In With Google',
                         style: TextStyle(
+                          color: text,
                             fontSize: 15, fontWeight: FontWeight.w500),
                       ),
                     ],
@@ -141,7 +144,7 @@ class _LogInState extends State<LogIn> {
                     children: [
                       Text("Dont Have An Account?",style: TextStyle(
                         fontSize: 15,
-                        color: Colors.black
+                        color: text
                       ),),
 
                       TextButton(onPressed: () {

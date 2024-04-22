@@ -92,6 +92,7 @@ class _SignUpState extends State<SignUp> {
                   },
                   textInputAction: TextInputAction.next,
                   controller: textEmail,
+                  style: TextStyle(color: text),
                   keyboardType: TextInputType.emailAddress,
                   onTapOutside: (event) {
                     FocusManager.instance.primaryFocus!.unfocus();
@@ -124,6 +125,7 @@ class _SignUpState extends State<SignUp> {
                   },
                   textInputAction: TextInputAction.next,
                   controller: textMobileNum,
+                  style: TextStyle(color: text),
                   keyboardType: TextInputType.emailAddress,
                   onTapOutside: (event) {
                     FocusManager.instance.primaryFocus!.unfocus();
@@ -156,6 +158,7 @@ class _SignUpState extends State<SignUp> {
                   },
                   textInputAction: TextInputAction.next,
                   controller: textPassword,
+                  style: TextStyle(color: text),
                   keyboardType: TextInputType.emailAddress,
                   onTapOutside: (event) {
                     FocusManager.instance.primaryFocus!.unfocus();
@@ -188,6 +191,7 @@ class _SignUpState extends State<SignUp> {
                   },
                   textInputAction: TextInputAction.next,
                   controller: textConfirm,
+                  style: TextStyle(color: text),
                   keyboardType: TextInputType.emailAddress,
                   onTapOutside: (event) {
                     FocusManager.instance.primaryFocus!.unfocus();
@@ -259,21 +263,21 @@ class _SignUpState extends State<SignUp> {
                     child: Container(
                       height: 0.5,
                       width: width,
-                      color: Colors.grey,
+                      color: text,
                     ),
                   ),
-                  const Padding(
+                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 16.0),
                     child: Text(
                       'or',
-                      style: TextStyle(color: Colors.black54, fontSize: 17),
+                      style: TextStyle(color: text, fontSize: 17),
                     ),
                   ),
                   Expanded(
                     child: Container(
                       height: 0.5,
                       width: width,
-                      color: Colors.grey,
+                      color: text,
                     ),
                   ),
                 ],
@@ -290,13 +294,13 @@ class _SignUpState extends State<SignUp> {
                     border: Border.all(color: Colors.black, width: 2),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  child: const Row(
+                  child:  Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Sign In With Google',
                         style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w500),
+                            fontSize: 15, fontWeight: FontWeight.w500,color: text),
                       ),
                     ],
                   ),
@@ -311,7 +315,7 @@ class _SignUpState extends State<SignUp> {
                   children: [
                     Text(
                       "Dont Have An Account?",
-                      style: TextStyle(fontSize: 15, color: Colors.black),
+                      style: TextStyle(fontSize: 15, color: text),
                     ),
                     TextButton(
                         onPressed: () {
