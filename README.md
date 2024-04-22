@@ -1,8 +1,12 @@
 # budget_tracker_app
 About The App :-
 Introducing  the ultimate expense manager app designed to revolutionize the way you handle your finances. With effortless expense tracking, personalized budget management, and insightful reports, empowers you to take control of your spending habits and achieve your financial goals with ease. Our secure data storage ensures the safety of your financial information, while seamless syncing across devices ensures access anytime, anywhere. Experience the convenience of customizable options and embark on your journey towards financial freedom with  Download now and transform the way you manage your money!
-![image](https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/2cdf827d-8320-40f5-9559-b5641e43063b)
 
+
+
+
+
+https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/18ceefa2-1e15-4f9f-89c2-dcf2fab485e2
 
 
 
