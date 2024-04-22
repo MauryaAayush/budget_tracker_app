@@ -33,13 +33,31 @@ class _SignUpState extends State<SignUp> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Getting Started',
-                style: TextStyle(
-                    fontSize: 30,
-                    color: Color(0xff059E2E),
-                    fontWeight: FontWeight.bold),
-              ),
+               Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 children: [
+                   Text(
+                    'Getting Started',
+                    style: TextStyle(
+                        fontSize: 30,
+                        color: Color(0xff059E2E),
+                        fontWeight: FontWeight.bold),
+                                 ),
+                   TextButton(
+                     onPressed: () {
+                       Navigator.of(context).pushNamed('/bottem');
+                     },
+                     child: Text(
+                      'Skip',
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: text,
+                          fontWeight: FontWeight.bold),
+                                   ),
+                   ),
+
+                 ],
+               ),
                Text(
                 'Create Your Account With Budget Friendly',
                 style: TextStyle(fontSize: 15,color: text),

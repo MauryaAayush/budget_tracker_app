@@ -43,11 +43,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.blue,
-                        radius: 27,
-                        backgroundImage:
-                            (imgPath != null) ? FileImage(imgPath!) : null,
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).pushNamed('/more');
+                        },
+                        child: CircleAvatar(
+                          backgroundColor: Colors.blue,
+                          radius: 27,
+                          backgroundImage:
+                              (imgPath != null) ? FileImage(imgPath!) : null,
+                        ),
                       ),
 
                       // here we have written the text of 👋 and AM
