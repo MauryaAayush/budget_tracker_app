@@ -26,6 +26,7 @@ class _SignUpState extends State<SignUp> {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Backgruond,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 55),
@@ -39,9 +40,9 @@ class _SignUpState extends State<SignUp> {
                     color: Color(0xff059E2E),
                     fontWeight: FontWeight.bold),
               ),
-              const Text(
+               Text(
                 'Create Your Account With Budget Friendly',
-                style: TextStyle(fontSize: 15),
+                style: TextStyle(fontSize: 15,color: text),
               ),
               SizedBox(
                 height: height / 45,
@@ -57,6 +58,7 @@ class _SignUpState extends State<SignUp> {
                   },
                   textInputAction: TextInputAction.next,
                   controller: textName,
+                  style: TextStyle(color: text),
                   keyboardType: TextInputType.emailAddress,
                   onTapOutside: (event) {
                     FocusManager.instance.primaryFocus!.unfocus();
@@ -73,6 +75,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                     hintText: 'Full Name',
+                    hintStyle: TextStyle(color: text),
                     focusColor: Color(0xff059E2E),
                     label: Text('Full Name'),
                   ),
