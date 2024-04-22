@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../utils/color.dart';
+import '../../../utils/global_variable.dart';
+import '../../../utils/transactionData.dart';
+import '../Add_Transaction/Components/Catogryicon.dart';
 
 class Transationa extends StatefulWidget {
   const Transationa({super.key});
@@ -90,70 +93,145 @@ class _TransationaState extends State<Transationa> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Container(
-              height: height / 9,
-              width: width,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.shade300,
-                      blurRadius: 5,
-                      spreadRadius: 1,
-                    )
-                  ]),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                        height: height / 10.9,
-                        width: width / 9,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle, color: Colors.black12),
-                        child: Icon(Icons.more_horiz)),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 18, vertical: 18),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+            child: Column(
+              children: [
+                ...List.generate(
+                  transactionData.length,
+                      (index) => GestureDetector(
+                    onLongPress: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          backgroundColor: Backgruond,
+                          title: Text(
+                            "Are you sure you want to delete",
+                            style: TextStyle(color: text),
+                          ),
+                          actions: [
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text(
+                                  "Cancel",
+                                  style: TextStyle(color: text),
+                                )),
+                            TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    transactionData.removeAt(index);
+                                    Navigator.pop(context);
+                                  });
+                                },
+                                child: Text(
+                                  "Delete",
+                                  style: TextStyle(color: text),
+                                )),
+                          ],
+                        ),
+                      );
+                    },
+                    onTap: () {
+                      isEditing = true;
+                      isEditingIndex = index;
+                      txtAmountExpense.text =
+                      transactionData[index]['amount'];
+                      isExpense = transactionData[index]['isExpense'];
+                      Navigator.pushReplacementNamed(
+                        context,
+                        '/add',
+                      );
+                    },
+                    child: Container(
+                      height: height / 12,
+                      width: width / 1.05,
+                      margin: EdgeInsets.only(bottom: height / 60),
+                      decoration: BoxDecoration(
+                        color: (transactionData[index]['isExpense'])
+                            ? Contain
+                            : Color(0xffE8F6E9),
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: Offset(0, 1),
+                            spreadRadius: 1,
+                            blurRadius: 5,
+                            color: (dark)
+                                ? Colors.black12
+                                : Colors.white12,
+                          ),
+                        ],
+                      ),
+                      child: Row(
                         children: [
-                          Text(
-                            "500.0",
-                            style: GoogleFonts.poppins(
-                              fontSize: 18,
-                              color: Colors.black,
+                          SizedBox(
+                            width: 10,
+                          ),
+                          CircleAvatar(
+                              backgroundColor: categoryIconColorList[
+
+                              transactionData[index]
+                              ['categoryIconColor']]
+                                  .withOpacity(0.15),
+                              radius: 25,
+                              child: transactionData[index]
+                              ['categoryIcon']),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20),
+                            child: Column(
+                              mainAxisAlignment:
+                              MainAxisAlignment.center,
+                              crossAxisAlignment:
+                              CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '$currencyCode${transactionData[index]['amount']}',
+                                  style: TextStyle(
+                                      color: text,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: height / 45),
+                                ),
+                                Text(
+                                  (transactionData[index]['note'] ==
+                                      "")
+                                      ? 'Not specified'
+                                      : transactionData[index]
+                                  ['note'],
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: height / 60),
+                                ),
+                              ],
                             ),
                           ),
-                          Text(
-                            "Not specified",
-                            style: GoogleFonts.poppins(
-                              fontSize: 18,
-                              color: Colors.black,
+                          Spacer(),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20),
+                            child: Column(
+                              mainAxisAlignment:
+                              MainAxisAlignment.center,
+                              crossAxisAlignment:
+                              CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  '16 Apr 24',
+                                  style: TextStyle(
+                                      fontSize: height / 65,
+                                      fontWeight: FontWeight.w500,
+                                      color: text),
+                                ),
+                                transactionData[index]['paymentIcon']
+                              ],
                             ),
                           ),
                         ],
                       ),
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("16 Apr 24",
-                            style: GoogleFonts.poppins(
-                              fontSize: 18,
-                              color: Colors.black,
-                            )),
-                        Icon(
-                          Icons.indeterminate_check_box,
-                          color: Colors.green,
-                        )
-                      ],
-                    )
-                  ],
+                  ),
                 ),
-              ),
+              ],
             ),
           )
         ],

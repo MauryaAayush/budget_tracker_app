@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                             Text(
-                              textName.text,
+                              "  ${textName.text}",
                               style: TextStyle(
                                   color: text,
                                   fontWeight: FontWeight.w500,
@@ -259,12 +259,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontSize: height / 48),
                 ),
                 Spacer(),
-                Text(
-                  'see all   ',
-                  style: TextStyle(
-                      color: text,
-                      fontSize: height / 65,
-                      fontWeight: FontWeight.w400),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/transationa');
+                  },
+                  child: Text(
+                    'see all   ',
+                    style: TextStyle(
+                        color: text,
+                        fontSize: height / 65,
+                        fontWeight: FontWeight.w400),
+                  ),
                 ),
               ],
             ),
@@ -348,7 +353,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 margin: EdgeInsets.only(bottom: height / 60),
                                 decoration: BoxDecoration(
                                   color: (transactionData[index]['isExpense'])
-                                      ? Colors.red.shade200
+                                      ? Contain
                                       : Color(0xffE8F6E9),
                                   borderRadius: BorderRadius.circular(12),
                                   boxShadow: [
@@ -387,7 +392,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Text(
                                             '$currencyCode${transactionData[index]['amount']}',
                                             style: TextStyle(
-                                                color: Colors.black,
+                                                color: (!transactionData[index]['isExpense'])?Colors.black:text,
                                                 fontWeight: FontWeight.w400,
                                                 fontSize: height / 45),
                                           ),
@@ -637,31 +642,38 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(
                           height: 17,
                         ),
-                        Container(
-                          height: height / 30,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: Backgruond,
-                          ),
-                          child: Row(
-                            children: [
-                              Text(
-                                '$currencyCode${spendingCounting()}',
-                                style: TextStyle(
-                                    color: text,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: height / 55),
-                              ),
-                              Spacer(),
-                              Text(
-                                '$currencyCode${earningCounting()}',
-                                style: TextStyle(
-                                    color: text,
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: height / 55),
-                              ),
-                            ],
-                          ),
+                        // Container(
+                        //   height: height / 30,
+                        //   decoration: BoxDecoration(
+                        //     borderRadius: BorderRadius.circular(30),
+                        //     color: Backgruond,
+                        //   ),
+                        //   child: Row(
+                        //     children: [
+                        //       Text(
+                        //         '$currencyCode${spendingCounting()}',
+                        //         style: TextStyle(
+                        //             color: text,
+                        //             fontWeight: FontWeight.w500,
+                        //             fontSize: height / 55),
+                        //       ),
+                        //       Spacer(),
+                        //       Text(
+                        //         '$currencyCode${earningCounting()}',
+                        //         style: TextStyle(
+                        //             color: text,
+                        //             fontWeight: FontWeight.w500,
+                        //             fontSize: height / 55),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // )
+                        LinearProgressIndicator(
+                          color: (countBalance().isNegative)?Colors.red:Colors.green,
+                          value: 1,
+
+                          minHeight: 20,
+                          borderRadius: BorderRadius.circular(20),
                         )
                       ],
                     ),
