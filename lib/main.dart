@@ -30,7 +30,9 @@ import 'package:provider/provider.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: (dark) ? Backgruond : Backgruond));
+      statusBarColor: (dark) ? Backgruond : Colors.red
+
+  ));
   runApp(const BudgetTracker());
 }
 
