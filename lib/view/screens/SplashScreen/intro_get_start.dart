@@ -22,7 +22,7 @@ class _Get_startedState extends State<Get_started> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: height / 2.5,
+              height: height / 3,
               width: width,
               decoration: BoxDecoration(
                   image: DecorationImage(
@@ -38,7 +38,7 @@ class _Get_startedState extends State<Get_started> {
                   child: Text(
                     "Simple and intuitive",
                     style: GoogleFonts.poppins(
-                      fontSize: 30,
+                      fontSize: 25,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1,

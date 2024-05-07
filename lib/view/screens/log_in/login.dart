@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../utils/color.dart';
@@ -34,24 +35,42 @@ class _LogInState extends State<LogIn> {
                 "Welcome Back",
                 style: TextStyle(
                     color: Color(0xff059E2E),
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold),
+                    fontSize: 30,
+                    fontWeight: FontWeight.w700),
               ),
               Text(
                 "Login With Budget Friendly",
-                style: TextStyle(fontSize: 15,color: text),
+                style: TextStyle(fontSize: 17,color: text),
               ),
               SizedBox(
-                height: 10,
+                height: 20,
               ),
               textFieldBox(
+
                 textName,
                 'Full Name',
                 'Full Name',
               ),
+              SizedBox(
+                height: 20,
+              ),
               textFieldBox(textEmail, 'Email ID',
                   'Email ID'),
+
+              SizedBox(
+                height: 20,
+              ),
               textFieldBox(textPassword, 'Password', 'Password'),
+              
+              Padding(
+                padding:EdgeInsets.symmetric(horizontal: 15),
+                child: Text('Forgot Password ?',style: TextStyle(
+                  color: Colors.green,
+                  fontWeight: FontWeight.w500,
+                  fontSize:18
+                ),),
+              ),
+              
               SizedBox(
                 height: height / 35,
               ),
@@ -103,7 +122,7 @@ class _LogInState extends State<LogIn> {
                   ),
                   Expanded(
                     child: Container(
-                      height: 0.3,
+                      height: 0.5,
                       width: width,
                       color: Colors.grey,
                     ),
@@ -150,7 +169,9 @@ class _LogInState extends State<LogIn> {
 
                       TextButton(onPressed: () {
                         Navigator.pushNamed(context, '/signUp');
-                      }, child: Text("Sign Up"))
+                      }, child: Text("Sign Up",style:TextStyle(
+                        color: Colors.green
+                      ) ,))
 
 
                     ],

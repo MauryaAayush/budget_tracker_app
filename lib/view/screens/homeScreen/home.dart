@@ -705,7 +705,8 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 10,
             ),
             Container(
-              height: height / 4.5,
+              padding: EdgeInsets.all(10),
+              height: height / 3.2,
               width: width / 1.1,
               decoration: BoxDecoration(
                 color: Contain,
@@ -721,14 +722,14 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 15,
-                  ),
+                  // SizedBox(
+                  //   height: height*0.0,
+                  // ),
                   Text(
                     'Set Transaction Reminers',
                     style: TextStyle(
                         color: text,
-                        fontSize: height / 40,
+                        fontSize: height / 50,
                         fontWeight: FontWeight.w500),
                   ),
                   SizedBox(
@@ -850,7 +851,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 35, top: 50),
+                    padding: const EdgeInsets.only(left: 15, top: 50),
                     child: Icon(
                       Icons.share,
                       color: text,
@@ -891,7 +892,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             bottomLeft: Radius.circular(10))),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 10, top: 5),
+                    padding: const EdgeInsets.only(left: 8, top: 5),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -907,7 +908,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 35, top: 50),
+                    padding: const EdgeInsets.only(left: 15, top: 50),
                     child: Icon(
                       Icons.share,
                       color: text,
@@ -938,8 +939,8 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   Container(
-                    height: height / 9,
-                    width: width / 4,
+                    height: height / 10,
+                    width: width / 5,
                     decoration: BoxDecoration(
                         color: Contain,
                         image: DecorationImage(
@@ -949,7 +950,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             bottomLeft: Radius.circular(10))),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 10, top: 5),
+                    padding: const EdgeInsets.only(left: 8, top: 5),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [

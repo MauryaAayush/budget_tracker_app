@@ -58,7 +58,7 @@ class _MainAnalyticsState extends State<MainAnalytics> {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: width * 0.025),
+                padding: EdgeInsets.symmetric(horizontal: width * 0.015),
                 child: Row(
                   children: [
                     GestureDetector(

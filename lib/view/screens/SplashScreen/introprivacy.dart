@@ -22,7 +22,7 @@ class _PrivacyState extends State<Privacy> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: height / 2.5,
+              height: height / 3,
               width: width,
               decoration: BoxDecoration(
                   image: DecorationImage(

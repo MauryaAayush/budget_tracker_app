@@ -253,7 +253,7 @@ class _Analytics2State extends State<Analytics2> {
               ),
               // graph ////----------------------------------------
               Container(
-                height: height / 3.5,
+                height: height / 3.2,
                 width: width,
                 // decoration: BoxDecoration(color: Colors.blue),
                 child: Center(
@@ -349,7 +349,7 @@ class _Analytics2State extends State<Analytics2> {
               ),
               // graph ////----------------------------------------
               Container(
-                height: height / 3.5,
+                height: height / 3.2,
                 width: width,
                 // decoration: BoxDecoration(color: Colors.blue),
                 child: Center(
@@ -447,7 +447,7 @@ class _Analytics2State extends State<Analytics2> {
                       color: text, fontSize: 18, fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
-                  height: height / 30,
+                  height: height / 20,
                 ),
                 Row(
                   children: [

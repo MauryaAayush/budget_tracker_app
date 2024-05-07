@@ -22,7 +22,7 @@ class _SavingState extends State<Saving> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: height / 2.5,
+              height: height / 3,
               width: width,
               decoration: BoxDecoration(
                   image: DecorationImage(
