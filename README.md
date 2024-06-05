@@ -1,4 +1,4 @@
-# budget_tracker_app
+# Budget Tracker App
 About The App :-
 Introducing  the ultimate expense manager app designed to revolutionize the way you handle your finances. With effortless expense tracking, personalized budget management, and insightful reports, empowers you to take control of your spending habits and achieve your financial goals with ease. Our secure data storage ensures the safety of your financial information, while seamless syncing across devices ensures access anytime, anywhere. Experience the convenience of customizable options and embark on your journey towards financial freedom with  Download now and transform the way you manage your money!
 
@@ -6,7 +6,7 @@ Introducing  the ultimate expense manager app designed to revolutionize the way 
 
 
 
-https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/18ceefa2-1e15-4f9f-89c2-dcf2fab485e2
+<video src = "https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/18ceefa2-1e15-4f9f-89c2-dcf2fab485e2">
 
 
 
@@ -39,19 +39,3 @@ https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/18ceefa2-1e1
 <img src = "https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/ee8f8d7e-cf00-4fed-b09c-1a12800b336b" height = 500px>
 <img src = "https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/ff798f61-5990-4541-b849-c48e5ee747cd" height = 500px>
 
-
-
-
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
