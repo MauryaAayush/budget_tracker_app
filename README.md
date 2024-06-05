@@ -6,7 +6,6 @@ Introducing  the ultimate expense manager app designed to revolutionize the way 
 
 
 
-<video src = "https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/18ceefa2-1e15-4f9f-89c2-dcf2fab485e2">
 
 
 
@@ -39,3 +38,6 @@ Introducing  the ultimate expense manager app designed to revolutionize the way 
 <img src = "https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/ee8f8d7e-cf00-4fed-b09c-1a12800b336b" height = 500px>
 <img src = "https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/ff798f61-5990-4541-b849-c48e5ee747cd" height = 500px>
 
+
+
+<video src = "https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/18ceefa2-1e15-4f9f-89c2-dcf2fab485e2">
