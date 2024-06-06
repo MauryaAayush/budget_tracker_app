@@ -3,12 +3,12 @@ About The App :-
 Introducing  the ultimate expense manager app designed to revolutionize the way you handle your finances. With effortless expense tracking, personalized budget management, and insightful reports, empowers you to take control of your spending habits and achieve your financial goals with ease. Our secure data storage ensures the safety of your financial information, while seamless syncing across devices ensures access anytime, anywhere. Experience the convenience of customizable options and embark on your journey towards financial freedom with  Download now and transform the way you manage your money!
 
 
+### 
+<h3 align="center"><i>Images</i></h3>
 
+###
 
-
-
-
-
+<div align="center">
 
 <img src = "https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/28797d9b-3d9c-433c-a9c6-a261519e0440" height = 500px>
 <img src = "https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/029c9667-f2fb-4309-b477-39907920199c" height = 500px>
@@ -38,6 +38,11 @@ Introducing  the ultimate expense manager app designed to revolutionize the way 
 <img src = "https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/ee8f8d7e-cf00-4fed-b09c-1a12800b336b" height = 500px>
 <img src = "https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/ff798f61-5990-4541-b849-c48e5ee747cd" height = 500px>
 
+</div>
 
 
+###
+<h3 align="center"><i>Video</i></h3>
+<div align="center">
 <video src = "https://github.com/MauryaAayush/budget_tracker_app/assets/143180849/18ceefa2-1e15-4f9f-89c2-dcf2fab485e2">
+</div>
